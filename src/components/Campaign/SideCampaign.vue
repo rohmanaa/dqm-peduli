@@ -30,6 +30,7 @@
                 <span>Masukan Nominal Donasi</span>
                 <div class="row">
                     <div class="col-lg-12">
+
                         <b-input-group prepend="Rp.">
                             <b-form-input v-model="selectedValue" type="number" @input="checkValue"></b-form-input>
                         </b-input-group>
@@ -134,6 +135,7 @@
 </template>
 
 <script>
+
 import VueJsProgress from 'vue-js-progress'
 export default {
 

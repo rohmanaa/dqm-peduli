@@ -8,15 +8,37 @@
 
     <title-area heading="Mari Bantu Mereka yang Membutuhkan" description="Menampilkan 12 campaign dari 107 campaign" />
 
-    
-   
     <!--====== APPIE PAGE TITLE PART ENDS ======-->
     <!-- Blog Start -->
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
+                <div class="container mb-5">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <span class="me-2"></span>
+
+                                <MultiSelect v-model="selectedCategories" display="chip" :options="categories" optionLabel="name" placeholder="Pilih Kategori" :maxSelectedLabels="3" class="w-full md:w-20rem me-2" />
+                                <MultiSelect v-model="selectedCities" display="chip" :options="cities" optionLabel="name" placeholder="Pilih Wilayah" :maxSelectedLabels="3" class="w-full md:w-20rem ms-2" />
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+                            <div class="d-flex justify-content-end align-items-center">
+                                
+                                    <Toast />
+                                    <SplitButton label="Filter" icon="pi pi-sort-alt"  :model="items" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-lg-12 col-md-7">
-                    
 
                     <all-campaign />
                 </div>
@@ -36,103 +58,100 @@
 </template>
 
 <script>
+import SplitButton from 'primevue/splitbutton';
+import MultiSelect from 'primevue/multiselect';
 import TitleArea from '../Layout/TitleArea.vue'
 import AllCampaign from './AllCampaign.vue'
 export default {
     components: {
         TitleArea,
+        MultiSelect,
+        SplitButton,
         AllCampaign
     },
+
     data() {
+
         return {
-            selected1: null,
-            selected2: null,
-            kategori: [{
-                    value: null,
-                    text: 'Please select an option'
+            selectedCategories: null,
+            selectedCities: null,
+            cities: [{
+                    name: 'New York',
+                    code: 'NY'
                 },
                 {
-                    value: 'a',
-                    text: 'This is First option'
+                    name: 'Rome',
+                    code: 'RM'
                 },
                 {
-                    value: 'b',
-                    text: 'Selected Option'
+                    name: 'London',
+                    code: 'LDN'
                 },
                 {
-                    value: {
-                        C: '3PO'
-                    },
-                    text: 'This is an option with object value'
+                    name: 'Istanbul',
+                    code: 'IST'
                 },
                 {
-                    value: 'd',
-                    text: 'This one is disabled',
-                    disabled: true
+                    name: 'Paris',
+                    code: 'PRS'
                 }
             ],
-            wilayah: [{
-                    value: null,
-                    text: 'Please select an option'
+            categories: [{
+                    name: 'Pendidikan',
+                    code: 'pe'
                 },
                 {
-                    value: 'a',
-                    text: 'This is First option'
+                    name: 'Kemanusiaan',
+                    code: 'RM'
                 },
                 {
-                    value: 'b',
-                    text: 'Selected Option'
+                    name: 'Kesehatan',
+                    code: 'LDN'
                 },
                 {
-                    value: {
-                        C: '3PO'
-                    },
-                    text: 'This is an option with object value'
+                    name: 'Ekonomi',
+                    code: 'IST'
                 },
                 {
-                    value: 'd',
-                    text: 'This one is disabled',
-                    disabled: true
+                    name: 'Paris',
+                    code: 'PRS'
+                }
+            ],
+            items: [{
+                    label: 'Terbaru',
+                    icon: 'pi pi-sort-amount-up'
+                
+                },
+                {
+                    label: 'Terlama',
+                    icon: 'pi pi-sort-amount-down'
+                    // command: () => {
+                    //     this.$toast.add({
+                    //         severity: 'warn',
+                    //         summary: 'Delete',
+                    //         detail: 'Data Deleted',
+                    //         life: 3000
+                    //     });
+                    // }
+                },
+                {
+                    label: 'Sisa Hari Terdekat',
+                    icon: 'pi pi-clock'
                 }
             ]
+
+        }
+    },
+    methods: {
+        save() {
+            this.$toast.add({
+                severity: 'success',
+                summary: 'Success',
+                detail: 'Data Saved',
+                life: 3000
+            });
         }
     }
 
 }
 </script>
-
-<style>
-.anchor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    padding: .75rem 2rem;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    color: #1A3257;
-    background-color: #fff;
-    border-color: #1A3257;
-}
-
-.anchor::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: .5em;
-    vertical-align: .255em;
-    content: "";
-    border-top: .3em solid;
-    border-right: .28em solid transparent;
-    border-bottom: 0;
-    border-left: .28em solid transparent;
-}
-
-.anchor:hover {
-    color: #1A3257;
-    background-color: #ffffff;
-    border-color: #1A3257;
-    cursor: pointer;
-}
-</style>
