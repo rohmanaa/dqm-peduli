@@ -14,7 +14,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <VueJsProgress  :percentage="13" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true"></VueJsProgress>
+                        <VueJsProgress :percentage="13" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true"></VueJsProgress>
                     </div>
                 </div>
                 <div class="row mt-10">
@@ -46,7 +46,8 @@
                         <div class="col-12 col-sm-6">
                             <label class="boxed-check">
                                 <input class="boxed-check-input" type="radio" name="radio-overview" value="10000" @change="updateInputValue">
-                                <div class="boxed-check-label text-center">10.000</div>
+
+                                <div class="boxed-check-label text-center"> 10.000</div>
                             </label>
                         </div>
                         <div class="col-12 col-sm-6">
@@ -86,71 +87,110 @@
 
         <aside class="widget widget-trend-post">
             <h3 class="widget-title">Metode Pembayaran</h3>
-            <div class="popular-post">
-                <router-link to="/single-news"><img src="@/assets/images/blog/p1.jpg" alt=""></router-link>
-                <h5>
-                    <router-link to="/single-news">Using creative problem Solving</router-link>
-                </h5>
-                <span>March 10, 2020</span>
-            </div>
-            <div class="popular-post">
-                <router-link to="/single-news"><img src="@/assets/images/blog/p2.jpg" alt=""></router-link>
-                <h5>
-                    <router-link to="/single-news">Fundamentals of UI Design</router-link>
-                </h5>
-                <span>Jan 14, 2020</span>
-            </div>
-            <div class="popular-post">
-                <router-link to="/single-news"><img src="@/assets/images/blog/p3.jpg" alt=""></router-link>
-                <h5>
-                    <router-link to="/single-news">Making music with Other people</router-link>
-                </h5>
-                <span>April 12, 2020</span>
-            </div>
-            <div class="popular-post">
-                <router-link to="/single-news"><img src="@/assets/images/blog/p4.jpg" alt=""></router-link>
-                <h5>
-                    <router-link to="/single-news">Brush strokes energize Trees in paintings</router-link>
-                </h5>
-                <span>July 4, 2020</span>
+            <div class="card border-0">
+                <Listbox v-model="selectedCountry" :options="countries" optionLabel="name" class="w-full" listStyle="max-height:250px">
+                    <template #option="slotProps">
+                        <div class="d-flex align-items-center">
+                            <img :alt="slotProps.option.name" :class="`ms-2 me-2 `" :src="slotProps.option.code" style="width: 70px" />
+                            <div>{{ slotProps.option.name }}</div>
+                        </div>
+                    </template>
+                </Listbox>
             </div>
         </aside>
         <aside class="widget">
-            <h3 class="widget-title">Popular Tags</h3>
-            <div class="tags">
-                <a href="#">Bisy LMS</a>
-                <a href="#">Design</a>
-                <a href="#">General</a>
-                <a href="#">Online</a>
-                <a href="#">Prevention</a>
-                <a href="#">Artist</a>
-                <a href="#">Education</a>
-                <a href="#">Motivation</a>
-                <a href="#">Politico</a>
-                <a href="#">Live Cases</a>
+            <h3 class="widget-title">Profil Donatur</h3>
+            <div class="row">
+                <div class="col-lg-12 mb-3">
+                    <b-input-group prepend="Rp.">
+                        <b-form-input v-model="selectedValue" type="number" @input="checkValue"></b-form-input>
+                    </b-input-group>
+                    <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <b-input-group prepend="Rp.">
+                        <b-form-input v-model="selectedValue" type="number" @input="checkValue"></b-form-input>
+                    </b-input-group>
+                    <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
+                </div>
+                <div class="col-lg-12">
+                    <b-input-group prepend="Rp.">
+                        <b-form-input v-model="selectedValue" type="number" @input="checkValue"></b-form-input>
+                    </b-input-group>
+                    <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
+                </div>
+
+                <div class="d-flex justify-content-center mt-5">
+                    <Checkbox v-model="anonim" inputId="anonim1" name="anonim" value="Anonim" class="me-2" />
+                    <label for="anonim1" class="ml-2"> Tampilkan sebagai donatur anonim </label>
+                </div>
             </div>
+
         </aside>
+
+        <aside class="widget">
+            <h3 class="widget-title">Dukungan atau Doamu (Optional)</h3>
+            <div class="row">
+                <div class="col-lg-12 mb-3">
+                    <Textarea v-model="value" rows="5" cols="4" style="width:100%" />
+                    </div>
+            </div>
+
+                <div class="p-3 mb-2 w-100 bg-secondary text-white rounded">            
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <span>Total</span>
+                    </div>
+                    <div class="col-lg-6">
+    <b-form-input v-model="selectedValue" type="number" @input="checkValue" disabled></b-form-input>
+                    </div>
+                </div></div>
+
+        </aside>
+
     </div>
 </div>
 </template>
 
 <script>
-
+import Checkbox from 'primevue/checkbox';
+import Textarea from 'primevue/textarea';
+import Listbox from 'primevue/listbox';
 import VueJsProgress from 'vue-js-progress'
 export default {
 
     components: {
-        VueJsProgress
+        VueJsProgress,
+        Textarea,
+        Checkbox,
+        Listbox
+
     },
     data() {
 
         return {
+            anonim: null,
             selectedValue: '',
-            showNotification: false
+            showNotification: false,
+            selectedCountry: null,
+            countries: [{
+                    name: 'Permata VA',
+                    code: 'https://digital-api.dompetdhuafa.org/storage/82/conversions/36a743ae4ae4c44e3fe1911674687873-large.png'
+                },
+                {
+                    name: 'BCA VA',
+                    code: 'https://digital-api.dompetdhuafa.org/storage/77/conversions/38dbccfe5861c4edc6ca1e18c82cf257-large.png'
+                },
+                {
+                    name: 'Briva VA',
+                    code: 'https://digital-api.dompetdhuafa.org/storage/76/conversions/900be96b129a1dbbb88c03b066708736-large.png'
+                },
+
+            ]
 
         }
     },
-   
+
     methods: {
         updateInputValue(event) {
             if (this.selectedValue === event.target.value) {

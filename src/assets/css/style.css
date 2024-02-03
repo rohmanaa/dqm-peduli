@@ -4699,7 +4699,7 @@ p {
   position: absolute;
   left: 0;
   top: 0;
-  content: "\f105";
+  /* content: "\f105"; */
   font-family: "Font Awesome 5 Pro";
   font-size: 20px;
   line-height: 40px;
