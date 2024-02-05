@@ -17,10 +17,8 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                             <div class="d-flex justify-content-start align-items-center">
-                                <span class="me-2"></span>
-
-                                <MultiSelect v-model="selectedCategories" display="chip" :options="categories" optionLabel="name" placeholder="Pilih Kategori" :maxSelectedLabels="3" class="w-full md:w-20rem me-2" />
-                                <MultiSelect v-model="selectedCities" display="chip" :options="cities" optionLabel="name" placeholder="Pilih Wilayah" :maxSelectedLabels="3" class="w-full md:w-20rem ms-2" />
+                                <MultiSelect v-model="selectedCategories" display="chip" :options="categories" optionLabel="name" placeholder="Pilih Kategori" :maxSelectedLabels="3" style="width:20rem;" />
+                                <MultiSelect v-model="selectedCities" display="chip" :options="cities" optionLabel="name" placeholder="Pilih Wilayah" :maxSelectedLabels="3" class="ms-2" style="width:20rem;" />
                             </div>
 
                         </div>
@@ -29,17 +27,13 @@
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
                             <div class="d-flex justify-content-end align-items-center">
-                                
-                                    <Toast />
-                                    <SplitButton label="Filter" icon="pi pi-sort-alt"  :model="items" />
-                                
+                                <SplitButton label="Filter" icon="pi pi-sort-alt" :model="items" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-12 col-md-7">
-
                     <all-campaign />
                 </div>
             </div>
@@ -58,15 +52,13 @@
 </template>
 
 <script>
-import SplitButton from 'primevue/splitbutton';
-import MultiSelect from 'primevue/multiselect';
+
 import TitleArea from '../Layout/TitleArea.vue'
 import AllCampaign from './AllCampaign.vue'
 export default {
     components: {
         TitleArea,
-        MultiSelect,
-        SplitButton,
+
         AllCampaign
     },
 
@@ -120,7 +112,7 @@ export default {
             items: [{
                     label: 'Terbaru',
                     icon: 'pi pi-sort-amount-up'
-                
+
                 },
                 {
                     label: 'Terlama',

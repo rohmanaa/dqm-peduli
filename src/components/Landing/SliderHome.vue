@@ -1,36 +1,19 @@
 <template>
-    <div>
-        
-        <b-carousel class="slider-home" id="carousel-1" v-model="slide" :interval="4000" controls indicators background="#ababab"
-            img-width="1024" img-height="480" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd">
-            <!-- Text slides with image -->
-            <b-carousel-slide caption="First slide" text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                img-src="https://picsum.photos/1024/480/?image=52"></b-carousel-slide>
+<div>
 
-            <!-- Slides with custom text -->
-            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-                <h1>Hello world!</h1>
-            </b-carousel-slide>
+    <b-carousel class="slider-home" id="carousel-1" v-model="slide" :interval="4000" controls indicators background="#ababab" img-width="1024" img-height="480" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart" @sliding-end="onSlideEnd">
+        <!-- Text slides with image -->
+        <b-carousel-slide img-src="https://digital-api.dompetdhuafa.org/storage/71068/conversions/e8906e51b954f522f5a1248f9eb3e230-large.jpeg"></b-carousel-slide>
 
-            <!-- Slides with image only -->
-            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
+        <!-- Slides with custom text -->
+        <b-carousel-slide img-src="https://digital-api.dompetdhuafa.org/storage/13451/conversions/dcc5e74b616544ab6095f592bfada663-large.jpg"></b-carousel-slide>
 
-            <!-- Slides with img slot -->
-            <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-            <b-carousel-slide>
-                <template #img>
-                    <img class="d-block img-fluid w-100" width="1024" height="480"
-                        src="https://picsum.photos/1024/480/?image=55" alt="image slot">
-                </template>
-            </b-carousel-slide>
+        <!-- Slides with image only -->
+        <b-carousel-slide img-src="https://digital-api.dompetdhuafa.org/storage/70087/conversions/8e833741d979124471cfc4286ba518ee-large.jpeg"></b-carousel-slide>
 
-            <!-- Slide with blank fluid image to maintain slide aspect ratio -->
+    </b-carousel>
 
-        </b-carousel>
-    
-
-    </div>
+</div>
 </template>
 
 <script>

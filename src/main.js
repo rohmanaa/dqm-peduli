@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import PrimeVue from 'primevue/config';
+
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 
@@ -16,15 +16,13 @@ import '../src/assets/css/default.css'
 import '../src/assets/css/style.css'
 import '../src/assets/css/main.css'
 
-import "primevue/resources/themes/lara-light-blue/theme.css";
-import "primevue/resources/primevue.min.css"; /* Deprecated */
-import "primeicons/primeicons.css";
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
-Vue.use(PrimeVue)
+
+Vue.use(router);
 
 
 Vue.config.productionTip = false
