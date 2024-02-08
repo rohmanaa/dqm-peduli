@@ -1,41 +1,28 @@
 <template>
-<div class="single-post-area">
+<div class="single-post-area mb-5">
     <div class="post-thumb">
-        <img src="https://digital.dompetdhuafa.org/_nuxt/img/zakat-maal.767d40a.jpg" alt="">
+        <img src="https://digital-api.dompetdhuafa.org/storage/362/conversions/97ddcc06407aa3a4522020af67aa65af-large.jpg" alt="">
     </div>
 
     <p>
-        Maal berasal dari kata bahasa Arab artinya harta atau kekayaan (al-amwal, jamak dari kata maal) adalah “segala hal yang diinginkan manusia untuk disimpan dan dimiliki” (Lisan ul-Arab). Menurut Islam sendiri, harta merupakan sesuatu yang boleh atau dapat dimiliki dan digunakan (dimanfaatkan) sesuai kebutuhannya.
+       Fidyah diambil dari kata “fadaa” artinya mengganti atau menebus. Bagi beberapa orang yang tidak mampu menjalankan ibadah puasa dengan kriteria tertentu, diperbolehkan tidak berpuasa serta tidak harus menggantinya di lain waktu. Namun, sebagai gantinya diwajibkan untuk membayar fidyah.
     </p>
-    <p>Oleh karena itu dalam pengertiannya, zakat maal berarti zakat yang dikenakan atas segala jenis harta, yang secara zat maupun substansi perolehannya tidak bertentangan dengan ketentuan agama.Sebagai contoh, zakat maal terdiri atas simpanan kekayaan seperti uang, emas, surat berharga, penghasilan profesi, aset perdagangan, hasil barang tambang atau hasil laut, hasil sewa aset dan lain sebagainya.</p>
-    <p>Sebagaimana yang dijelaskan oleh Syaikh Dr. Yusuf Al-Qardhawi dalam kitabnya Fiqh uz-Zakah, zakat maal meliputi:</p>
+    <p>
+        Ada ketentuan tentang siapa saja yang boleh tidak berpuasa. Hal ini tertuang dalam surat Al-Baqarah ayat 184.
+    </p>
+    <p>
+    ”(yaitu) dalam beberapa hari yang tertentu. Maka barangsiapa diantara kamu ada yang sakit atau dalam perjalanan (lalu ia berbuka), maka (wajiblah baginya berpuasa) sebanyak hari yang ditinggalkan itu pada hari-hari yang lain. Dan wajib bagi orang-orang yang berat menjalankannya (jika mereka tidak berpuasa) membayar fidyah, (yaitu): memberi makan seorang miskin. Barangsiapa yang dengan kerelaan hati mengerjakan kebajikan, maka itulah yang lebih baik baginya. Dan berpuasa lebih baik bagimu jika kamu mengetahui.” (Q.S. Al Baqarah: 184)
+    </p>
 
+    <h5>Kriteria orang yang bisa membayar fidyah di antaranya:</h5>
 
     <ol class="list-group list-group-numbered">
-      <li class="list-group-item">Zakat simpanan emas, perak, dan barang berharga lainnya;</li>
-      <li class="list-group-item">Zakat atas aset perdagangan;</li>
-      <li class="list-group-item">Zakat atas hewan ternak;</li>
-      <li class="list-group-item">Zakat atas hasil pertanian;</li>
-      <li class="list-group-item">Zakat atas hasil olahan tanaman dan hewan;</li>
-      <li class="list-group-item">Zakat atas hasil tambang dan tangkapan laut;</li>
-      <li class="list-group-item">Zakat atas hasil penyewaan asset;</li>
-      <li class="list-group-item">Zakat atas hasil jasa profesi;</li>
-      <li class="list-group-item">Zakat atas hasil saham dan obligasi.</li>
-      <li class="list-group-item">Kepemilikan penuh</li>
-      <li class="list-group-item">Harta halal dan diperoleh secara halal</li>
-      <li class="list-group-item">Harta yang dapat berkembang atau diproduktifkan (dimanfaatkan)</li>
-      <li class="list-group-item">Mencukupi nishab</li>
-      <li class="list-group-item">Bebas dari hutang</li>
-      <li class="list-group-item">Mencapai haul</li>
-      <li class="list-group-item">Atau dapat ditunaikan saat panen</li>
+      <li class="list-group-item border-0">Orang tua renta yang tidak memungkinkannya untuk berpuasa</li>
+      <li class="list-group-item border-0">Orang sakit parah yang kecil kemungkinan sembuh</li>
+      <li class="list-group-item border-0">Ibu hamil atau menyusui yang jika berpuasa khawatir dengan kondisi diri atau bayinya (atas rekomendasi dokter).</li>
+      
     </ol>
 
-    <div class="post-share p-2">
-        <h5>Share:</h5>
-        <a class="fac" href="#"><i class="fab fa-facebook-f"></i></a>
-        <a class="twi" href="#"><i class="fab fa-twitter"></i></a>
-        <a class="goo" href="#"><i class="fab fa-google"></i></a>
-    </div>
 
 </div>
 </template>

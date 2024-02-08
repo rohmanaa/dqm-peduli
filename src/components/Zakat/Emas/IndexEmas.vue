@@ -1,41 +1,20 @@
 <template>
-<div class="single-post-area">
+<div class="single-post-area mb-5">
     <div class="post-thumb">
-        <img src="https://digital.dompetdhuafa.org/_nuxt/img/zakat-maal.767d40a.jpg" alt="">
+        <img src="https://digital-api.dompetdhuafa.org/storage/27512/conversions/4e5f7cc1756998928ba574b83a0188b8-large.png" alt="">
     </div>
-
+    <h5 class="fw-bold">Mengapa Emas & Perak Harus Dizakati?</h5>
     <p>
-        Maal berasal dari kata bahasa Arab artinya harta atau kekayaan (al-amwal, jamak dari kata maal) adalah “segala hal yang diinginkan manusia untuk disimpan dan dimiliki” (Lisan ul-Arab). Menurut Islam sendiri, harta merupakan sesuatu yang boleh atau dapat dimiliki dan digunakan (dimanfaatkan) sesuai kebutuhannya.
+        Emas dan uang memiliki ‘illat dan kedudukan yang sama dalam syariat. Para ulama menerangkan bahwa keduanya sama-sama berperan sebagai standar harga atau tsamaniah.
     </p>
-    <p>Oleh karena itu dalam pengertiannya, zakat maal berarti zakat yang dikenakan atas segala jenis harta, yang secara zat maupun substansi perolehannya tidak bertentangan dengan ketentuan agama.Sebagai contoh, zakat maal terdiri atas simpanan kekayaan seperti uang, emas, surat berharga, penghasilan profesi, aset perdagangan, hasil barang tambang atau hasil laut, hasil sewa aset dan lain sebagainya.</p>
-    <p>Sebagaimana yang dijelaskan oleh Syaikh Dr. Yusuf Al-Qardhawi dalam kitabnya Fiqh uz-Zakah, zakat maal meliputi:</p>
+    <h5 class="fw-bold">KETENTUAN ZAKAT EMAS & PERAK</h5>
 
+    <ol class="list-group list-group-numbered" >
+        <li class="list-group-item border-0" >Mencapai Haul (Telah berumur 1 tahun).</li>
+        <li class="list-group-item border-0">Mencapai Nishab (Nishab zakat emas yakni 20 mitsqol atau 20 dinar. Satu dinar setara dengan 4,25 gram emas. Sehingga nishab zakat emas adalah 85 gram. Sedangkan nishab zakat perak adalah 200 dirham atau 5 uqiyah. Satu dirham setara dengan 2,975 gram perak. Sehingga nishab zakat perak adalah 595 gram)</li>
+        <li class="list-group-item border-0">Besar Zakat 2,5 % (Jumlah Emas & Perak tersebut memiliki harga yang melampaui untuk zakat 2,5%)</li>
 
-    <ol class="list-group list-group-numbered">
-      <li class="list-group-item">Zakat simpanan emas, perak, dan barang berharga lainnya;</li>
-      <li class="list-group-item">Zakat atas aset perdagangan;</li>
-      <li class="list-group-item">Zakat atas hewan ternak;</li>
-      <li class="list-group-item">Zakat atas hasil pertanian;</li>
-      <li class="list-group-item">Zakat atas hasil olahan tanaman dan hewan;</li>
-      <li class="list-group-item">Zakat atas hasil tambang dan tangkapan laut;</li>
-      <li class="list-group-item">Zakat atas hasil penyewaan asset;</li>
-      <li class="list-group-item">Zakat atas hasil jasa profesi;</li>
-      <li class="list-group-item">Zakat atas hasil saham dan obligasi.</li>
-      <li class="list-group-item">Kepemilikan penuh</li>
-      <li class="list-group-item">Harta halal dan diperoleh secara halal</li>
-      <li class="list-group-item">Harta yang dapat berkembang atau diproduktifkan (dimanfaatkan)</li>
-      <li class="list-group-item">Mencukupi nishab</li>
-      <li class="list-group-item">Bebas dari hutang</li>
-      <li class="list-group-item">Mencapai haul</li>
-      <li class="list-group-item">Atau dapat ditunaikan saat panen</li>
     </ol>
-
-    <div class="post-share p-2">
-        <h5>Share:</h5>
-        <a class="fac" href="#"><i class="fab fa-facebook-f"></i></a>
-        <a class="twi" href="#"><i class="fab fa-twitter"></i></a>
-        <a class="goo" href="#"><i class="fab fa-google"></i></a>
-    </div>
 
 </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
 <div>
     <div class="blog-sidebar">
-
         <aside class="widget widget-categories">
             <div class="mb-10">
                 <div class="row">

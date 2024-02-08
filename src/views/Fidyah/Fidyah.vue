@@ -1,13 +1,13 @@
 <template>
 <div>
-    <title-area heading="Zakat Fidyah" description="Zakat yang dikeluarkan individu maupun lembaga atas harta/penghasilan yang diperolehnya dengan syarat dan ketentuan yang sudah ditetapkan" />
+    <title-area heading="Zakat Fidyah" description="Fidyah adalah sejumlah harta benda dalam kadar tertentu yang wajib diberikan kepada fakir miskin sebagai ganti suatu ibadah yang telah ditinggalkan." />
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-7">
+                <div class="col-xl-8">
                     <index-fidyah />
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-xl-4">
                     <side-fidyah />
                 </div>
             </div>

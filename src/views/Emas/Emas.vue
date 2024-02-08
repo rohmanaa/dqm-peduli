@@ -1,13 +1,13 @@
 <template>
 <div>
-    <title-area heading="Zakat Emas" description="Zakat yang dikeluarkan individu maupun lembaga atas harta/penghasilan yang diperolehnya dengan syarat dan ketentuan yang sudah ditetapkan" />
+    <title-area heading="Zakat Emas" description="Zakat emas wajib dikenakan zakat jika emas yang tersimpan telah mencapai atau melebihi nisabnya" />
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-7">
+                <div class="col-xl-8">
                     <index-emas />
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-xl-4">
                     <side-emas/>
                 </div>
             </div>

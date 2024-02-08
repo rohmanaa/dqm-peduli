@@ -4,7 +4,7 @@
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-6">
+                <div class="col-xl-12">
                     <index-wakaf/>
                 </div>
 
