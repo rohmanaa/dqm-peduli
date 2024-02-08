@@ -17,7 +17,8 @@ export default {
     data() {
         return {
             sidebar: false,
-            navs: [{
+            navs: [
+                {
                     name: 'Donasi',
                     path: '/campaign'
                 },
@@ -54,26 +55,7 @@ export default {
                     name: 'Qurban',
                     path: '/qurban'
                 },
-                {
-                    name: 'pages',
-                    childrens: [{
-                            name: 'About us',
-                            path: '/about-us'
-                        },
-                        {
-                            name: 'Error',
-                            path: '/error'
-                        },
-                        {
-                            name: 'News',
-                            path: '/news'
-                        },
-                        {
-                            name: 'Single news',
-                            path: '/single-news'
-                        },
-                    ],
-                },
+               
 
             ]
         }

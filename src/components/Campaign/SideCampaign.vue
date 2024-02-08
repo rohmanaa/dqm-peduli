@@ -88,18 +88,36 @@
         <aside class="widget widget-trend-post">
             <h3 class="widget-title">Metode Pembayaran</h3>
 
-            <div class="row">
-                <b-form-select v-model="selected" :options="pembayaran" :select-size="10" class="custom-select"></b-form-select>
-                <div class="mt-1">Selected: <strong>{{ selected }}</strong></div>
+            <div class="overview-radio">
+                <div class="row boxed-check-group boxed-check-success">
+
+                    <div class="col-12 col-sm-6">
+                        <label class="boxed-check">
+                            <input class="boxed-check-input" type="radio" name="pembayaran">
+                            <div class="boxed-check-label text-center">
+                                <img src="https://down-id.img.susercontent.com/file/9a08d3abab3dd059fff945c72ca372d9" alt="BSI" class="radio-image" /></div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="boxed-check">
+                            <input class="boxed-check-input" type="radio" name="pembayaran">
+                            <div class="boxed-check-label text-center">
+                                <img src="https://down-id.img.susercontent.com/file/e7865f5fb066b8b5e73f9d5c36fc7154" alt="BSI" class="radio-image" /></div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="boxed-check">
+                            <input class="boxed-check-input" type="radio" name="pembayaran">
+                            <div class="boxed-check-label text-center">
+                                <img src="https://down-id.img.susercontent.com/file/0cf8caa250763eefc3d79bb1f8c08e73" alt="BSI" class="radio-image" /></div>
+                        </label>
+                    </div>
+
+                </div>
             </div>
 
-    <select class="selectpicker">
-        <option data-content="<img src='https://media.vanityfair.com/photos/5efcc8e3184617200a49bb77/16:9/w_1999,h_1124,c_limit/sia.jpg'> hi ">Mustard</option>
-      <option>Ketchup</option>
-      <option>Barbecue</option>
-    </select>
-    
         </aside>
+
         <aside class="widget">
             <h3 class="widget-title">Profil Donatur</h3>
             <div class="row">
@@ -127,7 +145,7 @@
                 <div class="d-flex justify-content-start mt-2">
 
                     <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
-                        I accept the terms and use
+                        <span class="ms-2">Tampilkan sebagai Anonim</span>
                     </b-form-checkbox>
 
                 </div>
@@ -140,7 +158,7 @@
             <div class="row">
                 <div class="col-lg-12 mb-3">
                     <div>
-                        <b-form-textarea id="textarea" v-model="text" placeholder="Enter something..." rows="3" max-rows="6"></b-form-textarea>
+                        <b-form-textarea id="textarea" v-model="text" placeholder="Tuliskan Pesanmu" rows="3" max-rows="6"></b-form-textarea>
 
                         <pre class="mt-3 mb-0">{{ text }}</pre>
                     </div>
@@ -158,7 +176,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <b-button block class="btn-dqm w-100">Block Level Button</b-button>
+                    <b-button block class="btn-dqm w-100">Lanjutkan</b-button>
                 </div>
             </div>
 
@@ -182,43 +200,6 @@ export default {
 
             selectedValue: '',
             showNotification: false,
-            selected: null,
-            pembayaran: [{
-                    value: null,
-                    text: 'Please select some item'
-                },
-                {
-                    value: 'a',
-                    text: 'This is option a',
-                    image: 'https://digital-api.dompetdhuafa.org/storage/75/conversions/9426b9b3191bc6268d08fde6c09df57e-large.png'
-                },
-                {
-                    value: 'b',
-                    text: 'Default Selected Option b',
-                    image: 'path_to_image_b'
-                },
-                {
-                    value: 'c',
-                    text: 'This is option c',
-                    image: 'path_to_image_c'
-                },
-                {
-                    value: 'd',
-                    text: 'This one is disabled',
-                    disabled: true,
-                    image: 'path_to_image_d'
-                },
-                {
-                    value: 'e',
-                    text: 'This is option e',
-                    image: 'path_to_image_e'
-                },
-                {
-                    value: 'f',
-                    text: 'This is option f',
-                    image: 'path_to_image_f'
-                }
-            ]
 
         }
     },
@@ -254,19 +235,6 @@ export default {
 </script>
 
 <style>
-.custom-select {
-    border: none;
-    /* Remove border */
-    outline: none;
-    /* Remove outline */
-    -webkit-box-shadow: none;
-    /* Remove shadow for WebKit browsers */
-    box-shadow: none;
-    /* Remove shadow */
-    overflow: hidden;
-    /* Hide scroll bar */
-}
-
 .boxed-check-group,
 .boxed-check-group .boxed-check {
     position: relative;
@@ -300,7 +268,7 @@ export default {
 
 .boxed-check-group .boxed-check .boxed-check-input:checked+.boxed-check-label,
 .boxed-check-group .boxed-check .boxed-check-input:not(:disabled)+.boxed-check-label:hover {
-    border-color: #1A3257 !important;
+    border-color: #2cb8ce !important;
 }
 
 .boxed-check-group .boxed-check .boxed-check-input:checked+.boxed-check-label::before {
@@ -328,7 +296,7 @@ export default {
 
 .boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:checked+.boxed-check-label,
 .boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:not(:disabled)+.boxed-check-label:hover {
-    border-color: #1A3257 !important;
+    border-color: #2cb8ce !important;
     background-color: #ffffff;
 }
 
@@ -344,5 +312,6 @@ export default {
 .boxed-check-group.boxed-check-success .boxed-check .boxed-check-input:checked+.boxed-check-label {
     color: #ffffff;
     background-color: #1A3257 !important;
+
 }
 </style>

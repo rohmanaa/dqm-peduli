@@ -1,7 +1,7 @@
 <template>
 <!--====== APPIE FOOTER PART START ======-->
 
-<section class="appie-footer-area">
+<section class="appie-footer-area footer-dqm">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">

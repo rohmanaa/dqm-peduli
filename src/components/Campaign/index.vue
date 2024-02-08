@@ -12,26 +12,47 @@
     <!-- Blog Start -->
     <section class="blogpage-section">
         <div class="container">
-            <div class="row">
-                <div class="container mb-5">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                            <div class="d-flex justify-content-start align-items-center">
-                                <MultiSelect v-model="selectedCategories" display="chip" :options="categories" optionLabel="name" placeholder="Pilih Kategori" :maxSelectedLabels="3" style="width:20rem;" />
-                                <MultiSelect v-model="selectedCities" display="chip" :options="cities" optionLabel="name" placeholder="Pilih Wilayah" :maxSelectedLabels="3" class="ms-2" style="width:20rem;" />
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="row">
+                            <!-- Kolom kiri untuk dua form select -->
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex flex-row mb-3">
+                                    <!-- Form select pertama -->
+                                    <multiselect v-model="valuekategori" :options="kategori" :multiple="true" :close-on-select="true" :clear-on-select="true" :preserve-search="true" :show-labels="false" placeholder="Pilih Kategori" label="name" track-by="name" class="me-2 w-100">
+                                        <template slot="selection" slot-scope="{ values, search, isOpen }">
+                                            <span class="multiselect__single" v-if="values.length" v-show="!isOpen">{{ values.length }} Dipilih</span>
+                                        </template>
+                                    </multiselect>
+
+                                    <!-- Form select kedua -->
+                                    <multiselect v-model="valuewilayah" :options="wilayah" :multiple="true" :close-on-select="false" :clear-on-select="true" :preserve-search="true" :show-labels="false" placeholder="Pilih Wilayah" label="name" track-by="name" class="w-100">
+                                        <template slot="selection" slot-scope="{ values, search, isOpen }">
+                                            <span class="multiselect__single" v-if="values.length" v-show="!isOpen">{{ values.length }} Dipilih</span>
+                                        </template>
+                                    </multiselect>
+                                </div>
                             </div>
 
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                            <!-- Kolom tengah kosong untuk desktop -->
+                            <div class="col-md-4"></div>
 
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
-                            <div class="d-flex justify-content-end align-items-center">
-                                <SplitButton label="Filter" icon="pi pi-sort-alt" :model="items" />
+                            <!-- Kolom kanan untuk satu form select -->
+                            <div class="col-md-4">
+                                <div class="d-flex flex-row-reverse">
+                                    <!-- Form select ketiga -->
+                                    <multiselect v-model="valueurutan" :options="urutan" :searchable="false" :close-on-select="false" :show-labels="false" placeholder="Pilih Urutan" class="w-100"></multiselect>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
+            </div>
+
+            <div class="row">
 
                 <div class="col-lg-12 col-md-7">
                     <all-campaign />
@@ -52,98 +73,73 @@
 </template>
 
 <script>
-
+import Multiselect from 'vue-multiselect'
 import TitleArea from '../Layout/TitleArea.vue'
 import AllCampaign from './AllCampaign.vue'
 export default {
     components: {
         TitleArea,
-
+        Multiselect,
         AllCampaign
     },
 
     data() {
 
         return {
-            selectedCategories: null,
-            selectedCities: null,
-            cities: [{
-                    name: 'New York',
-                    code: 'NY'
-                },
-                {
-                    name: 'Rome',
-                    code: 'RM'
-                },
-                {
-                    name: 'London',
-                    code: 'LDN'
-                },
-                {
-                    name: 'Istanbul',
-                    code: 'IST'
-                },
-                {
-                    name: 'Paris',
-                    code: 'PRS'
-                }
-            ],
-            categories: [{
-                    name: 'Pendidikan',
-                    code: 'pe'
-                },
-                {
-                    name: 'Kemanusiaan',
-                    code: 'RM'
-                },
-                {
-                    name: 'Kesehatan',
-                    code: 'LDN'
-                },
-                {
-                    name: 'Ekonomi',
-                    code: 'IST'
-                },
-                {
-                    name: 'Paris',
-                    code: 'PRS'
-                }
-            ],
-            items: [{
-                    label: 'Terbaru',
-                    icon: 'pi pi-sort-amount-up'
+            valuekategori: [],
+            kategori: [{
+                    name: 'Vue.js'
 
                 },
                 {
-                    label: 'Terlama',
-                    icon: 'pi pi-sort-amount-down'
-                    // command: () => {
-                    //     this.$toast.add({
-                    //         severity: 'warn',
-                    //         summary: 'Delete',
-                    //         detail: 'Data Deleted',
-                    //         life: 3000
-                    //     });
-                    // }
+                    name: 'Adonis'
                 },
                 {
-                    label: 'Sisa Hari Terdekat',
-                    icon: 'pi pi-clock'
+                    name: 'Rails'
+                },
+                {
+                    name: 'Sinatra'
+                },
+                {
+                    name: 'Laravel'
+                },
+                {
+                    name: 'Phoenix'
                 }
-            ]
+            ],
+            valuewilayah: [],
+            wilayah: [{
+                    name: 'Vue.js',
+                    language: 'JavaScript'
+                },
+                {
+                    name: 'Adonis',
+                    language: 'JavaScript'
+                },
+                {
+                    name: 'Rails',
+                    language: 'Ruby'
+                },
+                {
+                    name: 'Sinatra',
+                    language: 'Ruby'
+                },
+                {
+                    name: 'Laravel',
+                    language: 'PHP'
+                },
+                {
+                    name: 'Phoenix',
+                    language: 'Elixir'
+                }
+            ],
+            valueurutan: '',
+            urutan: ['Terbaru', 'Terlama', 'Waktu Dekat']
 
         }
     },
-    methods: {
-        save() {
-            this.$toast.add({
-                severity: 'success',
-                summary: 'Success',
-                detail: 'Data Saved',
-                life: 3000
-            });
-        }
-    }
 
 }
 </script>
+
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

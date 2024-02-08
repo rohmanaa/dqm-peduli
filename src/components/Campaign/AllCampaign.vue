@@ -1,34 +1,5 @@
 <template>
 <div>
-    <div class="row g-2 row-cols-1 row-cols-lg-3 mb-5">
-        <div class="col-md d-flex align-items-center mb-2 d-sm">
-            <span class="me-2">Filter</span>
-
-            <treeselect v-model="value" :multiple="true" :options="options" :limit="3" class="w-50 ms-2 d-none d-xs-block d-sm-block d-md-none" />
-        </div>
-        <div class="col-md d-none d-lg-block d-xl-none">
-            <treeselect v-model="value" :multiple="true" :options="options" :limit="3" class="w-50 ms-2" />
-        </div>
-        <div class="col-md d-flex justify-content-end align-items-center mb-2" xs="12">
-            <span class="me-2">Urutan</span>
-            <treeselect v-model="value" :multiple="true" :options="options" :limit="3" />
-        </div>
-    </div>
-
-    <div class="shop-grid-topbar d-flex justify-content-between align-items-center">
-         <div>
-            <span class="me-2">Filter</span>
-            <treeselect v-model="value" :multiple="true" :options="options" :limit="3" class="w-50" />
-        </div>
-            <div>
-                <span class="me-2">Filter</span>
-                <treeselect v-model="value" :multiple="true" :options="options" :limit="3" class="w-50" />
-            </div>
-                    <div>
-                <span class="me-2">Filter</span>
-                <treeselect v-model="value" :multiple="true" :options="options" :limit="3" class="w-50" />
-            </div>
-    </div>
 
     <b-skeleton-wrapper :loading="loading">
         <template #loading>
@@ -184,36 +155,18 @@
 </template>
 
 <script>
-import Treeselect from '@riophae/vue-treeselect'
+
 // import the styles
-import '@riophae/vue-treeselect/dist/vue-treeselect.css'
+
 
 export default {
     components: {
-        Treeselect
+       
     },
     data() {
         return {
             loading: true,
-            value: null,
-            // define options
-            options: [{
-                id: 'a',
-                label: 'a',
-                children: [{
-                    id: 'aa',
-                    label: 'aa',
-                }, {
-                    id: 'ab',
-                    label: 'ab',
-                }],
-            }, {
-                id: 'b',
-                label: 'b',
-            }, {
-                id: 'c',
-                label: 'c',
-            }],
+            
         };
     },
     mounted() {

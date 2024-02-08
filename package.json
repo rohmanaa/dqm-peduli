@@ -17,6 +17,7 @@
     "vue-countup-v2": "^4.0.0",
     "vue-easy-lightbox": "^0.16.2",
     "vue-js-progress": "^1.0.2",
+    "vue-multiselect": "^2.1.8",
     "vue-router": "^3.2.0",
     "vue-simple-multi-select": "^1.0.4",
     "vue-slick-carousel": "^1.0.6"

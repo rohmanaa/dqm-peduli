@@ -53,14 +53,7 @@
             <a class="twi" href="#"><i class="fab fa-twitter"></i></a>
             <a class="goo" href="#"><i class="fab fa-google"></i></a>
         </div>
-        <div class="post-admin">
-            <img src="@/assets/images/single-post/author.png" alt="">
-            <a href="#">Justin Case</a>
-            <span>About Author</span>
-            <p>
-                Me old mucker bits and bobs you mug tickety-boo a load of old tosh bender mufty bloke old daft.
-            </p>
-        </div>
+        
     </div>
 
 </template>
