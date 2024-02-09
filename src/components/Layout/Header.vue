@@ -17,13 +17,11 @@ export default {
     data() {
         return {
             sidebar: false,
-            navs: [
-                {
+            navs: [{
                     name: 'Donasi',
                     path: '/campaign'
                 },
                 {
-
                     name: 'Zakat',
                     childrens: [{
                             name: 'Maal',
@@ -55,7 +53,6 @@ export default {
                     name: 'Qurban',
                     path: '/qurban'
                 },
-               
 
             ]
         }

@@ -13,7 +13,7 @@
                                 <a href="javascript:void(0)" @click="hideSidebar"><i class="fa fa-times"></i></a>  
                             </div>
                             <div class="offcanvas-brand text-center mb-40">
-                                <img src="@/assets/images/logo.png" alt="appie">
+                                <img src="@/assets/images/logo/footer-logo.png" alt="DQMPEDULI" style="height:60px">
                             </div>
                             <div id="menu" :style="heightPro" class="text-left ">
                                 <ul class="offcanvas_main_menu">
