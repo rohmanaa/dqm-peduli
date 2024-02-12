@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import DetailCampaign from '@/components/Campaign/DetailCampaign.vue'
 import SideCampaign from '@/components/Campaign/SideCampaign.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+            
         }
     },
 }

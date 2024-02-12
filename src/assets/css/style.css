@@ -4563,10 +4563,10 @@ p {
 .bisylms-pagination a,
 .bisylms-pagination span {
   font-size: 14px;
-  color: #2b70fa;
+  color: #2CB8CE;
   font-weight: 600;
   line-height: 40px;
-  background: rgba(88, 56, 252, 0.1);
+  background: rgb(44 184 206 / 15%);
   width: 40px;
   height: 40px;
   border-radius: 3px;
@@ -4582,7 +4582,7 @@ p {
 .bisylms-pagination a:hover,
 .bisylms-pagination .current {
   color: #fff;
-  background: #2b70fa;
+  background: #1a3257;
   -webkit-box-shadow: 0px 20px 30px 0px rgba(26, 8, 119, 0.24);
   -moz-box-shadow: 0px 20px 30px 0px rgba(26, 8, 119, 0.24);
   box-shadow: 0px 20px 30px 0px rgba(26, 8, 119, 0.24);
@@ -6273,10 +6273,10 @@ blockquote cite {
   margin-bottom: 23px;
 }
 .appie-about-3-area .appie-traffic-service.item-2 .icon {
-  background-image: -moz-linear-gradient(120deg, #31c369 0%, #a0eac2 100%);
-  background-image: -webkit-linear-gradient(120deg, #31c369 0%, #a0eac2 100%);
-  background-image: -ms-linear-gradient(120deg, #31c369 0%, #a0eac2 100%);
-  background-image: linear-gradient(120deg, #31c369 0%, #a0eac2 100%);
+  background-image: -moz-linear-gradient(110deg, #2799f6 0%, #1A3257 100%);
+    background-image: -webkit-linear-gradient(110deg, #2799f6 0%, #1A3257 100%);
+    background-image: -ms-linear-gradient(110deg, #2799f6 0%, #1A3257 100%);
+    background-image: linear-gradient(110deg, #2799f6 0%, #1A3257 100%);
 }
 .appie-about-3-area .appie-traffic-service.item-3 .icon {
   background-image: -moz-linear-gradient(120deg, #9b2cfa 0%, #d8aaff 100%);
@@ -7586,7 +7586,7 @@ blockquote cite {
 .appie-shop-grid-area .bisylms-pagination a {
   border: 2px solid #e7eaef;
   background: #fff;
-  color: #0e1133;
+  color: #2cb8ce;
   font-size: 14px;
   font-weight: 500;
   border-radius: 5px;
@@ -7597,12 +7597,12 @@ blockquote cite {
 }
 .appie-shop-grid-area .bisylms-pagination a:hover {
   box-shadow: none;
-  background: #2b70fa;
-  border-color: #2b70fa;
+  background: #1a3257;
+  border-color: #1a3257;
   color: #fff;
 }
 .appie-shop-grid-area .bisylms-pagination span {
-  border: 2px solid #e7eaef;
+  border: 2px solid #2cb8ce;
 }
 
 .appie-shop-sidebar .shop-price-filter {

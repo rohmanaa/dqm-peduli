@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import IndexWakaf from '@/components/Wakaf/IndexWakaf.vue'
 
 
@@ -26,7 +26,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+          
         }
     },
 }

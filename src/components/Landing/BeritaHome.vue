@@ -18,52 +18,54 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="post-item-1">
-                                <img src="@/assets/images/blog/1.jpg" alt="">
+                                <img src="https://digital-api.dompetdhuafa.org/storage/39176/conversions/3551826e17e6f42f745816d51c08bd8b-large.jpg" alt="">
                                 <div class="b-post-details">
                                     <div class="bp-meta">
                                         <a href="#"><i class="fal fa-clock"></i>April 22, 2020</a>
                                         <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
                                     </div>
-                                    <h3><a href="single-post.html">Build A Full Web Chat App From Scratch.</a></h3>
-                                    <a class="read-more" href="single-post.html">Read More<i
+                                    <h3><a href="/detail-berita">Build A Full Web Chat App From Scratch.</a></h3>
+                                    <a class="read-more" href="/detail-berita">Read More<i
                                             class="fal fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="post-item-1">
-                                <img src="@/assets/images/blog/2.jpg" alt="">
+                                <img src="https://digital-api.dompetdhuafa.org/storage/61650/conversions/aa8a308de15417edb854c3adf9001962-large.png" alt="">
                                 <div class="b-post-details">
                                     <div class="bp-meta">
                                         <a href="#"><i class="fal fa-clock"></i>April 22, 2020</a>
                                         <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
                                     </div>
-                                    <h3><a href="single-post.html">Insights on How to Improve Your Teaching.</a></h3>
-                                    <a class="read-more" href="single-post.html">Read More<i
+                                    <h3><a href="/detail-berita">Insights on How to Improve Your Teaching.</a></h3>
+                                    <a class="read-more" href="/detail-berita">Read More<i
                                             class="fal fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="post-item-1">
-                                <img src="@/assets/images/blog/3.jpg" alt="">
+                                <img src="https://digital-api.dompetdhuafa.org/storage/71068/conversions/e8906e51b954f522f5a1248f9eb3e230-large.jpeg" alt="">
                                 <div class="b-post-details">
                                     <div class="bp-meta">
                                         <a href="#"><i class="fal fa-clock"></i>April 22, 2020</a>
                                         <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
                                     </div>
-                                    <h3><a href="single-post.html">Brush Strokes Energize Trees In Paintings</a></h3>
-                                    <a class="read-more" href="single-post.html">Read More<i
+                                    <h3><a href="/detail-berita">Brush Strokes Energize Trees In Paintings</a></h3>
+                                    <a class="read-more" href="/detail-berita">Read More<i
                                             class="fal fa-arrow-right"></i></a>
+                                            
                                 </div>
+                                
                             </div>
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="bisylms-pagination text-center">
-                                <a class="next" href="#">Lihat Semua Highlight<i class="fal fa-arrow-right"></i></a>
+                            <div class="text-center">
+                                  <b-button block href="/berita" class="btn-dqm">Lihat Semua Berita<i class="fal fa-arrow-right ms-2"></i></b-button>
                             </div>
                         </div>
                     </div>

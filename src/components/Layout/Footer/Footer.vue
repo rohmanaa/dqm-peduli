@@ -7,7 +7,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-about-widget">
                     <div class="logo">
-                        <a href="/"><img src="@/assets/images/logo/footer-logo.png" alt="footer logo" style="height:70px"></a>
+                        <router-link to="/"><img src="@/assets/images/logo/footer-logo.png" alt="footer logo" style="height:70px"></router-link>
                     </div>
                     <p>Darul Quran Mulia merupakan Lembaga Pendidikan Islam yang Unggul dengan sistem pembelajaran terpadu yaitu pembelajaran akademik, pembinaan karakter, dan pengajaran Al-Quran.</p>
                     <!-- <a href="#">Read More <i class="fal fa-arrow-right"></i></a> -->

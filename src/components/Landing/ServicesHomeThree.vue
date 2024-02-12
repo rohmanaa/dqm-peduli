@@ -20,7 +20,7 @@
                         </div>
                         <h4 class="appie-title">Donasi</h4>
                         <p>Mucker plastered bugger all mate morish are.</p>
-                        <a href="#">Read More <i class="fal fa-arrow-right"></i></a>
+                       
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -31,7 +31,7 @@
                         </div>
                         <h4 class="appie-title">Sedekah</h4>
                         <p>Mucker plastered bugger all mate morish are.</p>
-                        <a href="#">Read More <i class="fal fa-arrow-right"></i></a>
+                       
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -42,7 +42,7 @@
                         </div>
                         <h4 class="appie-title">Wakaf</h4>
                         <p>Mucker plastered bugger all mate morish are.</p>
-                        <a href="#">Read More <i class="fal fa-arrow-right"></i></a>
+                      
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -53,7 +53,7 @@
                         </div>
                         <h4 class="appie-title">Qurban</h4>
                         <p>Mucker plastered bugger all mate morish are.</p>
-                        <a href="#">Read More <i class="fal fa-arrow-right"></i></a>
+                      
                     </div>
                 </div>
             </div>

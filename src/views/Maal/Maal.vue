@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import IndexMaal from '@/components/Zakat/Maal/IndexMaal.vue'
 import SideMaal from '@/components/Zakat/Maal/SideMaal.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+         
         }
     },
 }

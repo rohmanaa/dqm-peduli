@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import IndexFidyah from '@/components/Zakat/Fidyah/IndexFidyah.vue'
 import SideFidyah from '@/components/Zakat/Fidyah/SideFidyah.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+          
         }
     },
 }

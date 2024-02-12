@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="about-thumb">
-                                <img src="@/assets/images/about-thumb.png" alt="">
+                                <img src="https://cloud.dqakses.id/apps/files_sharing/publicpreview/j58k664cmbwFymx?file=/&fileId=2841167&x=1920&y=971&a=true" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">

@@ -7,7 +7,7 @@
 
 <script>
 import HeaderHomeThree from './HeaderHomeThree.vue';
-import SidebarHomeThree from './SidebarHomeThree.vue';
+import SidebarHomeThree from '../Sidebar/SidebarHomeThree.vue';
 
 export default {
     components: {

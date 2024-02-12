@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import IndexPenghasilan from '@/components/Zakat/Penghasilan/IndexPenghasilan.vue'
 import SidePenghasilan from '@/components/Zakat/Penghasilan/SidePenghasilan.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+    
         }
     },
 }

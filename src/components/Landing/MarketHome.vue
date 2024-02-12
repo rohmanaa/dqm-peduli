@@ -3,7 +3,7 @@
 
     <!--====== APPIE FUN FACT PART START ======-->
 
-    <section class="appie-fun-fact-area pt-10 pb-100">
+    <section class="appie-fun-fact-area pt-100 pb-100">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -11,37 +11,34 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="appie-fun-fact-content">
-                                    <h3 class="title text-center ">Mengapa Berbagi Bersama DQMPeduli ?</h3>
-                                    <!-- <p>The app provides design and digital marketing, applied arts can include industrial design</p> -->
                                     <div class="row text-center">
                                         <div class="col-sm-4">
-
                                             <div class="appie-fun-fact-item">
                                                 <div class="icon">
                                                     <img src="@/assets/images/landing/market/suitable.svg" alt="" style="width:70px">
                                                 </div>
                                                 <h4 class="title">
-                                                    Responsif
+                                                    350
                                                 </h4>
-                                                <span>Merespon kebutuhan masyarakat dengan cepat dan tepat</span>
+                                                <span>Campaign</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="appie-fun-fact-item">
                                                 <div class="icon">
-                                                        <img src="@/assets/images/landing/market/kerjasama.svg" alt="" style="width:70px">
-                                                    </div>
-                                                <h4 class="title"> Sustainable Program</h4>
-                                                <span>Program jangka panjang untuk kemandirian umat</span>
+                                                    <img src="@/assets/images/landing/market/kerjasama.svg" alt="" style="width:70px">
+                                                </div>
+                                                <h4 class="title">81.332.516.570</h4>
+                                                <span>DONASI TERKUMPUL</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="appie-fun-fact-item">
                                                 <div class="icon">
-                                                        <img src="@/assets/images/landing/market/percaya.svg" alt="" style="width:70px">
-                                                    </div>
-                                                <h4 class="title">Credibility</h4>
-                                                <span>Bertanggung jawab penuh menjalankan amanah program</span>
+                                                    <img src="@/assets/images/landing/market/percaya.svg" alt="" style="width:70px">
+                                                </div>
+                                                <h4 class="title">209.303</h4>
+                                                <span>TRANSAKSI CAMPAIGN</span>
                                             </div>
                                         </div>
                                     </div>

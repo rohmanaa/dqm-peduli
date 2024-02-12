@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import IndexQurban from '@/components/Qurban/IndexQurban.vue'
 import SideQurban from '@/components/Qurban/SideQurban.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+           
         }
     },
 }

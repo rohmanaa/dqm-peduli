@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Landing from '../views/Landing.vue'
-import News from '../views/News.vue'
+
 import Campaign from '../views/Campaign/Campaign.vue'
+import DetailCampaign from '../views/Campaign/DetailCampaign.vue'
 import ZakatMaal from '../views/Maal/Maal.vue'
 import ZakatPenghasilan from '../views/Penghasilan/Penghasilan.vue'
 import ZakatFidyah from '../views/Fidyah/Fidyah.vue'
@@ -11,8 +12,10 @@ import ZakatEmas from '../views/Emas/Emas.vue'
 import Sedekah from '../views/Sedekah/Sedekah.vue'
 import Wakaf from '../views/Wakaf/Wakaf.vue'
 import Qurban from '../views/Qurban/Qurban.vue'
-import DetailCampaign from '../views/Campaign/DetailCampaign.vue'
-import SingleNews from '../views/SingleNews.vue'
+
+import Berita from '../views/Berita/Berita.vue'
+import DetailBerita from '../views/Berita/DetailBerita.vue'
+
 import Contact from '../views/Contact.vue'
 import ServiceDetails from '../views/ServiceDetails'
 import Error from '../views/Error.vue'
@@ -73,6 +76,16 @@ const routes = [
     component:Qurban
   },
   {
+    path: '/berita',
+    name: 'Berita Terbaru',
+    component:Berita
+  },
+    {
+    path: '/detail-berita',
+    name: 'Detail Berita',
+    component:DetailBerita
+  },
+  {
     path: '/service-details',
     name: 'ServiceDetails',
     component: ServiceDetails
@@ -82,16 +95,7 @@ const routes = [
     name: 'AboutUs',
     component: AboutUs
   },
-  {
-    path: '/news',
-    name: 'News',
-    component: News
-  },
-  {
-    path: '/single-news',
-    name: 'SingleNews',
-    component: SingleNews
-  },
+
   {
     path: '/contact',
     name: 'Contact',

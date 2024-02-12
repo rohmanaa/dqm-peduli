@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout/TitleArea.vue'
+import TitleArea from '@/components/Layout//Title/TitleArea.vue'
 import IndexSedekah from '@/components/Sedekah/IndexSedekah.vue'
 import SideSedekah from '@/components/Sedekah/SideSedekah.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
     data() {
         return {
-            sidebar: false,
+        
         }
     },
 }

@@ -7,9 +7,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-2 col-md-4 col-sm-5 col-6 order-1 order-sm-1">
                     <div class="appie-logo-box">
-                        <a href="/">
+                        <router-link to="/">
                             <img src="@/assets/images/logo/default.png" alt="logo" style="height:50px">
-                        </a>
+                        </router-link>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-1 col-sm-1 order-3 order-sm-2">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import NavItems from './NavItems.vue'
+import NavItems from '../NavItem/NavItems.vue'
 export default {
     props: {
         menuItems: {
@@ -71,7 +71,6 @@ export default {
             }
         }
     }
-
 }
 </script>
 
