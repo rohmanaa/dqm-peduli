@@ -1,22 +1,22 @@
 <template>
     <div>
-        <title-area heading="Mari Bantu Mereka yang Membutuhkan" description="Menampilkan 12 campaign dari 107 campaign" />
+        <title-area heading="Berita Terbaru"/>
         <section class="blogpage-section">
             <div class="container">
                 <div class="container mb-5">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-lg-12 col-md-12">
 
                             <div class="row">
                                 <!-- Kolom kiri untuk dua form select -->
                                 <div class="col-md-4 mb-3">
                                     <div class="d-flex flex-row mb-3">
 
-
                                         <!-- Form select kedua -->
                                         <multiselect v-model="valueurutan" :options="urutan" :searchable="false"
                                             :close-on-select="false" :show-labels="false" placeholder="Pilih Urutan"
                                             class="w-100"></multiselect>
+                                            
                                     </div>
                                 </div>
 
@@ -25,11 +25,10 @@
 
                                 <!-- Kolom kanan untuk satu form select -->
                                 <div class="col-md-4">
-                                    <div class="d-flex flex-row-reverse">
+                                    <div class="flex">
                                         <!-- Form select ketiga -->
-
                                         <form class="search-form" action="#" method="post">
-                                            <input type="search" name="s" placeholder="Cari...">
+                                            <input type="search" placeholder="Cari...">
                                             <button type="submit"><i class="fal fa-search"></i></button>
                                         </form>
 
@@ -42,7 +41,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-7">
+                    <div class="col-lg-12 col-md-12">
                         <all-berita />
                     </div>
                 </div>

@@ -4,8 +4,7 @@
     <section class="appie-showcase-area">
         <div class="container">
             <div class="row">
-                <vue-easy-lightbox scrollDisabled escDisabled moveDisabled :visible="visible" :imgs="imgs" :index="index"
-                    @hide="handleHide"></vue-easy-lightbox>
+                
                 <div class="col-lg-12">
                     <div class="appie-section-title text-center">
                         <h3 class="appie-title">Highlight Kisah Kasih</h3>

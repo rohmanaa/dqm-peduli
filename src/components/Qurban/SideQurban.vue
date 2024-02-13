@@ -19,68 +19,68 @@
 
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
 
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
                 <div class="mb-2 mt-2">
                     <span>Harta dalam bentuk tabungan/giro/deposito*</span>
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="TEXT HERE"></b-form-input>
                 </div>
 
                 <b-button block class="btn-dqm w-100 mt-3">HITUNG</b-button>

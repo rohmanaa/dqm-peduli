@@ -55,10 +55,9 @@
                 <div class="footer-widget-info">
                     <h4 class="title">Get In Touch</h4>
                     <ul>
-                        <li><a href="#"><i class="fal fa-envelope"></i> support@appie.com</a></li>
-                        <li><a href="#"><i class="fal fa-phone"></i> +(642) 342 762 44</a></li>
-                        <li><a href="#"><i class="fal fa-map-marker-alt"></i> 442 Belle Terre St Floor 7, San Francisco,
-                                AV 4206</a></li>
+                        <li><a href="mailto:sekret@darulquran.sch.id"><i class="fal fa-envelope"></i> sekret@darulquran.sch.id</a></li>
+                        <li><a href="#"><i class="fal fa-phone"></i> 082125466187</a></li>
+                        <li><a href="#"><i class="fal fa-map-marker-alt"></i> Darul Quran Mulia, Gunungsindur, Kab. Bogor</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,7 +73,7 @@
                         </ul> -->
                     </div>
                     <div class="copyright-text">
-                        <p>Copyright © 2021 Appie. All rights reserved.</p>
+                        <p>&copy; {{ new Date().getFullYear() }}. DQM Peduli</p>
                     </div>
                 </div>
             </div>

@@ -4,10 +4,10 @@
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-7">
+                <div class="col-xl-8 col-md-12">
                     <index-penghasilan />
                 </div>
-                <div class="col-lg-4 col-md-7">
+                <div class="col-xl-4 col-md-12">
                     <side-penghasilan />
                 </div>
             </div>

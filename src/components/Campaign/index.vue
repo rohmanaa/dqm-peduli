@@ -5,7 +5,7 @@
         <div class="container">
             <div class="container mb-5">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-12 col-md-12 col-xl-12">
 
                         <div class="row">
                             <!-- Kolom kiri untuk dua form select -->
@@ -28,7 +28,7 @@
 
                             <!-- Kolom kanan untuk satu form select -->
                             <div class="col-md-4">
-                                <div class="d-flex flex-row-reverse">
+                                <div class="flex">
                                     <!-- Form select ketiga -->
                                    
                                     <form class="search-form" action="#" method="post">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-12 col-md-7">
+                <div class="col-lg-12 col-md-12">
                     <all-campaign />
                 </div>
             </div>

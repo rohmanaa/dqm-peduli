@@ -1,6 +1,6 @@
 <template>
 <div>
-    <title-area heading="Zakat Wakaf" description="Zakat yang dikeluarkan individu maupun lembaga atas harta/penghasilan yang diperolehnya dengan syarat dan ketentuan yang sudah ditetapkan" />
+    <title-area heading="Wakaf" description="Mari Bantu Mereka yang Membutuhkan" />
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout//Title/TitleArea.vue'
+import TitleArea from '@/components/Layout/Title/TitleArea.vue'
 import IndexWakaf from '@/components/Wakaf/IndexWakaf.vue'
 
 

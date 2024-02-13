@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="mt-15 mb-10">
-                <span>Masukan Nominal Donasi</span>
+                <h3 class="widget-title">Masukan Nominal Donasi</h3>
                 <div class="row">
                     <div class="col-lg-12">
 
@@ -39,7 +39,7 @@
             </div>
 
             <div class="mt-15 mb-10">
-                <span>Atau Pilih Nominal</span>
+                <h3 class="widget-title">Atau Pilih Nominal</h3>
                 <div class="overview-radio">
                     <div class="row boxed-check-group boxed-check-success">
                         <div class="col-12 col-sm-6">
@@ -234,83 +234,5 @@ export default {
 </script>
 
 <style>
-.boxed-check-group,
-.boxed-check-group .boxed-check {
-    position: relative;
-    margin-bottom: 10px;
-}
 
-.boxed-check-group .boxed-check {
-    display: block;
-}
-
-.boxed-check-group .boxed-check:last-child {
-    margin-bottom: 10px;
-}
-
-.boxed-check-group .boxed-check.boxed-check-inline {
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-.boxed-check-group .boxed-check .boxed-check-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    display: none;
-}
-
-.boxed-check-group .boxed-check .boxed-check-input:disabled+.boxed-check-label {
-    border: 1px dashed #bec2c6;
-    opacity: .4;
-    cursor: not-allowed;
-}
-
-.boxed-check-group .boxed-check .boxed-check-input:checked+.boxed-check-label,
-.boxed-check-group .boxed-check .boxed-check-input:not(:disabled)+.boxed-check-label:hover {
-    border-color: #2cb8ce !important;
-}
-
-.boxed-check-group .boxed-check .boxed-check-input:checked+.boxed-check-label::before {
-    content: ' ';
-    position: absolute;
-    width: 7px;
-    height: 6px;
-    border-width: 0 0 2px 2px;
-    border-style: solid;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    right: 2px;
-    top: 1px;
-}
-
-.boxed-check-group .boxed-check .boxed-check-label {
-    display: block;
-    background-color: #ffffff;
-    border: 1px solid #ced4da;
-    padding: .3rem;
-    margin: 0;
-    border-radius: .25rem;
-    cursor: pointer;
-}
-
-.boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:checked+.boxed-check-label,
-.boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:not(:disabled)+.boxed-check-label:hover {
-    border-color: #2cb8ce !important;
-    background-color: #ffffff;
-}
-
-.boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:checked+.boxed-check-label::before {
-    border-color: #1A3257 !important;
-}
-
-/* boxed-check colorful success theme */
-.boxed-check-group.boxed-check-success .boxed-check .boxed-check-input:checked+.boxed-check-label * {
-    color: #ffffff;
-}
-
-.boxed-check-group.boxed-check-success .boxed-check .boxed-check-input:checked+.boxed-check-label {
-    color: #ffffff;
-    background-color: #1A3257 !important;
-
-}
 </style>

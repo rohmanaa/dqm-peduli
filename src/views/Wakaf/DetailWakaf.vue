@@ -1,14 +1,14 @@
 <template>
 <div>
-    <title-area heading="Mari bersedekah Melalui DQM Peduli" description="Sedekah adalah mengeluarkan harta yang pokok. mencakup zakat dan non-zakat" />
+    <title-area heading="Alirkan Pahala Wakaf Sumur untuk Bunda" description=""/>
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
-                    <index-sedekah />
+                    <detail-wakaf/>
                 </div>
                 <div class="col-lg-4 col-md-12">
-                    <side-sedekah />
+                    <side-wakaf />
                 </div>
             </div>
         </div>
@@ -18,18 +18,20 @@
 
 <script>
 import TitleArea from '@/components/Layout/Title/TitleArea.vue'
-import IndexSedekah from '@/components/Sedekah/IndexSedekah.vue'
-import SideSedekah from '@/components/Sedekah/SideSedekah.vue'
+import DetailWakaf from '@/components/Wakaf/DetailWakaf.vue'
+import SideWakaf from '@/components/Wakaf/SideWakaf.vue'
+
 
 export default {
     components: {
         TitleArea,
-        SideSedekah,
-        IndexSedekah
+        SideWakaf,
+        DetailWakaf
+
     },
     data() {
         return {
-        
+            
         }
     },
 }

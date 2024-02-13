@@ -12,25 +12,25 @@
 
 
     <ol class="list-group list-group-numbered">
-      <li class="list-group-item">Zakat simpanan emas, perak, dan barang berharga lainnya;</li>
-      <li class="list-group-item">Zakat atas aset perdagangan;</li>
-      <li class="list-group-item">Zakat atas hewan ternak;</li>
-      <li class="list-group-item">Zakat atas hasil pertanian;</li>
-      <li class="list-group-item">Zakat atas hasil olahan tanaman dan hewan;</li>
-      <li class="list-group-item">Zakat atas hasil tambang dan tangkapan laut;</li>
-      <li class="list-group-item">Zakat atas hasil penyewaan asset;</li>
-      <li class="list-group-item">Zakat atas hasil jasa profesi;</li>
-      <li class="list-group-item">Zakat atas hasil saham dan obligasi.</li>
-      <li class="list-group-item">Kepemilikan penuh</li>
-      <li class="list-group-item">Harta halal dan diperoleh secara halal</li>
-      <li class="list-group-item">Harta yang dapat berkembang atau diproduktifkan (dimanfaatkan)</li>
-      <li class="list-group-item">Mencukupi nishab</li>
-      <li class="list-group-item">Bebas dari hutang</li>
-      <li class="list-group-item">Mencapai haul</li>
-      <li class="list-group-item">Atau dapat ditunaikan saat panen</li>
+      <li class="list-group-item border-0">Zakat simpanan emas, perak, dan barang berharga lainnya;</li>
+      <li class="list-group-item border-0">Zakat atas aset perdagangan;</li>
+      <li class="list-group-item border-0">Zakat atas hewan ternak;</li>
+      <li class="list-group-item border-0">Zakat atas hasil pertanian;</li>
+      <li class="list-group-item border-0">Zakat atas hasil olahan tanaman dan hewan;</li>
+      <li class="list-group-item border-0">Zakat atas hasil tambang dan tangkapan laut;</li>
+      <li class="list-group-item border-0">Zakat atas hasil penyewaan asset;</li>
+      <li class="list-group-item border-0">Zakat atas hasil jasa profesi;</li>
+      <li class="list-group-item border-0">Zakat atas hasil saham dan obligasi.</li>
+      <li class="list-group-item border-0">Kepemilikan penuh</li>
+      <li class="list-group-item border-0">Harta halal dan diperoleh secara halal</li>
+      <li class="list-group-item border-0">Harta yang dapat berkembang atau diproduktifkan (dimanfaatkan)</li>
+      <li class="list-group-item border-0">Mencukupi nishab</li>
+      <li class="list-group-item border-0">Bebas dari hutang</li>
+      <li class="list-group-item border-0">Mencapai haul</li>
+      <li class="list-group-item border-0">Atau dapat ditunaikan saat panen</li>
     </ol>
 
-    <div class="post-share p-2">
+    <div class="post-share pb-5 pt-2">
         <h5>Share:</h5>
         <a class="fac" href="#"><i class="fab fa-facebook-f"></i></a>
         <a class="twi" href="#"><i class="fab fa-twitter"></i></a>

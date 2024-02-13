@@ -10,7 +10,10 @@ import ZakatPenghasilan from '../views/Penghasilan/Penghasilan.vue'
 import ZakatFidyah from '../views/Fidyah/Fidyah.vue'
 import ZakatEmas from '../views/Emas/Emas.vue'
 import Sedekah from '../views/Sedekah/Sedekah.vue'
+
 import Wakaf from '../views/Wakaf/Wakaf.vue'
+import DetailWakaf from '../views/Wakaf/DetailWakaf.vue'
+
 import Qurban from '../views/Qurban/Qurban.vue'
 
 import Berita from '../views/Berita/Berita.vue'
@@ -69,6 +72,11 @@ const routes = [
     path: '/wakaf',
     name: 'Wakaf',
     component: Wakaf
+  },
+  {
+    path: '/detail-wakaf',
+    name: 'Detail Wakaf',
+    component: DetailWakaf
   },
         {
     path: '/qurban',
