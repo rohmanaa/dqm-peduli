@@ -4,11 +4,9 @@
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-7">
+                <div class="col-lg-12 col-md-8">
+                   
                     <index-qurban />
-                </div>
-                <div class="col-lg-4 col-md-7">
-                    <side-qurban />
                 </div>
             </div>
         </div>
@@ -17,20 +15,26 @@
 </template>
 
 <script>
-import TitleArea from '@/components/Layout//Title/TitleArea.vue'
+
+import TitleArea from '@/components/Layout/Title/TitleArea.vue'
 import IndexQurban from '@/components/Qurban/IndexQurban.vue'
-import SideQurban from '@/components/Qurban/SideQurban.vue'
+
 
 export default {
     components: {
         TitleArea,
-        SideQurban,
         IndexQurban
+   
     },
     data() {
         return {
-           
+            slider: [
+                48,
+                1000
+            ],
+
         }
     },
 }
 </script>
+

@@ -15,6 +15,7 @@ import Wakaf from '../views/Wakaf/Wakaf.vue'
 import DetailWakaf from '../views/Wakaf/DetailWakaf.vue'
 
 import Qurban from '../views/Qurban/Qurban.vue'
+import DetailQurban from '../views/Qurban/DetailQurban.vue'
 
 import Berita from '../views/Berita/Berita.vue'
 import DetailBerita from '../views/Berita/DetailBerita.vue'
@@ -82,6 +83,11 @@ const routes = [
     path: '/qurban',
     name: 'Qurban',
     component:Qurban
+  },
+    {
+    path: '/detail-qurban',
+    name: 'Detail Qurban',
+    component: DetailQurban
   },
   {
     path: '/berita',
