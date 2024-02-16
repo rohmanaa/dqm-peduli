@@ -1,11 +1,10 @@
 <template>
 <div>
-    <title-area heading="Zakat Qurban" description="Zakat yang dikeluarkan individu maupun lembaga atas harta/penghasilan yang diperolehnya dengan syarat dan ketentuan yang sudah ditetapkan" />
+    <title-area heading="Qurban" description="Tebar Hewan Kurban 1445 H" />
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-8">
-                   
+                <div class="col-xl-12 col-md-8">
                     <index-qurban />
                 </div>
             </div>

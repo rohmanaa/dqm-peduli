@@ -1,22 +1,29 @@
 <template>
 <div>
     <div>
-        <b-dropdown id="dropdown-form" text="Dropdown with form" ref="dropdown" class="pb-5">
+        <b-dropdown id="dropdown-form" variant="outline-success" text="Batas Harga (Rp.)" ref="dropdown" class="pb-5">
             <b-dropdown-form>
-                <b-form-group label="Email" label-for="dropdown-form-email" @submit.stop.prevent>
-                    <b-form-input id="dropdown-form-email" size="sm" placeholder="email@example.com"></b-form-input>
+                <b-form-group label="minimal" label-for="dropdown-form-minimal">
+                    <b-form-input id="dropdown-form-minimal" size="sm" placeholder="Minimal"></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Password" label-for="dropdown-form-password">
-                    <b-form-input id="dropdown-form-password" type="password" size="sm" placeholder="Password"></b-form-input>
+                <b-form-group label="maxi" label-for="dropdown-form-maxi">
+                    <b-form-input id="dropdown-form-maxi" type="maxi" size="sm" placeholder="Maximal"></b-form-input>
                 </b-form-group>
+                <b-form-group class="mt-2 mb-2">
+                    <b-form-radio-group id="btn-radios-2" button-variant="outline-success" v-model="selected" :options="options" :aria-describedby="ariaDescribedby" size="sm" class="text-nowrap" name="radios-btn-default" buttons></b-form-radio-group>
+                </b-form-group>
+                <b-dropdown-divider></b-dropdown-divider>
+                <div class="row pt-2 text-center">
+                    <div class="col-6">
+                        <b-button class="btn-dqm" size="md">Simpan</b-button>
+                    </div>
+                    <div class="col-6">
+                        <b-button variant="danger" size="md">Hapus</b-button>
+                    </div>
+                </div>
 
-                <b-form-checkbox class="mb-3">Remember me</b-form-checkbox>
-                <b-button variant="primary" size="sm" @click="onClick">Sign In</b-button>
             </b-dropdown-form>
-            <b-dropdown-divider></b-dropdown-divider>
-            <b-dropdown-item-button>New around here? Sign up</b-dropdown-item-button>
-            <b-dropdown-item-button>Forgot Password?</b-dropdown-item-button>
         </b-dropdown>
     </div>
 
@@ -81,198 +88,143 @@
             <div class="row">
                 <div class="col-xl-4">
                     <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/61650/conversions/aa8a308de15417edb854c3adf9001962-large.png" alt="">
+                        <img src="https://digital-api.dompetdhuafa.org/storage/68520/conversions/3f309fb8e7d18db7b033fc833ca9fc63-standard.jpg" alt="">
                         <div class="b-post-details">
                             <h3>
-                                <router-link to="/detail-qurban">Hadiah Alat Bantu Dengar untuk Teman
-                                    Tuli</router-link>
+                                <router-link to="/detail-qurban">Domba/Kambing Standar</router-link>
                             </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia!
-                                Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
+                            <span class="mb-3">Bobot 23 - 25 kg</span>
+
+                            <div class="d-flex justify-content-between">
                                 <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
+                                    Harga/Ekor
                                 </span>
                             </div>
                             <div class="bp-meta d-flex justify-content-between">
                                 <span class="text-dqm2 fw-bold">
                                     <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
                                 </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
+                            </div>
+                            <b-button block href="/detail-qurban" class="btn-dqm w-100">QURBAN SEKERANG</b-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="post-item-1">
+                        <img src="https://digital-api.dompetdhuafa.org/storage/68520/conversions/3f309fb8e7d18db7b033fc833ca9fc63-standard.jpg" alt="">
+                        <div class="b-post-details">
+                            <h3>
+                                <router-link to="/detail-qurban">Domba/Kambing Standar</router-link>
+                            </h3>
+                            <span class="mb-3">Bobot 23 - 25 kg</span>
+
+                            <div class="d-flex justify-content-between">
+                                <span style="font-size:.8rem">
+                                    Harga/Ekor
                                 </span>
                             </div>
-                            <b-button block href="/detail-qurban" class="btn-dqm w-100">DONASI</b-button>
+                            <div class="bp-meta d-flex justify-content-between">
+                                <span class="text-dqm2 fw-bold">
+                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
+                                </span>
+                            </div>
+                            <b-button block href="/detail-qurban" class="btn-dqm w-100">QURBAN SEKERANG</b-button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
                     <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/68791/conversions/8f40fc0922dd3eeed393bea08029cd4e-large.jpg" alt="">
+                        <img src="https://digital-api.dompetdhuafa.org/storage/68520/conversions/3f309fb8e7d18db7b033fc833ca9fc63-standard.jpg" alt="">
                         <div class="b-post-details">
                             <h3>
-                                <router-link to="/detail-qurban">Hadiah Alat Bantu Dengar untuk Teman
-                                    Tuli</router-link>
+                                <router-link to="/detail-qurban">Domba/Kambing Standar</router-link>
                             </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia!
-                                Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
+                            <span class="mb-3">Bobot 23 - 25 kg</span>
+
+                            <div class="d-flex justify-content-between">
                                 <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
+                                    Harga/Ekor
                                 </span>
                             </div>
                             <div class="bp-meta d-flex justify-content-between">
                                 <span class="text-dqm2 fw-bold">
                                     <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
                                 </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
                             </div>
-                            <b-button block href="/detail-qurban" class="btn-dqm w-100">DONASI</b-button>
+                            <b-button block href="/detail-qurban" class="btn-dqm w-100">QURBAN SEKERANG</b-button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
                     <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/71068/conversions/e8906e51b954f522f5a1248f9eb3e230-large.jpeg" alt="">
+                        <img src="https://digital-api.dompetdhuafa.org/storage/68520/conversions/3f309fb8e7d18db7b033fc833ca9fc63-standard.jpg" alt="">
                         <div class="b-post-details">
                             <h3>
-                                <router-link to="/detail-qurban">Hadiah Alat Bantu Dengar untuk Teman
-                                    Tuli</router-link>
+                                <router-link to="/detail-qurban">Domba/Kambing Standar</router-link>
                             </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia!
-                                Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
+                            <span class="mb-3">Bobot 23 - 25 kg</span>
+
+                            <div class="d-flex justify-content-between">
                                 <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
+                                    Harga/Ekor
                                 </span>
                             </div>
                             <div class="bp-meta d-flex justify-content-between">
                                 <span class="text-dqm2 fw-bold">
                                     <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
                                 </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
                             </div>
-                            <b-button block href="/detail-qurban" class="btn-dqm w-100">DONASI</b-button>
+                            <b-button block href="/detail-qurban" class="btn-dqm w-100">QURBAN SEKERANG</b-button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
                     <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/58534/conversions/015afefbcdfaea28c4a610a48697829f-large.jpg" alt="">
+                        <img src="https://digital-api.dompetdhuafa.org/storage/68520/conversions/3f309fb8e7d18db7b033fc833ca9fc63-standard.jpg" alt="">
                         <div class="b-post-details">
                             <h3>
-                                <router-link to="/detail-qurban">Hadiah Alat Bantu Dengar untuk Teman
-                                    Tuli</router-link>
+                                <router-link to="/detail-qurban">Domba/Kambing Standar</router-link>
                             </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia!
-                                Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
+                            <span class="mb-3">Bobot 23 - 25 kg</span>
+
+                            <div class="d-flex justify-content-between">
                                 <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
+                                    Harga/Ekor
                                 </span>
                             </div>
                             <div class="bp-meta d-flex justify-content-between">
                                 <span class="text-dqm2 fw-bold">
                                     <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
                                 </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
                             </div>
-                            <b-button block href="/detail-qurban" class="btn-dqm w-100">DONASI</b-button>
+                            <b-button block href="/detail-qurban" class="btn-dqm w-100">QURBAN SEKERANG</b-button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
                     <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/65836/conversions/a7e1f1a392c3cb24fb95acb08742a2c6-large.jpg" alt="">
+                        <img src="https://digital-api.dompetdhuafa.org/storage/68520/conversions/3f309fb8e7d18db7b033fc833ca9fc63-standard.jpg" alt="">
                         <div class="b-post-details">
                             <h3>
-                                <router-link to="/detail-qurban">Hadiah Alat Bantu Dengar untuk Teman
-                                    Tuli</router-link>
+                                <router-link to="/detail-qurban">Domba/Kambing Standar</router-link>
                             </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia!
-                                Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
-                                </span>
-                            </div>
-                            <div class="bp-meta d-flex justify-content-between">
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
-                                </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
-                            </div>
-                            <b-button block href="/detail-qurban" class="btn-dqm w-100">DONASI</b-button>
-                        </div>
-                    </div>
-                </div>
+                            <span class="mb-3">Bobot 23 - 25 kg</span>
 
-                <div class="col-xl-4">
-                    <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/39176/conversions/3551826e17e6f42f745816d51c08bd8b-large.jpg" alt="">
-                        <div class="b-post-details">
-                            <h3>
-                                <router-link to="/detail-qurban">Hadiah Alat Bantu Dengar untuk Teman
-                                    Tuli</router-link>
-                            </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia!
-                                Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
+                            <div class="d-flex justify-content-between">
                                 <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
+                                    Harga/Ekor
                                 </span>
                             </div>
                             <div class="bp-meta d-flex justify-content-between">
                                 <span class="text-dqm2 fw-bold">
                                     <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
                                 </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
                             </div>
-                            <b-button block href="/detail-qurban" class="btn-dqm w-100">DONASI</b-button>
+                            <b-button block href="/detail-qurban" class="btn-dqm w-100">QURBAN SEKERANG</b-button>
                         </div>
                     </div>
                 </div>
@@ -303,7 +255,22 @@ export default {
         return {
             loading: true,
             value: 45,
-            max: 100
+            max: 100,
+
+            selected: 'radio1',
+            options: [{
+                    text: '1jt - 1.2jt',
+                    value: 'radio1'
+                },
+                {
+                    text: '2jt - 2.8jt',
+                    value: 'radio2'
+                },
+                {
+                    text: '3.2jt - 5jt',
+                    value: 'radio4'
+                }
+            ]
 
         };
     },
