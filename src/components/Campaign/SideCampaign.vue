@@ -149,7 +149,7 @@
 
                 <div class="d-flex justify-content-start mt-2">
 
-                    <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
+                    <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
                         <span class="ms-2">Tampilkan sebagai Anonim</span>
                     </b-form-checkbox>
 
@@ -163,9 +163,7 @@
             <div class="row">
                 <div class="col-lg-12 mb-3">
                     <div>
-                        <b-form-textarea id="textarea" v-model="text" placeholder="Tuliskan Pesanmu" rows="3" max-rows="6"></b-form-textarea>
-
-                        <pre class="mt-3 mb-0">{{ text }}</pre>
+                        <b-form-textarea id="textarea" placeholder="Tuliskan Pesanmu" rows="3" max-rows="6"></b-form-textarea>
                     </div>
                 </div>
             </div>

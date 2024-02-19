@@ -1,48 +1,45 @@
 <template>
-    <div>
-<!--====== APPIE PAGE TITLE PART ENDS ======-->
-<!-- Blog Start -->
-<section class="blogpage-section">
-    <div class="container">
-        <div class="container mb-5">
+<div>
+    <!--====== APPIE PAGE TITLE PART ENDS ======-->
+    <!-- Blog Start -->
+
+    <div class="row">
+        <div class="col-12">
+
             <div class="row">
-                <div class="col-12">
+                <!-- Kolom kiri untuk dua form select -->
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-row mb-3">
+                        <!-- Form select pertama -->
+                        <multiselect v-model="valuekategori" :options="kategori" :multiple="true" :close-on-select="true" :clear-on-select="true" :preserve-search="true" :show-labels="false" placeholder="Pilih Kategori" label="name" track-by="name" class="me-2 w-100">
+                            <template slot="selection" slot-scope="{ values, search, isOpen }">
+                                <span class="multiselect__single" v-if="values.length" v-show="!isOpen">{{ values.length }} Dipilih</span>
+                            </template>
+                        </multiselect>
 
-                    <div class="row">
-                        <!-- Kolom kiri untuk dua form select -->
-                        <div class="col-md-4 mb-3">
-                            <div class="d-flex flex-row mb-3">
-                                <!-- Form select pertama -->
-                                <multiselect v-model="valuekategori" :options="kategori" :multiple="true" :close-on-select="true" :clear-on-select="true" :preserve-search="true" :show-labels="false" placeholder="Pilih Kategori" label="name" track-by="name" class="me-2 w-100">
-                                    <template slot="selection" slot-scope="{ values, search, isOpen }">
-                                        <span class="multiselect__single" v-if="values.length" v-show="!isOpen">{{ values.length }} Dipilih</span>
-                                    </template>
-                                </multiselect>
-
-                                <!-- Form select kedua -->
-                                <multiselect v-model="valuewilayah" :options="wilayah" :multiple="true" :close-on-select="false" :clear-on-select="true" :preserve-search="true" :show-labels="false" placeholder="Pilih Wilayah" label="name" track-by="name" class="w-100">
-                                    <template slot="selection" slot-scope="{ values, search, isOpen }">
-                                        <span class="multiselect__single" v-if="values.length" v-show="!isOpen">{{ values.length }} Dipilih</span>
-                                    </template>
-                                </multiselect>
-                            </div>
-                        </div>
-
-                        <!-- Kolom tengah kosong untuk desktop -->
-                        <div class="col-md-4"></div>
-
-                        <!-- Kolom kanan untuk satu form select -->
-                        <div class="col-md-4">
-                            <div class="d-flex flex-row-reverse">
-                                <!-- Form select ketiga -->
-                                <multiselect v-model="valueurutan" :options="urutan" :searchable="false" :close-on-select="false" :show-labels="false" placeholder="Pilih Urutan" class="w-100"></multiselect>
-                            </div>
-                        </div>
+                        <!-- Form select kedua -->
+                        <multiselect v-model="valuewilayah" :options="wilayah" :multiple="true" :close-on-select="false" :clear-on-select="true" :preserve-search="true" :show-labels="false" placeholder="Pilih Wilayah" label="name" track-by="name" class="w-100">
+                            <template slot="selection" slot-scope="{ values, search, isOpen }">
+                                <span class="multiselect__single" v-if="values.length" v-show="!isOpen">{{ values.length }} Dipilih</span>
+                            </template>
+                        </multiselect>
                     </div>
+                </div>
 
+                <!-- Kolom tengah kosong untuk desktop -->
+                <div class="col-md-4"></div>
+
+                <!-- Kolom kanan untuk satu form select -->
+                <div class="col-md-4">
+                    <div class="d-flex flex-row-reverse">
+                        <!-- Form select ketiga -->
+                        <multiselect v-model="valueurutan" :options="urutan" :searchable="false" :close-on-select="false" :show-labels="false" placeholder="Pilih Urutan" class="w-100"></multiselect>
+                    </div>
                 </div>
             </div>
+
         </div>
+    </div>
 
     <div>
         <b-skeleton-wrapper :loading="loading">
@@ -302,8 +299,7 @@
             </div>
         </b-skeleton-wrapper>
     </div>
-    </div>
-</section></div>
+</div>
 </template>
 
 <script>
@@ -312,12 +308,12 @@ import Multiselect from 'vue-multiselect'
 
 export default {
     components: {
-     
+
         Multiselect,
     },
     data() {
         return {
-                        value: 45,
+            value: 45,
             max: 100,
             loading: true,
             valuekategori: [],

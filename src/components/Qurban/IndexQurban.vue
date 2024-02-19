@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-        <b-dropdown id="dropdown-form" variant="light" text="Batas Harga (Rp.)" ref="dropdown" class="pb-5">
+        <b-dropdown id="dropdown-form" variant="light" text="Batas Harga (Rp.)" ref="dropdown" class="pb-4">
             <b-dropdown-form>
                 <b-form-group label="minimal" label-for="dropdown-form-minimal">
                     <b-form-input id="dropdown-form-minimal" size="sm" placeholder="Minimal"></b-form-input>
@@ -11,7 +11,7 @@
                     <b-form-input id="dropdown-form-maxi" type="maxi" size="sm" placeholder="Maximal"></b-form-input>
                 </b-form-group>
                 <b-form-group class="mt-2 mb-2">
-                    <b-form-radio-group id="btn-radios-2" button-variant="outline-success" v-model="selected" :options="options" :aria-describedby="ariaDescribedby" size="sm" class="text-nowrap" name="radios-btn-default" buttons></b-form-radio-group>
+                    <b-form-radio-group id="btn-radios-2" button-variant="outline-success" v-model="selected" :options="options" size="sm" class="text-nowrap" name="radios-btn-default" buttons></b-form-radio-group>
                 </b-form-group>
                 <b-dropdown-divider></b-dropdown-divider>
                 <div class="row pt-2 text-center">

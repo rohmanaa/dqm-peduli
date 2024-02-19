@@ -3,7 +3,7 @@
     <title-area heading="Mari Bantu Mereka yang Membutuhkan" description="Menampilkan 12 campaign dari 107 campaign" />
     <section class="blogpage-section">
         <div class="container">
-            <div class="container mb-5">
+          
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-xl-12">
 
@@ -42,7 +42,7 @@
 
                     </div>
                 </div>
-            </div>
+        
 
             <div class="row">
                 <div class="col-lg-12 col-md-12">

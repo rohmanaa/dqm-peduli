@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <span>Jumlah Zakat Dibayarkan</span>
-                    <b-form-input v-model="selectedValue" type="text" @input="checkValue" disabled />
+                    <b-form-input disabled />
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="d-flex justify-content-start mt-2">
-                    <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
+                    <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
                         <span class="ms-2">Tampilkan sebagai Anonim</span>
                     </b-form-checkbox>
                 </div>
