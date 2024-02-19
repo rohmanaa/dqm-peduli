@@ -64,38 +64,44 @@
                 </div>
             </aside>
 
-            <aside class="widget widget-trend-post">
-                <h3 class="widget-title">Metode Pembayaran</h3>
+            <div class="mb-3 mt-3">
 
-                <div class="overview-radio">
-                    <div class="row boxed-check-group boxed-check-success">
+                <b-button v-b-modal.modal-pembayaran class="w-100 bg-dqm d-flex justify-content-between">
+                    <b-icon icon="tag-fill" scale="1" variant="white"></b-icon> Pilih Pembayaran <b-icon icon="info-circle-fill" scale="1" variant="white"></b-icon>
+                </b-button>
 
-                        <div class="col-12 col-sm-6">
-                            <label class="boxed-check">
-                                <input class="boxed-check-input" type="radio" name="pembayaran">
-                                <div class="boxed-check-label text-center">
-                                    <img src="https://down-id.img.susercontent.com/file/9a08d3abab3dd059fff945c72ca372d9" alt="BSI" class="radio-image" /></div>
-                            </label>
+                <b-modal id="modal-pembayaran" scrollable title="Pilih Pembayaran">
+                    <div class="overview-radio">
+                        <div class="row boxed-check-group boxed-check-success">
+                            <div class="col-12">
+                                <label class="boxed-check">
+                                    <input class="boxed-check-input" type="radio" name="pembayaran">
+                                    <div class="boxed-check-label text-center">
+                                        <img src="https://down-id.img.susercontent.com/file/9a08d3abab3dd059fff945c72ca372d9" alt="BSI" class="radio-image" />
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <label class="boxed-check">
+                                    <input class="boxed-check-input" type="radio" name="pembayaran">
+                                    <div class="boxed-check-label text-center">
+                                        <img src="https://down-id.img.susercontent.com/file/e7865f5fb066b8b5e73f9d5c36fc7154" alt="BSI" class="radio-image" />
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <label class="boxed-check">
+                                    <input class="boxed-check-input" type="radio" name="pembayaran">
+                                    <div class="boxed-check-label text-center">
+                                        <img src="https://down-id.img.susercontent.com/file/0cf8caa250763eefc3d79bb1f8c08e73" alt="BSI" class="radio-image" />
+                                    </div>
+                                </label>
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-6">
-                            <label class="boxed-check">
-                                <input class="boxed-check-input" type="radio" name="pembayaran">
-                                <div class="boxed-check-label text-center">
-                                    <img src="https://down-id.img.susercontent.com/file/e7865f5fb066b8b5e73f9d5c36fc7154" alt="BSI" class="radio-image" /></div>
-                            </label>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <label class="boxed-check">
-                                <input class="boxed-check-input" type="radio" name="pembayaran">
-                                <div class="boxed-check-label text-center">
-                                    <img src="https://down-id.img.susercontent.com/file/0cf8caa250763eefc3d79bb1f8c08e73" alt="BSI" class="radio-image" /></div>
-                            </label>
-                        </div>
-
                     </div>
-                </div>
+                </b-modal>
+            </div>
 
-            </aside>
 
             <aside class="widget">
                 <h3 class="widget-title">Profil Donatur</h3>

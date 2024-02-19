@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-        <b-dropdown id="dropdown-form" variant="outline-success" text="Batas Harga (Rp.)" ref="dropdown" class="pb-5">
+        <b-dropdown id="dropdown-form" variant="light" text="Batas Harga (Rp.)" ref="dropdown" class="pb-5">
             <b-dropdown-form>
                 <b-form-group label="minimal" label-for="dropdown-form-minimal">
                     <b-form-input id="dropdown-form-minimal" size="sm" placeholder="Minimal"></b-form-input>
