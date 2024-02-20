@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
 
                         <b-input-group prepend="Rp.">
-                            <b-form-input v-model="selectedValue" type="number" disabled></b-form-input>
+                            <b-form-input type="number" disabled></b-form-input>
                         </b-input-group>
 
                     </div>
@@ -98,7 +98,7 @@
 
                 <div class="d-flex justify-content-start mt-2">
 
-                    <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
+                    <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
                         <span class="ms-2">Tampilkan sebagai Anonim</span>
                     </b-form-checkbox>
 
@@ -110,7 +110,7 @@
         <aside class="widget">
             <h3 class="widget-title">Masukkan Jumlah Orang yang Berkurban</h3>
             <div>
-                <b-form-spinbutton id="demo-sb" v-model="qurbanjumlahorang" min="1" size="lg" max="100"></b-form-spinbutton>
+                <b-form-spinbutton id="demo-sb" min="1" size="lg" max="100"></b-form-spinbutton>
             </div>
 
             <h3 class="widget-title mt-3">Nama Orang Yang Berkurban</h3>

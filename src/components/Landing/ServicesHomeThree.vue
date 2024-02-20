@@ -19,7 +19,7 @@
                             <img src="@/assets/images/landing/program/donasi.svg" alt="">
                         </div>
                         <h4 class="appie-title">Donasi</h4>
-                        <p>Mucker plastered bugger all mate morish are.</p>
+                        <p>Ulurkan tangan Anda untuk meringankan beban mereka.</p>
                        
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                             <img src="@/assets/images/landing/program/sedekah.svg" alt="">
                         </div>
                         <h4 class="appie-title">Sedekah</h4>
-                        <p>Mucker plastered bugger all mate morish are.</p>
+                        <p>Sedekahkan sebagian harta benda Anda bagi mereka yang membutuhkan.</p>
                        
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                             <img src="@/assets/images/landing/program/wakaf.svg" alt="">
                         </div>
                         <h4 class="appie-title">Wakaf</h4>
-                        <p>Mucker plastered bugger all mate morish are.</p>
+                        <p>Sedekahkan sebagian harta benda Anda bagi kepentingan umat banyak.</p>
                       
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             <img src="@/assets/images/landing/program/qurban.svg" alt="">
                         </div>
                         <h4 class="appie-title">Qurban</h4>
-                        <p>Mucker plastered bugger all mate morish are.</p>
+                        <p>Tunaikan kewajiban kurban sesuai syarat Islam bersama kami.</p>
                       
                     </div>
                 </div>

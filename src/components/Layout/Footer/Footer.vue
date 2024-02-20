@@ -11,14 +11,14 @@
                     </div>
                     <p>Darul Quran Mulia merupakan Lembaga Pendidikan Islam yang Unggul dengan sistem pembelajaran terpadu yaitu pembelajaran akademik, pembinaan karakter, dan pengajaran Al-Quran.</p>
                     <!-- <a href="#">Read More <i class="fal fa-arrow-right"></i></a> -->
-                    <div class="social mt-30">
+                    <!-- <div class="social mt-30">
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                             <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
@@ -44,20 +44,20 @@
                 <div class="footer-navigation">
                     <h4 class="title">Web Terkait</h4>
                     <ul>
-                        <li><a href="#">DQM Web</a></li>
-                        <li><a href="#">STIU DQM</a></li>
-                        <li><a href="#">DQM Akses</a></li>
+                        <li><a href="https://www.dqm.sch.id/" target="_blank">DQM Web</a></li>
+                        <li><a href="https://stiudq.ac.id/" target="_blank">STIU DQM</a></li>
+                        <li><a href="https://dq.akses.live/" target="_blank">DQM Akses</a></li>
 
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="footer-widget-info">
-                    <h4 class="title">Get In Touch</h4>
+                    <h4 class="title">Hubungi Kami</h4>
                     <ul>
-                        <li><a href="mailto:sekret@darulquran.sch.id"><i class="fal fa-envelope"></i> sekret@darulquran.sch.id</a></li>
-                        <li><a href="#"><i class="fal fa-phone"></i> 082125466187</a></li>
-                        <li><a href="#"><i class="fal fa-map-marker-alt"></i> Darul Quran Mulia, Gunungsindur, Kab. Bogor</a></li>
+                        <li><a href="mailto:sekret@darulquran.sch.id" target="_blank"><b-icon icon="envelope" variant="info" aria-hidden="true"></b-icon> sekret@darulquran.sch.id</a></li>
+                        <li><a href="https://wa.me/6281212427687" target="_blank"><b-icon icon="whatsapp" variant="info" aria-hidden="true"></b-icon> 0812 1242 7687</a></li>
+                        <li><a href="https://maps.app.goo.gl/WRURnSkiUmn8f4tP9" target="_blank"><b-icon icon="pin-map" variant="info" aria-hidden="true"></b-icon> Darul Quran Mulia, Gunungsindur, Kab. Bogor</a></li>
                     </ul>
                 </div>
             </div>

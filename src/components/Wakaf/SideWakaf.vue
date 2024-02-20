@@ -10,7 +10,7 @@
                         <div class="col-lg-12">
 
                             <b-input-group prepend="Rp.">
-                                <b-form-input v-model="selectedValue" type="number" @input="checkValue"></b-form-input>
+                                <b-form-input type="number"></b-form-input>
                             </b-input-group>
                             <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
                         </div>
@@ -135,7 +135,7 @@
 
                     <div class="d-flex justify-content-start mt-2">
 
-                        <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted"
+                        <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted"
                             unchecked-value="not_accepted">
                             <span class="ms-2">Tampilkan sebagai Anonim</span>
                         </b-form-checkbox>
@@ -150,10 +150,8 @@
                 <div class="row">
                     <div class="col-lg-12 mb-3">
                         <div>
-                            <b-form-textarea id="textarea" v-model="text" placeholder="Tuliskan Pesanmu" rows="3"
+                            <b-form-textarea id="textarea" placeholder="Tuliskan Pesanmu" rows="3"
                                 max-rows="6"></b-form-textarea>
-
-                            <pre class="mt-3 mb-0">{{ text }}</pre>
                         </div>
                     </div>
                 </div>
@@ -162,7 +160,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <span>Total</span>
-                            <b-form-input v-model="selectedValue" type="text" @input="checkValue" disabled />
+                            <b-form-input type="text" disabled />
                         </div>
                     </div>
                 </div>

@@ -24,7 +24,6 @@ Vue.use(IconsPlugin)
 
 Vue.use(router);
 
-
 Vue.config.productionTip = false
 
 new Vue({

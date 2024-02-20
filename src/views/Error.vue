@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ErrorCom from '../components/ErrorCom.vue'
+import ErrorCom from '../components/404/ErrorCom.vue'
 export default {
 	components: { ErrorCom },
 

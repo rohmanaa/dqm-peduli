@@ -13,7 +13,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="appie-team-item appie-team-item-about mt-30 wow animated fadeInUp" data-wow-duration="2000ms" data-wow-delay="200ms">
                         <div class="thumb">
-                            <img src="@/assets/images/team-1.jpg" alt="">
+                            <img src="" alt="">
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -29,7 +29,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="appie-team-item appie-team-item-about mt-30 wow animated fadeInUp" data-wow-duration="2000ms" data-wow-delay="400ms">
                         <div class="thumb">
-                            <img src="@/assets/images/team-2.jpg" alt="">
+                            <img src="" alt="">
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>

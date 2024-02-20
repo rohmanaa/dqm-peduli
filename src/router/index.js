@@ -23,6 +23,7 @@ import DetailBerita from '../views/Berita/DetailBerita.vue'
 import Contact from '../views/Contact.vue'
 import ServiceDetails from '../views/ServiceDetails'
 import Error from '../views/Error.vue'
+
 import AboutUs from '../views/About.vue'
 
 
@@ -115,11 +116,8 @@ const routes = [
     name: 'Contact',
     component: Contact
   },
-  {
-    path: '/error',
-    name: 'Error',
-    component: Error
-  }
+ 
+  { path: "*", component: Error }
 
 ]
 

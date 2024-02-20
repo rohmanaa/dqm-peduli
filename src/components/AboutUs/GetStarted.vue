@@ -25,7 +25,7 @@
                             </div>
                         </form>
                         <div class="thumb">
-                            <img src="@/assets/images/signup-thumb.png" alt="">
+                            <img src="" alt="">
                         </div>
                     </div>
                 </div>

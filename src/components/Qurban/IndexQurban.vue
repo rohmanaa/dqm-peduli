@@ -256,7 +256,6 @@ export default {
             loading: true,
             value: 45,
             max: 100,
-
             selected: 'radio1',
             options: [{
                     text: '1jt - 1.2jt',
@@ -275,10 +274,9 @@ export default {
         };
     },
     mounted() {
-        // Untuk simulasi waktu, atur loading ke false setelah 5 detik
         setTimeout(() => {
             this.loading = false;
-        }, 2000); // 5000 milidetik atau 5 detik
+        }, 2000);
     }
 
 };
