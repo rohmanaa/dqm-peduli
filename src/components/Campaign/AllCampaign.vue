@@ -57,18 +57,62 @@
             </div>
         </template>
         <div class="col-lg-12">
-            <div class="row">
-                <div class="col-xl-4">
+            <div class="row mb-3">
+                <div class="col-lg-12 col-md-12 col-xl-12">
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="d-flex flex-row">
+                                <multiselect v-model="valueurutan" :options="urutan" :searchable="false" :close-on-select="false" :show-labels="false" placeholder="Pilih Urutan" class="w-100"></multiselect>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="flex">
+                                <form class="search-form" @submit.prevent="searchProducts">
+                                    <input v-model="searchQuery" type="search" name="s" placeholder="Cari...">
+                                    <button type="submit"><i class="fal fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" v-if="filteredProducts.length > 0">
+                <div class="col-lg-4" v-for="product in filteredProducts" :key="product.id">
                     <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/61650/conversions/aa8a308de15417edb854c3adf9001962-large.png" alt="">
+                        <img :src="product.url" alt="">
                         <div class="b-post-details">
                             <h3>
-                                <router-link to="/detail-campaign">Hadiah Alat Bantu Dengar untuk Teman Tuli</router-link>
+                                <router-link :to="`/detail-campaign?proid=${product.id}`">
+                                    {{ product.product }}
+                                </router-link>
                             </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia! Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
+                            <span style="font-size:.8rem" class="mb-3">{{ product.desc }}</span>
                             <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
+                                <VueJsProgress :percentage="13" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true"></VueJsProgress>
                             </div>
+
+                            <div class="mb-3">
+                                <label class="form-label mb-0" style="font-size: 10px!important;">
+                                    <strong>Nama Donatur</strong>
+                                </label>
+                                <input :id="'nama_' + product.id" :name="'nama_' + product.id" type="text" class="form-control form-control-sm" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label mb-0" style="font-size: 10px!important;">
+                                    <strong>No WhatsApp</strong>
+                                </label>
+                                <input :id="'nowa_' + product.id" :name="'nowa_' + product.id" type="text" class="form-control form-control-sm" />
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text">RP. </span>
+                                <input :id="'price_' + product.id" :name="'price_' + product.id" class="form-control form-control-sm" v-money="money" />
+                            </div>
+
                             <div class="d-flex justify-content-between mt-3">
                                 <span style="font-size:.8rem">
                                     Terkumpul
@@ -78,173 +122,35 @@
                             </div>
                             <div class="bp-meta d-flex justify-content-between">
                                 <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
+                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp. {{ product.total }}
                                 </span>
                                 <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
+                                    <b-icon icon="clock" class="me-2"></b-icon>-
                                 </span>
                             </div>
-                            <b-button block href="/detail-campaign" class="btn-dqm w-100">DONASI</b-button>
+                            <router-link :to="`/detail-campaign?proid=${product.id}`" class="btn btn-dqm w-100 text-white">
+                               DONASI
+                            </router-link>
+                            <!-- <button class="btn btn-dqm w-100 text-white" type="button" @click="donate(product.id)"> DONASI </button> -->
+
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-xl-4">
-                    <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/68791/conversions/8f40fc0922dd3eeed393bea08029cd4e-large.jpg" alt="">
-                        <div class="b-post-details">
-                            <h3>
-                                <router-link to="/detail-campaign">Hadiah Alat Bantu Dengar untuk Teman Tuli</router-link>
-                            </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia! Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
-                                </span>
-                            </div>
-                            <div class="bp-meta d-flex justify-content-between">
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
-                                </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
-                            </div>
-                            <b-button block href="/detail-campaign" class="btn-dqm w-100">DONASI</b-button>
-                        </div>
-                    </div>
-                </div>
+            <div v-else class="row">
 
-                <div class="col-xl-4">
-                    <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/71068/conversions/e8906e51b954f522f5a1248f9eb3e230-large.jpeg" alt="">
-                        <div class="b-post-details">
-                            <h3>
-                                <router-link to="/detail-campaign">Hadiah Alat Bantu Dengar untuk Teman Tuli</router-link>
-                            </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia! Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
-                                </span>
-                            </div>
-                            <div class="bp-meta d-flex justify-content-between">
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
-                                </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
-                            </div>
-                            <b-button block href="/detail-campaign" class="btn-dqm w-100">DONASI</b-button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4">
-                    <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/58534/conversions/015afefbcdfaea28c4a610a48697829f-large.jpg" alt="">
-                        <div class="b-post-details">
-                            <h3>
-                                <router-link to="/detail-campaign">Hadiah Alat Bantu Dengar untuk Teman Tuli</router-link>
-                            </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia! Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
-                                </span>
-                            </div>
-                            <div class="bp-meta d-flex justify-content-between">
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
-                                </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
-                            </div>
-                            <b-button block href="/detail-campaign" class="btn-dqm w-100">DONASI</b-button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4">
-                    <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/65836/conversions/a7e1f1a392c3cb24fb95acb08742a2c6-large.jpg" alt="">
-                        <div class="b-post-details">
-                            <h3>
-                                <router-link to="/detail-campaign">Hadiah Alat Bantu Dengar untuk Teman Tuli</router-link>
-                            </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia! Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
-                                </span>
-                            </div>
-                            <div class="bp-meta d-flex justify-content-between">
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
-                                </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
-                            </div>
-                            <b-button block href="/detail-campaign" class="btn-dqm w-100">DONASI</b-button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4">
-                    <div class="post-item-1">
-                        <img src="https://digital-api.dompetdhuafa.org/storage/39176/conversions/3551826e17e6f42f745816d51c08bd8b-large.jpg" alt="">
-                        <div class="b-post-details">
-                            <h3>
-                                <router-link to="/detail-campaign">Hadiah Alat Bantu Dengar untuk Teman Tuli</router-link>
-                            </h3>
-                            <span class="mb-3">"Wujudkan Mimpi Mendengar Normal untuk Anak-anak Tuna Rungu Indonesia! Ayo Berikan Hadiah Alat Bantu Dengar!"</span>
-                            <div>
-                                <b-progress :value="value" :max="max" show-progress animated></b-progress>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <span style="font-size:.8rem">
-                                    Terkumpul
-                                </span>
-                                <span style="font-size:.8rem">Sisa Hari
-                                </span>
-                            </div>
-                            <div class="bp-meta d-flex justify-content-between">
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="suit-heart-fill" class="me-2"></b-icon>Rp 18.093.043
-                                </span>
-                                <span class="text-dqm2 fw-bold">
-                                    <b-icon icon="clock" class="me-2"></b-icon>326
-                                </span>
-                            </div>
-                            <b-button block href="/detail-campaign" class="btn-dqm w-100">DONASI</b-button>
+                <div class="py-5 text-center">
+                    <div class="container">
+                        <div class="col-lg-12">
+                            <h3 class="text-dqm">Mohon maaf !</h3>
+                            <span>Data Yang Dicari Tidak Tersedia</span>
                         </div>
                     </div>
                 </div>
 
             </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="bisylms-pagination">
@@ -254,31 +160,147 @@
                     </div>
                 </div>
             </div>
+
+            
         </div>
     </b-skeleton-wrapper>
 </div>
 </template>
 
 <script>
-// import the styles
-
+import Multiselect from 'vue-multiselect'
+import VueJsProgress from 'vue-js-progress'
+import axios from "axios";
+import Swal from "sweetalert2";
+import {
+    VMoney
+} from 'v-money'
 export default {
     components: {
-
+        VueJsProgress,
+        Multiselect
     },
     data() {
         return {
-            loading: true,
+            valueurutan: null,
+            urutan: ['Terbaru', 'Terlama'],
+            searchQuery: '',
+            produkDonasi: {
+                data: []
+            },
             value: 45,
-            max: 100
+            max: 100,
+            donationAmount: 0,
+            isLoading: false,
+            shopAPI: process.env.VUE_APP_SHOPURL,
+            money: {
+                decimal: ',',
+                thousands: '.',
+                prefix: '',
+                suffix: '',
+                precision: 0,
+                masked: false
+            }
 
         };
     },
-     mounted() {
-        // Untuk simulasi waktu, atur loading ke false setelah 5 detik
-        setTimeout(() => {
-            this.loading = false;
-        }, 2000); // 5000 milidetik atau 5 detik
+
+    computed: {
+        filteredProducts() {
+            let filtered = this.produkDonasi.data;
+
+            // Filter based on search query
+            const query = this.searchQuery.toLowerCase();
+            filtered = filtered.filter(product => product.product.toLowerCase().includes(query));
+
+            // Sort based on selected option
+            if (this.valueurutan === 'Terbaru') {
+                filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+            } else if (this.valueurutan === 'Terlama') {
+                filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+            }
+
+            return filtered;
+        },
+    },
+    mounted() {
+        // Initial request without search query
+        this.fetchProducts();
+    },
+    methods: {
+        searchProducts() {
+            axios.get(process.env.VUE_APP_SHOPURL + "/api/product", {
+                    params: {
+                        categoryid: '1679091c5a880faf6fb5e6087eb1b2dc',
+                        search: this.searchQuery,
+                        sort: this.valueurutan === 'Terbaru' ? 'desc' : 'asc',
+                    },
+                })
+                .then((response) => {
+                    this.produkDonasi = response.data;
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+        },
+        fetchProducts() {
+            axios.get(process.env.VUE_APP_SHOPURL + "/api/product?categoryid=1679091c5a880faf6fb5e6087eb1b2dc")
+                .then((response) => {
+                    this.produkDonasi = response.data;
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+        },
+        async donate(productid) {
+            const dataToSend = {
+                product_id: productid,
+                nama: document.querySelector(`[name="nama_${productid}"]`).value,
+                nohp: document.querySelector(`[name="nowa_${productid}"]`).value,
+                price: document.querySelector(`[name="price_${productid}"]`).value
+            };
+            try {
+                this.isLoading = true;
+                const response = await axios.post(process.env.VUE_APP_SHOPURL + "/api/transaction/request", dataToSend);
+                if (response.status == 200) {
+                    var win = window.open(response.data.data.paymenturl, 'PEMBAYARAN DQ PEDULI', 'width=350, height=700')
+                    var timer = setInterval(function () {
+                        if (win.closed) {
+                            clearInterval(timer)
+                            location.reload()
+                        }
+                    }, 1000);
+                }
+            } catch (error) {
+                console.error(error);
+                await Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Terjadi kesalahan saat mengirim data ke server.",
+                });
+            } finally {
+                this.isLoading = false;
+            }
+        },
+        resetForm() {
+            this.donationAmount = 0;
+        },
+
+    },
+    created() {
+        this.customerNama = this.$route.query["customer[nama]"] || "";
+        this.customerNohp = this.$route.query["customer[nohp]"] || "";
+        axios.get(process.env.VUE_APP_SHOPURL + "/api/product?categoryid=1679091c5a880faf6fb5e6087eb1b2dc").then((response) => {
+            this.produkDonasi = response.data;
+            console.log(response.data);
+        }).catch((error) => {
+            console.error("Error:", error);
+        });
+    },
+    directives: {
+        money: VMoney
     }
 
 };

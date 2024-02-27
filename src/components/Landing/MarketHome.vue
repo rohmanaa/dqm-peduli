@@ -12,39 +12,20 @@
                             <div class="col-lg-12">
                                 <div class="appie-fun-fact-content">
                                     <div class="row text-center">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4" v-for="(milestone, index) in milestones" :key="index">
                                             <div class="appie-fun-fact-item">
                                                 <div class="icon">
-                                                    <img src="@/assets/images/landing/market/suitable.svg" alt="" style="width:70px">
+                                                    <img :src="milestone.img" alt="" style="width:70px">
                                                 </div>
                                                 <h4 class="title">
-                                                    350
+                                                    {{ milestone.total}}
                                                 </h4>
-                                                <span>Campaign</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="appie-fun-fact-item">
-                                                <div class="icon">
-                                                    <img src="@/assets/images/landing/market/kerjasama.svg" alt="" style="width:70px">
-                                                </div>
-                                                <h4 class="title">81.332.516.570</h4>
-                                                <span>DONASI TERKUMPUL</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="appie-fun-fact-item">
-                                                <div class="icon">
-                                                    <img src="@/assets/images/landing/market/percaya.svg" alt="" style="width:70px">
-                                                </div>
-                                                <h4 class="title">209.303</h4>
-                                                <span>TRANSAKSI CAMPAIGN</span>
+                                                <span>{{ milestone.desc}}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -57,16 +38,42 @@
 </template>
 
 <script>
+import axios from "axios";
+import ImgResponsif from '@/assets/images/landing/market/suitable.svg'
+import ImgSustainable from '@/assets/images/landing/market/kerjasama.svg'
+import ImgCredibility from '@/assets/images/landing/market/percaya.svg'
 export default {
-    components: {
-
-    },
     data() {
         return {
-
+            ImgResponsif: ImgResponsif,
+            ImgSustainable: ImgSustainable,
+            ImgCredibility: ImgCredibility,
+            milestones: [{
+                    img: ImgResponsif,
+                    total: '3',
+                    desc: 'CAMPAIGN'
+                },
+                {
+                    img: ImgSustainable,
+                    total: '81.332.516.570',
+                    desc: 'DONASI TERKUMPUL'
+                },
+                {
+                    img: ImgCredibility,
+                    total: '50',
+                    desc: 'TRANSAKSI CAMPAIGN'
+                },
+            ]
         }
     },
-
+     created() {
+        axios.get(process.env.VUE_APP_SHOPURL + "/api/product?categoryid=1679091c5a880faf6fb5e6087eb1b2dc").then((response) => {
+            this.produkDonasi = response.data;
+            console.log(response.data);
+        }).catch((error) => {
+            console.error("Error:", error);
+        });
+    },
 }
 </script>
 

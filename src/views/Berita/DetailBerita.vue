@@ -20,9 +20,7 @@
 <script>
 import HeaderDefault from '@/components/Layout/Header/Header.vue'
 import FooterDefault from '@/components/Layout/Footer/Footer.vue'
-
-// import DetailBerita from '@/components/Berita/DetailBerita.vue'
-import DetailBerita from  '@/components/404/Build'
+import DetailBerita from '@/components/Berita/DetailBerita.vue'
 import SideBerita from '@/components/Berita/SideBerita.vue'
 
 export default {

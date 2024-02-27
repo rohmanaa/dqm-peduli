@@ -1,29 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import Landing from '../views/Landing.vue'
 
 import Campaign from '../views/Campaign/Campaign.vue'
 import DetailCampaign from '../views/Campaign/DetailCampaign.vue'
-import ZakatMaal from '../views/Maal/Maal.vue'
-import ZakatPenghasilan from '../views/Penghasilan/Penghasilan.vue'
-import ZakatFidyah from '../views/Fidyah/Fidyah.vue'
-import ZakatEmas from '../views/Emas/Emas.vue'
-import Sedekah from '../views/Sedekah/Sedekah.vue'
 
-import Wakaf from '../views/Wakaf/Wakaf.vue'
-import DetailWakaf from '../views/Wakaf/DetailWakaf.vue'
-
-import Qurban from '../views/Qurban/Qurban.vue'
-import DetailQurban from '../views/Qurban/DetailQurban.vue'
-
-import Berita from '../views/Berita/Berita.vue'
-import DetailBerita from '../views/Berita/DetailBerita.vue'
-
+import ZakatMaal from '../views/ComingSoon.vue'
+import ZakatPenghasilan from '../views/ComingSoon.vue'
+import ZakatFidyah from '../views/ComingSoon.vue'
+import ZakatEmas from '../views/ComingSoon.vue'
+import Sedekah from '../views/ComingSoon.vue'
+import Wakaf from '../views/ComingSoon.vue'
+import DetailWakaf from '../views/ComingSoon.vue'
+import Qurban from '../views/ComingSoon.vue'
+import DetailQurban from '../views/ComingSoon.vue'
+import Berita from '../views/ComingSoon.vue'
+import DetailBerita from '../views/ComingSoon.vue'
 import Contact from '../views/Contact.vue'
 import ServiceDetails from '../views/ServiceDetails'
 import Error from '../views/Error.vue'
-
 import AboutUs from '../views/About.vue'
 
 
@@ -40,10 +35,15 @@ const routes = [
     name: 'Campaign',
     component: Campaign
   },
-        {
-    path: '/detail-campaign',
-    name: 'Detail Campaign',
-    component: DetailCampaign
+    {
+      path: '/detail-campaign',
+      component: DetailCampaign,
+       meta: {
+        breadcrumb: [
+           { name: 'detail-campaign', }
+           ]
+      }
+    
   },
       {
     path: '/zakat-maal',

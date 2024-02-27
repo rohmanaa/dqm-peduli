@@ -148,7 +148,7 @@ position: absolute;
 
 .slider-home .slick-arrow {
   position: absolute;
-  top: 43%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 9;
   cursor: pointer;
@@ -156,7 +156,7 @@ position: absolute;
   width: 40px;
   text-align: center;
   line-height: 36px;
-  border: 2px solid transparent;;
+  border: 2px solid transparent;
   color: #1a3257;
   border-radius: 50%;
   transition: all linear 0.3s;
@@ -2471,11 +2471,11 @@ p {
 }
 .appie-page-title-item nav ol li a {
   color: #fff;
-  opacity: 0.8;
+  opacity: 1 ;
 }
 .appie-page-title-item nav ol li.active {
   color: #fff;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /*===========================

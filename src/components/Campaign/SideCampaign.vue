@@ -5,7 +5,7 @@
             <div class="mb-10">
                 <div class="row">
                     <div class="col-6">
-                        <h5 class="fw-bold text-dqm mb-10">Rp. 19000000</h5>
+                        <h5 class="fw-bold text-dqm mb-10">Rp. {{ totalterkumpul }}</h5>
                     </div>
                     <div class="col-6 text-end">
                         <span class="text-dqm mb-10" style="font-size: 0.6rem;"> <i class="fal fa-users"></i> 145 Donatur</span>
@@ -31,7 +31,7 @@
                     <div class="col-lg-12">
 
                         <b-input-group prepend="Rp.">
-                            <b-form-input v-model="selectedValue" type="number" @input="checkValue"></b-form-input>
+                            <b-form-input v-model="selectedValue" type="number" @input="checkValue" v-money="money"></b-form-input>
                         </b-input-group>
                         <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
                     </div>
@@ -84,7 +84,7 @@
             </div>
         </aside>
 
-            <div class="mb-3 mt-3">
+            <!-- <div class="mb-3 mt-3">
 
                 <b-button v-b-modal.modal-pembayaran class="w-100 bg-dqm d-flex justify-content-between">
                     <b-icon icon="tag-fill" scale="1" variant="white"></b-icon> Pilih Pembayaran <b-icon icon="info-circle-fill" scale="1" variant="white"></b-icon>
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                 </b-modal>
-            </div>
+            </div> -->
 
 
         <aside class="widget">
@@ -135,38 +135,29 @@
 
                 <div class="col-lg-12 mb-3">
                     <b-input-group>
-                        <b-form-input type="text" placeholder="Email Donatur"></b-form-input>
-                    </b-input-group>
-                    <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
-                </div>
-
-                <div class="col-lg-12 mb-3">
-                    <b-input-group>
                         <b-form-input type="text" placeholder="Nomor WA Donatur"></b-form-input>
                     </b-input-group>
                     <span v-if="showNotification" style="color: red;">Mohon isi Rp 10.000 atau lebih</span>
                 </div>
 
-                <div class="d-flex justify-content-start mt-2">
-
+                <!-- <div class="d-flex justify-content-start mt-2">
                     <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
                         <span class="ms-2">Tampilkan sebagai Anonim</span>
                     </b-form-checkbox>
-
-                </div>
+                </div> -->
             </div>
 
         </aside>
 
         <aside class="widget">
-            <h3 class="widget-title">Dukungan atau Doamu (Optional)</h3>
+            <!-- <h3 class="widget-title">Dukungan atau Doamu (Optional)</h3>
             <div class="row">
                 <div class="col-lg-12 mb-3">
                     <div>
                         <b-form-textarea id="textarea" placeholder="Tuliskan Pesanmu" rows="3" max-rows="6"></b-form-textarea>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="p-3 mb-2 w-100 bg-secondary text-white rounded">
                 <div class="row">
@@ -191,7 +182,9 @@
 
 <script>
 import VueJsProgress from 'vue-js-progress'
-
+import {
+    VMoney
+} from 'v-money'
 export default {
 
     components: {
@@ -205,11 +198,27 @@ export default {
 
             selectedValue: '',
             showNotification: false,
-
+            money: {
+                decimal: ',',
+                thousands: '.',
+                prefix: '',
+                suffix: '',
+                precision: 0,
+                masked: false
+            },
            
 
         }
     },
+    props: {
+        totalterkumpul: {
+            type: String,
+        },
+        gambar: {
+            type: Boolean,
+        }
+    },
+
 
     methods: {
         load() {
@@ -236,7 +245,10 @@ export default {
             } else {
                 this.showNotification = false; // Sembunyikan notifikasi jika tidak kurang dari 10.000
             }
-        }
+        },
+            directives: {
+            money: VMoney
+        },
     }
 }
 </script>

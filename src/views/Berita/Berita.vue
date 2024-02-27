@@ -7,8 +7,7 @@
 </template>
 
 <script>
-// import Berita from '@/components/Berita/index'
-import Berita from '@/components/404/Build'
+import Berita from '@/components/Berita/index'
 import HeaderDefault from '@/components/Layout/Header/Header.vue'
 import FooterDefault from '@/components/Layout/Footer/Footer.vue'
 export default {
