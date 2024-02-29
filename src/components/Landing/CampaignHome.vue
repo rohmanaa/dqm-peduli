@@ -21,30 +21,13 @@
                             <img :src="product.url" alt="">
                             <div class="b-post-details">
                                 <h3>
-                                    <router-link to="#">
+                                    <router-link :to="`/detail-campaign?proid=${product.id}`">
                                         {{ product.product }}
                                     </router-link>
                                 </h3>
                                 <span style="font-size:.8rem" class="mb-3">{{ product.desc}}</span>
                                 <div>
                                     <VueJsProgress :percentage="13" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true"></VueJsProgress>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label mb-0" style="font-size: 10px!important;">
-                                        <strong>Nama Donatur</strong>
-                                    </label>
-                                    <input :id="'nama_' + product.id" :name="'nama_' + product.id" type="text" class="form-control form-control-sm" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label mb-0" style="font-size: 10px!important;">
-                                        <strong>No WhatsApp</strong>
-                                    </label>
-                                    <input :id="'nowa_' + product.id" :name="'nowa_' + product.id" type="text" class="form-control form-control-sm" />
-                                </div>
-                                <div class="input-group input-group-sm mb-3">
-                                    <span class="input-group-text">RP. </span>
-                                    <input :id="'price_' + product.id" :name="'price_' + product.id" class="form-control form-control-sm" v-money="money" />
                                 </div>
 
                                 <div class="d-flex justify-content-between mt-3">
@@ -62,10 +45,9 @@
                                         <b-icon icon="clock" class="me-2"></b-icon>-
                                     </span>
                                 </div>
-                                <!-- <router-link :to="`/detail-campaign?product=${product.id}`" class="btn btn-dqm w-100 text-white">
+                                <router-link :to="`/detail-campaign?proid=${product.id}`" class="btn btn-dqm w-100 text-white">
                                     DONASI
-                                </router-link> -->
-                                <button class="btn btn-dqm w-100 text-white" type="button" @click="donate(product.id)"> DONASI </button>
+                                </router-link>
 
                             </div>
                         </div>

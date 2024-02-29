@@ -21,6 +21,185 @@
 /*===========================
     1. COMMON css 
 ===========================*/
+/* donasi  */.card-donasi {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  grid-area: aside;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.donasi-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px
+}
+
+.donasi-header .status {
+  background: #1A3257;
+  border-radius: 0 0 32px 0;
+  color: #fff;
+  font-weight: 800;
+  line-height: 44px;
+  padding: 8px 26px
+}
+
+.donasi-header .status,
+.donasi-header .status i {
+  font-size: 24px;
+  font-style: normal
+}
+
+.donasi-header h5 {
+  color: #1A3257;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 590;
+  letter-spacing: -.016em;
+  line-height: 26px;
+  margin: 17px 16px
+}
+
+.description-donasi {
+  margin: 0 12px 24px
+}
+
+.desc-item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px
+}
+
+.desc-item .label {
+  color: #1A3257;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .016em;
+  line-height: 15px
+}
+
+.desc-item .nominal {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 510;
+  letter-spacing: -.016em;
+  line-height: 18px
+}
+
+.desc-item .nominal.decrease {
+  color: #c08112
+}
+
+.card-fixed-donasi {
+  background: #fff;
+  border-top: initial;
+  overflow: hidden
+}
+
+.choose-donasi {
+  background: #fff;
+  left: 0;
+  right: 0;
+}
+
+.choose-item,
+.title_choose-donasi {
+  color: #1A3257;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px
+}
+
+.choose-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 7px 0;
+  text-align: center
+}
+
+.choose-item.active {
+  background: #1A3257;
+  color: #fff
+}
+
+.input-donasi-lain {
+  border: 1px solid #1A3257;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  outline: none;
+  padding: 12px;
+  width: 100%
+}
+
+.total-donasi {
+  background: #1A3257;
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  right: 0;
+  z-index: 8;
+}
+
+.nominal-donasi {
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px;
+  padding: 8.5px 0
+}
+
+.nominal-donasi h5 {
+  color: #d1fcf8;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .016em;
+  line-height: 18px
+}
+
+.nominal-donasi h4 {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 590;
+  letter-spacing: -.016em;
+  line-height: 28px
+}
+
+.nominal-donasi .icon {
+  cursor: pointer;
+  display: block;
+  margin-left: 8px;
+  transform: rotate(180deg)
+}
+
+.nominal-donasi .icon.active {
+  transform: rotate(0deg)
+}
+
+.submit-donasi {
+  background: #0dcaf0;
+  border: 1px solid #1A3257;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 21px;
+  padding: 11.5px 0;
+  text-align: center
+}
+/* end donasi */
 .text-dqm{
   color: #1a3257;
 }
@@ -98,14 +277,12 @@ position: absolute;
 
 .boxed-check-group .boxed-check .boxed-check-input:checked+.boxed-check-label,
 .boxed-check-group .boxed-check .boxed-check-input:not(:disabled)+.boxed-check-label:hover {
-  border-color: #2cb8ce !important;
+  border-color: #1A3257 !important;
 }
 
 .boxed-check-group .boxed-check .boxed-check-input:checked+.boxed-check-label::before {
   content: ' ';
   position: absolute;
-  width: 7px;
-  height: 6px;
   border-width: 0 0 2px 2px;
   border-style: solid;
   -webkit-transform: rotate(-45deg);
@@ -126,7 +303,7 @@ position: absolute;
 
 .boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:checked+.boxed-check-label,
 .boxed-check-group.boxed-check-outline-default .boxed-check .boxed-check-input:not(:disabled)+.boxed-check-label:hover {
-  border-color: #2cb8ce !important;
+  border-color: #1A3257 !important;
   background-color: #ffffff;
 }
 
@@ -7073,6 +7250,7 @@ blockquote cite {
   background: #fff;
   height: 100px;
   width: 100px;
+  padding: 5px;
   text-align: center;
   line-height: 100px;
   border-radius: 6px;
@@ -7080,7 +7258,7 @@ blockquote cite {
   margin: 30px 16px 0;
 }
 .appie-sponser-box.item-2 .sponser-item {
-  margin: 30px 28px 0;
+  margin: 20px 28px 20px;
 }
 @media (max-width: 767px) {
   .appie-sponser-box.item-2 .sponser-item {

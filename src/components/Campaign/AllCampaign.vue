@@ -96,23 +96,6 @@
                                 <VueJsProgress :percentage="13" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true"></VueJsProgress>
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label mb-0" style="font-size: 10px!important;">
-                                    <strong>Nama Donatur</strong>
-                                </label>
-                                <input :id="'nama_' + product.id" :name="'nama_' + product.id" type="text" class="form-control form-control-sm" />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label mb-0" style="font-size: 10px!important;">
-                                    <strong>No WhatsApp</strong>
-                                </label>
-                                <input :id="'nowa_' + product.id" :name="'nowa_' + product.id" type="text" class="form-control form-control-sm" />
-                            </div>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">RP. </span>
-                                <input :id="'price_' + product.id" :name="'price_' + product.id" class="form-control form-control-sm" v-money="money" />
-                            </div>
-
                             <div class="d-flex justify-content-between mt-3">
                                 <span style="font-size:.8rem">
                                     Terkumpul
@@ -131,8 +114,7 @@
                             <router-link :to="`/detail-campaign?proid=${product.id}`" class="btn btn-dqm w-100 text-white">
                                DONASI
                             </router-link>
-                            <!-- <button class="btn btn-dqm w-100 text-white" type="button" @click="donate(product.id)"> DONASI </button> -->
-
+                        
                         </div>
                     </div>
                 </div>
@@ -171,10 +153,6 @@
 import Multiselect from 'vue-multiselect'
 import VueJsProgress from 'vue-js-progress'
 import axios from "axios";
-import Swal from "sweetalert2";
-import {
-    VMoney
-} from 'v-money'
 export default {
     components: {
         VueJsProgress,
@@ -190,17 +168,7 @@ export default {
             },
             value: 45,
             max: 100,
-            donationAmount: 0,
-            isLoading: false,
-            shopAPI: process.env.VUE_APP_SHOPURL,
-            money: {
-                decimal: ',',
-                thousands: '.',
-                prefix: '',
-                suffix: '',
-                precision: 0,
-                masked: false
-            }
+        
 
         };
     },
@@ -254,44 +222,11 @@ export default {
                     console.error("Error:", error);
                 });
         },
-        async donate(productid) {
-            const dataToSend = {
-                product_id: productid,
-                nama: document.querySelector(`[name="nama_${productid}"]`).value,
-                nohp: document.querySelector(`[name="nowa_${productid}"]`).value,
-                price: document.querySelector(`[name="price_${productid}"]`).value
-            };
-            try {
-                this.isLoading = true;
-                const response = await axios.post(process.env.VUE_APP_SHOPURL + "/api/transaction/request", dataToSend);
-                if (response.status == 200) {
-                    var win = window.open(response.data.data.paymenturl, 'PEMBAYARAN DQ PEDULI', 'width=350, height=700')
-                    var timer = setInterval(function () {
-                        if (win.closed) {
-                            clearInterval(timer)
-                            location.reload()
-                        }
-                    }, 1000);
-                }
-            } catch (error) {
-                console.error(error);
-                await Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Terjadi kesalahan saat mengirim data ke server.",
-                });
-            } finally {
-                this.isLoading = false;
-            }
-        },
-        resetForm() {
-            this.donationAmount = 0;
-        },
+       
 
     },
     created() {
-        this.customerNama = this.$route.query["customer[nama]"] || "";
-        this.customerNohp = this.$route.query["customer[nohp]"] || "";
+        
         axios.get(process.env.VUE_APP_SHOPURL + "/api/product?categoryid=1679091c5a880faf6fb5e6087eb1b2dc").then((response) => {
             this.produkDonasi = response.data;
             console.log(response.data);
@@ -299,9 +234,7 @@ export default {
             console.error("Error:", error);
         });
     },
-    directives: {
-        money: VMoney
-    }
+
 
 };
 </script>

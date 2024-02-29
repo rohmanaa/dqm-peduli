@@ -30,18 +30,21 @@ const routes = [
     name: 'Landing',
     component: Landing
   },
+  
     {
     path: '/Campaign',
     name: 'Campaign',
-    component: Campaign
+      component: Campaign,
+    meta: {
+        breadcrumb: 'Campaign'  
+      }
   },
     {
       path: '/detail-campaign',
       component: DetailCampaign,
-       meta: {
-        breadcrumb: [
-           { name: 'detail-campaign', }
-           ]
+      name: 'detail-campaign',
+      meta: {
+        breadcrumb: 'Detail Campaign'  
       }
     
   },
