@@ -1,8 +1,7 @@
 <template>
 <div>
-    <header-default />
-    <div v-if="product">
 
+      <div v-if="!isLoading">
         <section class="blogpage-section">
             <div class="container">
                 <div class="row">
@@ -20,7 +19,7 @@
         <div class="py-5 text-center">
             <div class="container">
                 <div class="col-lg-12">
-                    <b-spinner type="grow" label="Loading..." variant="info"></b-spinner>
+                    <b-spinner label="Loading..." variant="info"></b-spinner>
                     <h3 class="text-dqm"></h3>
                     <span>Loading...</span>
                 </div>
@@ -28,7 +27,6 @@
         </div>
     </div>
 
-    <footer-default />
 </div>
 </template>
 
@@ -36,24 +34,21 @@
 import axios from "axios";
 import SideCampaign from '@/components/Campaign/SideCampaign.vue'
 import DetailCampaign from '@/components/Campaign/DetailCampaign.vue'
-import HeaderDefault from '@/components/Layout/Header/Header.vue'
-import FooterDefault from '@/components/Layout/Footer/Footer.vue'
+
 export default {
     components: {
-   
         SideCampaign,
         DetailCampaign,
-        HeaderDefault,
-        FooterDefault
     },
     data() {
         return {
-            value: 45,
+            
+            value: 100,
             max: 100,
             product: null,
             proid: null,
             donationAmount: 0,
-            isLoading: false,
+            isLoading: true,
             shopAPI: process.env.VUE_APP_SHOPURL,
         }
     },
@@ -63,6 +58,11 @@ export default {
         if (this.proid) {
             this.fetchProduct(this.proid);
         }
+
+        setTimeout(() => {
+            this.isLoading = false;
+        }, 1000)
+        
     },
     methods: {
         async fetchProduct(proid) {

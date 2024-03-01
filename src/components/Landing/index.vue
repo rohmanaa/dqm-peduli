@@ -7,7 +7,7 @@
     <market-home />
     <blog-home-three />
     <fundaiser-home />
-    <kerjasama-home />
+    <!-- <kerjasama-home /> -->
 </div>
 </template>
 
@@ -21,7 +21,7 @@ import MarketHome from './MarketHome.vue'
 import FundaiserHome from './Fundaiser.vue'
 import ServicesHomeThree from './ServicesHomeThree.vue'
 import CampaignHome from './CampaignHome.vue'
-import KerjasamaHome from './Kerjasama.vue'
+// import KerjasamaHome from './Kerjasama.vue'
 export default {
     components: {
         SliderHome,
@@ -31,7 +31,7 @@ export default {
         CampaignHome,
         BlogHomeThree,
         FundaiserHome,
-        KerjasamaHome
+        // KerjasamaHome
     },
     data() {
         return {

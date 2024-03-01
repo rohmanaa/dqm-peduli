@@ -1,20 +1,14 @@
 <template>
 <div>
-    <header-default />
     <Berita />
-    <footer-default />
 </div>
 </template>
 
 <script>
 import Berita from '@/components/Berita/index'
-import HeaderDefault from '@/components/Layout/Header/Header.vue'
-import FooterDefault from '@/components/Layout/Footer/Footer.vue'
 export default {
     components: {
         Berita,
-        HeaderDefault,
-        FooterDefault,
     },
 
 }

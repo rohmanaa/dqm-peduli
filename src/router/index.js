@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Landing from '../views/Landing.vue'
 
+import AppHeader from "../components/Layout/Header/Header";
+import AppFooter from "../components/Layout/Footer/Footer";
+
+import Landing from '../views/Landing.vue'
 import Campaign from '../views/Campaign/Campaign.vue'
 import DetailCampaign from '../views/Campaign/DetailCampaign.vue'
-
 import ZakatMaal from '../views/ComingSoon.vue'
-import ZakatPenghasilan from '../views/ComingSoon.vue'
+import ZakatPenghasilan from '../views/Zakat/Penghasilan/Penghasilan.vue'
 import ZakatFidyah from '../views/ComingSoon.vue'
 import ZakatEmas from '../views/ComingSoon.vue'
 import Sedekah from '../views/ComingSoon.vue'
@@ -16,119 +18,163 @@ import Qurban from '../views/ComingSoon.vue'
 import DetailQurban from '../views/ComingSoon.vue'
 import Berita from '../views/ComingSoon.vue'
 import DetailBerita from '../views/ComingSoon.vue'
-import Contact from '../views/Contact.vue'
-import ServiceDetails from '../views/ServiceDetails'
 import Error from '../views/Error.vue'
-import AboutUs from '../views/About.vue'
+
 
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Landing',
-    component: Landing
-  },
-  
+    {
+      path: "/",
+      name: "Landing",
+      components: {
+        header: AppHeader,
+        default: Landing,
+        footer: AppFooter
+      }
+    },
     {
     path: '/Campaign',
     name: 'Campaign',
-      component: Campaign,
-    meta: {
+    components:
+      {
+        header: AppHeader,
+        default: Campaign,
+        footer: AppFooter
+      },
+    meta:
+      {
         breadcrumb: 'Campaign'  
       }
-  },
+    },
     {
       path: '/detail-campaign',
-      component: DetailCampaign,
+      components:
+      {
+        header: AppHeader,
+        default: DetailCampaign,
+        footer: AppFooter
+      },
       name: 'detail-campaign',
-      meta: {
-        breadcrumb: 'Detail Campaign'  
-      }
-    
-  },
+    },
       {
     path: '/zakat-maal',
     name: 'Zakat Maal',
-    component: ZakatMaal
-  },
-        {
+      components:
+      {
+        header: AppHeader,
+        default: ZakatMaal,
+        footer: AppFooter
+      },
+    },
+    {
     path: '/zakat-penghasilan',
     name: 'Zakat Penghasilan',
-    component: ZakatPenghasilan
-  },
-          {
+    components:
+      {
+        header: AppHeader,
+        default: ZakatPenghasilan,
+        footer: AppFooter
+      },
+    },
+    {
     path: '/zakat-fidyah',
     name: 'Zakat Fidyah',
-    component: ZakatFidyah
-  },
-            {
+    components:
+      {
+        header: AppHeader,
+        default: ZakatFidyah,
+        footer: AppFooter
+      },
+    },
+    {
     path: '/zakat-emas',
     name: 'Zakat Emas',
-    component: ZakatEmas
-  },
+    components:
+      {
+        header: AppHeader,
+        default: ZakatEmas,
+        footer: AppFooter
+      },
+    },
     {
     path: '/sedekah',
     name: 'Sedekah',
-    component: Sedekah
-  },
+    components:
+      {
+        header: AppHeader,
+        default: Sedekah,
+        footer: AppFooter
+      },
+    },
       {
     path: '/wakaf',
     name: 'Wakaf',
-    component: Wakaf
-  },
-  {
+    components:
+      {
+        header: AppHeader,
+        default: Wakaf,
+        footer: AppFooter
+      },
+    },
+    {
     path: '/detail-wakaf',
     name: 'Detail Wakaf',
-    component: DetailWakaf
-  },
-        {
+    components:
+      {
+        header: AppHeader,
+        default: DetailWakaf,
+        footer: AppFooter
+      },
+    },
+    {
     path: '/qurban',
     name: 'Qurban',
-    component:Qurban
-  },
+    components:
+      {
+        header: AppHeader,
+        default: Qurban,
+        footer: AppFooter
+      },
+    },
     {
     path: '/detail-qurban',
     name: 'Detail Qurban',
-    component: DetailQurban
-  },
-  {
+    components:
+      {
+        header: AppHeader,
+        default: DetailQurban,
+        footer: AppFooter
+      },
+    },
+    {
     path: '/berita',
     name: 'Berita Terbaru',
-    component:Berita
-  },
+    components:
+      {
+        header: AppHeader,
+        default: Berita,
+        footer: AppFooter
+      },
+    },
     {
     path: '/detail-berita',
     name: 'Detail Berita',
-    component:DetailBerita
-  },
-  {
-    path: '/service-details',
-    name: 'ServiceDetails',
-    component: ServiceDetails
-  },
-  {
-    path: '/about-us',
-    name: 'AboutUs',
-    component: AboutUs
-  },
-
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: Contact
-  },
- 
+    components:
+      {
+        header: AppHeader,
+        default: DetailBerita,
+        footer: AppFooter
+      },
+    },
   { path: "*", component: Error }
-
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  // stop stop cache
   scrollBehavior() {
       document.getElementById('app').scrollIntoView();
   }

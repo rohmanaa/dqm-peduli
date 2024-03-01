@@ -45,7 +45,7 @@
                                         <b-icon icon="clock" class="me-2"></b-icon>-
                                     </span>
                                 </div>
-                                <router-link :to="`/detail-campaign?proid=${product.id}`" class="btn btn-dqm w-100 text-white">
+                                <router-link :to="`/detail-campaign?proid=${product.id}`" class="submit-dqm w-100 text-white">
                                     DONASI
                                 </router-link>
 

@@ -111,11 +111,11 @@
                                     <b-icon icon="clock" class="me-2"></b-icon>-
                                 </span>
                             </div>
-                            <router-link :to="`/detail-campaign?proid=${product.id}`" class="btn btn-dqm w-100 text-white">
-                               DONASI
+                            <router-link :to="`/detail-campaign?proid=${product.id}`" class="submit-dqm text-white">
+                                DONASI
                             </router-link>
-                        
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -143,7 +143,6 @@
                 </div>
             </div>
 
-            
         </div>
     </b-skeleton-wrapper>
 </div>
@@ -153,6 +152,9 @@
 import Multiselect from 'vue-multiselect'
 import VueJsProgress from 'vue-js-progress'
 import axios from "axios";
+import {
+    VMoney
+} from 'v-money'
 export default {
     components: {
         VueJsProgress,
@@ -168,7 +170,6 @@ export default {
             },
             value: 45,
             max: 100,
-        
 
         };
     },
@@ -222,11 +223,10 @@ export default {
                     console.error("Error:", error);
                 });
         },
-       
 
     },
     created() {
-        
+
         axios.get(process.env.VUE_APP_SHOPURL + "/api/product?categoryid=1679091c5a880faf6fb5e6087eb1b2dc").then((response) => {
             this.produkDonasi = response.data;
             console.log(response.data);
@@ -234,7 +234,9 @@ export default {
             console.error("Error:", error);
         });
     },
-
+    directives: {
+        money: VMoney
+    }
 
 };
 </script>

@@ -10,15 +10,15 @@
                         <router-link to="/"><img src="@/assets/images/logo/footer-logo.png" alt="footer logo" style="height:70px"></router-link>
                     </div>
                     <p>Darul Quran Mulia merupakan Lembaga Pendidikan Islam yang Unggul dengan sistem pembelajaran terpadu yaitu pembelajaran akademik, pembinaan karakter, dan pengajaran Al-Quran.</p>
-                    <!-- <a href="#">Read More <i class="fal fa-arrow-right"></i></a> -->
-                    <!-- <div class="social mt-30">
+                    <a href="#">Read More <i class="fal fa-arrow-right"></i></a>
+                    <div class="social mt-30">
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                             <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                         </ul>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
@@ -47,6 +47,8 @@
                         <li><a href="https://www.dqm.sch.id/" target="_blank">DQM Web</a></li>
                         <li><a href="https://stiudq.ac.id/" target="_blank">STIU DQM</a></li>
                         <li><a href="https://dq.akses.live/" target="_blank">DQM Akses</a></li>
+                        <li><a href="https://izi.or.id/" target="_blank">IZI</a></li>
+                        
 
                     </ul>
                 </div>
@@ -66,18 +68,20 @@
             <div class="col-lg-12">
                 <div class="footer-copyright d-flex align-items-center justify-content-between pt-35">
                     <div class="apps-download-btn">
-                        <!-- <ul>
-                            <li><a href="#"><i class="fab fa-apple"></i> Download for iOS</a></li>
-                            <li><a class="item-2" href="#"><i class="fab fa-google-play"></i> Download for Android</a>
+                        <ul>
+                            <li><img src="https://izi.or.id/wp-content/uploads/2022/03/logo.png" style="height:50px"/></li>
+                            <li><img src="@/assets/images/logo/footer-logo.png" style="height:50px">
                             </li>
-                        </ul> -->
+                        </ul>
                     </div>
+                    
                     <div class="copyright-text">
                         <p>&copy; {{ new Date().getFullYear() }}. DQM Peduli</p>
                     </div>
                 </div>
             </div>
         </div>
+  
     </div>
 
     <div class="back-to-top back-to-top-3">

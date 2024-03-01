@@ -4,6 +4,8 @@
         <img src="https://digital.dompetdhuafa.org/_nuxt/img/zakat-maal.767d40a.jpg" alt="">
     </div>
 
+
+
     <p>
         Maal berasal dari kata bahasa Arab artinya harta atau kekayaan (al-amwal, jamak dari kata maal) adalah “segala hal yang diinginkan manusia untuk disimpan dan dimiliki” (Lisan ul-Arab). Menurut Islam sendiri, harta merupakan sesuatu yang boleh atau dapat dimiliki dan digunakan (dimanfaatkan) sesuai kebutuhannya.
     </p>

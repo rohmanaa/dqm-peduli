@@ -1,6 +1,5 @@
 <template>
 <div>
-    <header-default />
     <section class="blogpage-section">
         <div class="container">
             <div class="row">
@@ -13,20 +12,17 @@
             </div>
         </div>
     </section>
-    <footer-default />
+
 </div>
 </template>
 
 <script>
-import HeaderDefault from '@/components/Layout/Header/Header.vue'
-import FooterDefault from '@/components/Layout/Footer/Footer.vue'
 import DetailBerita from '@/components/Berita/DetailBerita.vue'
 import SideBerita from '@/components/Berita/SideBerita.vue'
 
 export default {
     components: {
-        HeaderDefault,
-        FooterDefault,
+
         SideBerita,
         DetailBerita
     },
