@@ -2,140 +2,113 @@
 <div>
     <section class="appie-pricing-2-area pb-100">
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="appie-section-title text-center">
-                        <div class="appie-pricing-tab-btn">
-                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation" @click.prevent="change_plan">
-                                    <a class="nav-link" :class="[switchPlan ? 'active' : '']" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                                        <b-icon icon="calculator" font-scale="1"></b-icon> Hitung
-                                    </a>
-                                </li>
-                                <li class="nav-item" role="presentation" :class="[switchPlan ? 'on' : 'off']" @click.prevent="change_plan">
-                                    <a class="nav-link" :class="[switchPlan === false ? 'active' : '']" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
-                                        <b-icon icon="credit-card" font-scale="1"></b-icon> Bayar
-                                    </a>
-                                </li>
-                            </ul>
+                    <aside class="mb-3">
+                        <div class="card-donasi" style="">
+                            <div class="donasi-header">
+                                <div class="status"> 100 <i>%</i>
+                                </div>
+                                <h5> Rp. {{ totalterkumpulzakat }} </h5>
+                            </div>
+                            <div class="p-2">
+                                <VueJsProgress :percentage="100" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true">
+                                </VueJsProgress>
+                            </div>
+                            <h5 class="title_choose-donasi p-2">Total Zakat Terkumpul</h5>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade" :class="[switchPlan ? 'active show' : '']" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                            <aside>
-                                <div class="card-donasi" style="">
-                                    <div class="donasi-header">
+                    </aside>
+                    <aside class="mb-3">
+                        <div class="card-donasi" style="">
+                            <div class="pt-3 ps-2">
+                                <h5 class="title_choose-donasi">Kalkulator Zakat Penghasilan</h5>
+                            </div>
+                            <hr />
+                            <div class="ps-2 pe-2">
+                                <!-- Input for Monthly Salary -->
+                                <div class="mb-2">
+                                    <span>Penghasilan/Gaji saya per bulan<span class="text-danger">*</span></span>
+                                    <input type="text" v-model="salary" class="input-donasi-lain" />
+                                </div>
 
-                                        <h5> Zakat Pendapatan </h5>
+                                <!-- Input for Other Monthly Income -->
+                                <div class="mb-2 mt-2">
+                                    <span>Penghasilan lain-lain saya per bulan</span>
+                                    <input type="text" v-model="otherIncome" class="input-donasi-lain" />
+                                </div>
+
+                                <!-- Input for Monthly Debt for Basic Needs -->
+                                <div class="mb-2 mt-2">
+                                    <span>Hutang/Cicilan saya untuk kebutuhan pokok
+                                        <v-b-tooltip.hover title="Yang dimaksud Kebutuhan Pokok adalah kebutuhan sandang, pangan, papan, pendidikan, kesehatan dan alat transportasi primer.">
+                                            <b-icon icon="exclamation-circle" animation="throb" scale="1"></b-icon>
+                                        </v-b-tooltip.hover>
+                                    </span>
+                                    <input type="text" v-model="basicNeedsDebt" class="input-donasi-lain"  />
+                                </div>
+
+                                <!-- Display Total Monthly Income -->
+                                <div class="mb-2 mt-2">
+                                    <span>Jumlah penghasilan per bulan</span>
+                                    <input type="text" :value="totalIncome" class="input-donasi-lain" disabled v-money="money" />
+                                </div>
+
+                                <!-- Display Zakat Amount -->
+                                <div class="mb-2 mt-2">
+                                    <span>Jumlah yang saya harus bayar per bulan</span>
+                                    <input type="text" :value="zakatAmount" class="input-donasi-lain" disabled v-money="money" />
+                                </div>
+
+                                <!-- Button to Calculate Zakat -->
+
+                            </div>
+                            <div class="total-donasi mt-3">
+                                <button type="button" class="submit-donasi" @click="calculateZakat">
+                                    <span v-if="!isCalculating">HITUNG</span>
+                                    <span v-else>
+                                        <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Result Section -->
+                    <aside v-if="showResult">
+                        <div class="card-donasi">
+                            <div id="chooseDonasi" class="choose-donasi p-2">
+                                <h5 class="title_choose-donasi">Total Zakat</h5>
+                                <div class="col-lg-12 mb-2">
+                                    <input type="text" class="input-donasi-lain" v-model="totalZakat" disabled v-money="money" />
+                                </div>
+                            </div>
+
+                            <!-- Profile Section -->
+                            <div class="p-2">
+                                <h5 class="title_choose-donasi">Profil Donatur</h5>
+                                <div class="row">
+                                    <div class="col-lg-12 mb-2">
+                                        <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="input-donasi-lain" v-model="namaDonatur" />
                                     </div>
-
-                                    <hr />
-                                    <div class="p-2">
-                                        <div class="mb-2">
-                                            <span>Penghasilan/Gaji saya per bulan<span class="text-danger">*</span></span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder=""></b-form-input>
-                                        </div>
-                                        <div class="mb-2 mt-2">
-                                            <span>Penghasilan lain-lain saya per bulan</span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder=""></b-form-input>
-                                        </div>
-
-                                        <div class="mb-2 mt-2">
-                                            <span>Hutang/Cicilan saya untuk kebutuhan pokok
-                                                <v-b-tooltip.hover title="Yang dimaksud Kebutuhan Pokok adalah kebutuhan sandang, pangan, papan, pendidikan, kesehatan dan alat transportasi primer.">
-                                                    <b-icon icon="exclamation-circle" animation="throb" scale="1"></b-icon>
-                                                </v-b-tooltip.hover>
-                                            </span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder=""></b-form-input>
-                                        </div>
-
-                                        <div class="mb-2 mt-2">
-                                            <span>Jumlah penghasilan per bulan</span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="" disabled></b-form-input>
-                                        </div>
-
-                                        <div class="mb-2">
-                                            <span>Masukan harga emas saat ini (per gram)*</span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder=""></b-form-input>
-                                        </div>
-                                        <div class="mb-2 mt-2">
-                                            <span>Besarnya nishab zakat penghasilan per bulan</span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="" disabled></b-form-input>
-                                        </div>
-                                        <div class="mb-2 mt-2">
-                                            <span>Apakah saya wajib membayar zakat penghasilan?</span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="" disabled></b-form-input>
-                                        </div>
-                                        <div class="mb-2 mt-2">
-                                            <span>Jumlah yang saya harus bayar per bulan</span>
-                                            <b-form-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="" disabled></b-form-input>
-                                        </div>
-                                    </div>
-
-                                    <div class="total-donasi mt-3">
-
-                                        <button type="button" :class="{ 'submit-donasi': !isSubmitting, 'disabled-button': isButtonDisabled || isSubmitting }" :disabled="isButtonDisabled || isSubmitting" @click="donate(idpro)">
-                                            <span v-if="!isSubmitting">HITUNG ZAKAT</span>
-                                            <span v-else>
-                                                <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
-                                            </span>
-                                        </button>
+                                    <div class="col-lg-12">
+                                        <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="input-donasi-lain" v-model="nomorWhatsApp" />
                                     </div>
                                 </div>
-                            </aside>
-                        </div>
-                        <div class="tab-pane fade" :class="[switchPlan === false ? 'active show' : '']" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                            <aside>
-                                <div class="card-donasi" style="">
-                                    <div class="donasi-header">
-                                        <div class="status"> 100 <i>%</i>
-                                        </div>
-                                        <h5> Rp. {{ totalterkumpul }} </h5>
-                                    </div>
-                                    <div class="p-2">
-                                        <VueJsProgress :percentage="100" customBgColor="#1a3257" :delay="600" :striped="true" :animation="true">
-                                        </VueJsProgress>
-                                    </div>
+                            </div>
 
-                                    <hr />
-
-                                    <div id="chooseDonasi" class="choose-donasi p-2">
-                                        <h5 class="title_choose-donasi">Total Zakat</h5>
-                                        <div class="col-lg-12 mb-2">
-                                            <input :id="'price_' + idpro" :name="'price_' + idpro" type="number" v-model="donasi" class="input-donasi-lain" @input="checkMinAmount" disabled />
-                                        </div>
-                                    </div>
-                                    <div class="p-2">
-                                        <h5 class="title_choose-donasi">Profil Donatur</h5>
-                                        <div class="row">
-                                            <div class="col-lg-12 mb-2">
-                                                <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="input-donasi-lain" v-model="namaDonatur" />
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="input-donasi-lain" v-model="nomorWhatsApp" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="total-donasi mt-3">
-                                        <div class="nominal-donasi">
-                                            <h5>Total Zakat</h5>
-                                            <h4>Rp. {{ jumlahDonasi }}</h4>
-                                        </div>
-                                        <button type="button" :class="{ 'submit-donasi': !isSubmitting, 'disabled-button': isButtonDisabled || isSubmitting }" :disabled="isButtonDisabled || isSubmitting" @click="donate(idpro)">
-                                            <span v-if="!isSubmitting">ZAKAT</span>
-                                            <span v-else>
-                                                <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </aside>
+                            <!-- Button to Pay Zakat -->
+                            <div class="total-donasi mt-3">
+                                <button type="button" class="submit-donasi" @click="payZakat">
+                                    <span v-if="!isSubmitting">BAYAR ZAKAT</span>
+                                    <span v-else>
+                                        <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
+                                    </span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </aside>
+
                 </div>
             </div>
         </div>
@@ -160,19 +133,26 @@ export default {
             switchPlan: true,
             namaDonatur: '',
             nomorWhatsApp: '',
-            isSubmitting: false,
             showNotification: false,
             shopAPI: process.env.VUE_APP_SHOPURL,
             donasi: '',
             selectedValue: '',
             money: {
-                decimal: ',',
-                thousands: '.',
-                prefix: '',
-                suffix: '',
-                precision: 0,
-                masked: false
+                decimal: "",
+                thousands: ".",
+                prefix: "Rp. ",
+                precision: '',
+                masked: false,
             },
+            salary: '',
+            otherIncome: '',
+            basicNeedsDebt: '',
+            totalIncome: 0,
+            zakatAmount: 0,
+            isCalculating: false,
+            showResult: false,
+            totalZakat: 0,
+            isSubmitting: false,
 
         }
     },
@@ -188,15 +168,36 @@ export default {
         jumlahDonasi: function () {
             return this.donasi;
         },
-        isButtonDisabled() {
+        isB1uttonDisabled() {
             return !this.donasi || this.donasi < 10000 || !this.namaDonatur || !this.nomorWhatsApp;
-        }
+        },
+
     },
     created() {
         this.customerNama = this.$route.query["customer[nama]"] || "";
         this.customerNohp = this.$route.query["customer[nohp]"] || "";
     },
     methods: {
+        calculateZakat: function () {
+            // Mengambil nilai dari input dan mengkonversi ke tipe float
+            var salary = parseFloat(this.salary) || 0;
+            var otherIncome = parseFloat(this.otherIncome) || 0;
+            var basicNeedsDebt = parseFloat(this.basicNeedsDebt) || 0;
+
+            // Menghitung total pemasukan
+            var totalIncome = salary + otherIncome - basicNeedsDebt;
+
+            // Menghitung jumlah zakat
+            var zakatAmount = 0.025 * totalIncome;
+
+            // Menetapkan nilai hasil perhitungan ke variabel data
+            this.totalIncome = totalIncome; // Pembulatan ke 2 desimal
+            this.zakatAmount = zakatAmount; // Pembulatan ke 2 desimal
+
+            this.totalZakat = zakatAmount;
+            this.showResult = true;
+        },
+
         change_plan() {
             this.switchPlan = !this.switchPlan
         },
@@ -259,6 +260,19 @@ export default {
         },
         directives: {
             money: VMoney
+        },
+        payZakat() {
+            // Your payment logic goes here
+            // For example, you can make an API call to process the payment
+            // Display loading spinner during the payment process
+            this.isSubmitting = true;
+
+            // Simulating a payment process with a delay (you should replace this with your actual payment logic)
+            setTimeout(() => {
+                this.isSubmitting = false;
+                alert("Zakat payment successful!");
+                // Reset the form or redirect to a thank you page
+            }, 2000);
         },
     }
 }

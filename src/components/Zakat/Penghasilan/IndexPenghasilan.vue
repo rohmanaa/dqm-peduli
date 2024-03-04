@@ -1,7 +1,7 @@
 <template>
 <div class="single-post-area">
     <div class="post-thumb">
-        <img src="https://digital.dompetdhuafa.org/_nuxt/img/zakat-penghasilan.6522390.jpg" alt="">
+        <img src="https://zpasset.imgix.net/programs/cVe7cnMutOdMm8INsZkPNtB8DUfSHn5nZFzKpYz4.jpg" alt="">
 
         <div class="container mt-3">
             <div class="row justify-content-center">

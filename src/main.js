@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-
+import VueMoney from 'v-money';
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -17,12 +17,9 @@ import '../src/assets/css/style.css'
 import '../src/assets/css/main.css'
 
 
-
-// Make BootstrapVue available throughout your project
-Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
-
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+Vue.use(VueMoney);
 Vue.use(router);
 
 Vue.config.productionTip = false

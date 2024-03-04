@@ -1,61 +1,6 @@
 <template>
 <div>
-    <b-skeleton-wrapper :loading="loading">
-        <template #loading>
-            <div class="col-lg-12">
-                <b-row>
-                    <b-col class="col-4 mb-3">
-                        <b-skeleton-img class="rounded"></b-skeleton-img>
-                        <b-card>
-                            <b-skeleton width="85%" variant="text"></b-skeleton>
-                            <b-skeleton width="55%" variant="text"></b-skeleton>
-                            <b-skeleton width="70%" variant="text"></b-skeleton>
-                        </b-card>
-                    </b-col>
-                    <b-col class="col-4 mb-3">
-                        <b-skeleton-img class="rounded"></b-skeleton-img>
-                        <b-card>
-                            <b-skeleton width="85%" variant="text"></b-skeleton>
-                            <b-skeleton width="55%" variant="text"></b-skeleton>
-                            <b-skeleton width="70%" variant="text"></b-skeleton>
-                        </b-card>
-                    </b-col>
-                    <b-col class="col-4 mb-3">
-                        <b-skeleton-img class="rounded"></b-skeleton-img>
-                        <b-card>
-                            <b-skeleton width="85%" variant="text"></b-skeleton>
-                            <b-skeleton width="55%" variant="text"></b-skeleton>
-                            <b-skeleton width="70%" variant="text"></b-skeleton>
-                        </b-card>
-                    </b-col>
-                    <b-col class="col-4 mb-3">
-                        <b-skeleton-img class="rounded"></b-skeleton-img>
-                        <b-card>
-                            <b-skeleton width="85%" variant="text"></b-skeleton>
-                            <b-skeleton width="55%" variant="text"></b-skeleton>
-                            <b-skeleton width="70%" variant="text"></b-skeleton>
-                        </b-card>
-                    </b-col>
-                    <b-col class="col-4 mb-3">
-                        <b-skeleton-img class="rounded"></b-skeleton-img>
-                        <b-card>
-                            <b-skeleton width="85%" variant="text"></b-skeleton>
-                            <b-skeleton width="55%" variant="text"></b-skeleton>
-                            <b-skeleton width="70%" variant="text"></b-skeleton>
-                        </b-card>
-                    </b-col>
-                    <b-col class="col-4 mb-3">
-                        <b-skeleton-img class="rounded"></b-skeleton-img>
-                        <b-card>
-                            <b-skeleton width="85%" variant="text"></b-skeleton>
-                            <b-skeleton width="55%" variant="text"></b-skeleton>
-                            <b-skeleton width="70%" variant="text"></b-skeleton>
-                        </b-card>
-                    </b-col>
-
-                </b-row>
-            </div>
-        </template>
+  
         <div class="col-lg-12">
             <div class="row mb-3">
                 <div class="col-lg-12 col-md-12 col-xl-12">
@@ -121,16 +66,14 @@
             </div>
 
             <div v-else class="row">
-
                 <div class="py-5 text-center">
                     <div class="container">
                         <div class="col-lg-12">
                             <h3 class="text-dqm">Mohon maaf !</h3>
-                            <span>Data Yang Dicari Tidak Tersedia</span>
+                            <span>Data Tidak Tersedia</span>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="row">
@@ -144,7 +87,7 @@
             </div>
 
         </div>
-    </b-skeleton-wrapper>
+
 </div>
 </template>
 

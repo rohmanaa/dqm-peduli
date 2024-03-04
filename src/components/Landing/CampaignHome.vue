@@ -53,47 +53,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="container py-5">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-4 col-md-4 col-12" v-for="product in produkDonasi.data" :key="product.id">
-                                <div class="card mb-3">
-                                    <img :src="product.url" class="card-img-top" alt="" />
-                                    <div class="card-body opacity-dqm">
-                                        <div class="text-center">
-                                            <p class="card-text mb-3">
-                                                <strong>{{ product.desc }}</strong>
-                                            </p>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label mb-0" style="font-size: 10px!important;">
-                                                <strong>Nama Donatur</strong>
-                                            </label>
-                                            <input :id="'nama_' + product.id" :name="'nama_' + product.id" type="text" class="form-control form-control-sm" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label mb-0" style="font-size: 10px!important;">
-                                                <strong>No WhatsApp</strong>
-                                            </label>
-                                            <input :id="'nowa_' + product.id" :name="'nowa_' + product.id" type="text" class="form-control form-control-sm" />
-                                        </div>
-                                        <div class="input-group input-group-sm mb-3">
-                                            <span class="input-group-text">RP. </span>
-                                            <input :id="'price_' + product.id" :name="'price_' + product.id" class="form-control form-control-sm" v-money="money" />
-                                        </div>
-                                        <div class="d-grid gap-2">
-                                            <button class="btn text-white btn-sm w-100" style="background-color: #1a3257 !important" type="button" @click="donate(product.id)"> DONASI </button>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer text-white opacity-30 text-center">
-                                        <small class="mb-0">
-                                            <strong>Terkumpul Saat Ini</strong>
-                                        </small>
-                                        <button type="button" class="btn btn-sm btn-success w-100">Rp. {{ product.total }}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
             </div>
