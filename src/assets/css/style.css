@@ -1920,7 +1920,7 @@ p {
     3.APPIE HERO css 
 ===========================*/
 .appie-hero-area {
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 110px;
   overflow: hidden;
   position: relative;
@@ -2497,9 +2497,9 @@ p {
   height: 500px;
   width: 500px;
   transform: translate(-50%, -50%);
-  background: #ff3e66;
   border-radius: 50%;
   z-index: -1;
+  background: #EDFDFF;
 }
 .appie-hero-thumb.appie-hero-thumb-4::before {
   height: 160px;
@@ -2517,7 +2517,7 @@ p {
 }
 
 .appie-hero-area-2 {
-  padding-top: 290px;
+  padding-top: 100px;
   padding-bottom: 170px;
   background: #eef1f6;
   position: relative;
@@ -7248,7 +7248,7 @@ blockquote cite {
     14.APPIE DOWNLOAD css 
 ===========================*/
 .appie-download-area {
-  background-image: url(../images/download-bg.png);
+  background-image: url(../images/title/title.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -7828,6 +7828,28 @@ blockquote cite {
   position: relative;
   z-index: 3;
   margin: 0 0 41px;
+}
+
+.donasi-form input[type="text"],
+.donasi-form input[type="number"],
+.donasi-form textarea,
+.donasi-form input[type="email"] {
+  width: 100%;
+  height: 56px;
+  font-size: 14px;
+  line-height: 56px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: none;
+  background: #f5f5f7;
+  color: #7e7c87;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 0 30px;
+  margin-bottom: 20px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-form input[type="text"],

@@ -28,8 +28,14 @@
                     <div class="row boxed-check-group boxed-check-success">
                         <div class="col-12 col-sm-6">
                             <label class="boxed-check">
+                                <input class="boxed-check-input" type="radio" name="radio-overview" value="50000" @change="updateInputValue">
+                                <div class="boxed-check-label text-center">50.000</div>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="boxed-check">
                                 <input class="boxed-check-input" type="radio" name="radio-overview" value="100000" @change="updateInputValue">
-                                <div class="boxed-check-label text-center"> 100.000</div>
+                                <div class="boxed-check-label text-center">100.000</div>
                             </label>
                         </div>
                         <div class="col-12 col-sm-6">
@@ -44,18 +50,12 @@
                                 <div class="boxed-check-label text-center">500.000</div>
                             </label>
                         </div>
-                        <div class="col-12 col-sm-6">
-                            <label class="boxed-check">
-                                <input class="boxed-check-input" type="radio" name="radio-overview" value="1000000" @change="updateInputValue">
-                                <div class="boxed-check-label text-center">1000.000</div>
-                            </label>
-                        </div>
 
                     </div>
                 </div>
                 <h5 class="title_choose-donasi">Atau Masukkan Nominal</h5>
                 <div class="col-lg-12 mb-2">
-                    <input :id="'price_' + idpro" :name="'price_' + idpro" type="number" v-model="donasi" placeholder="Nominal lain - minimal Rp 10.000" class="input-donasi-lain" v-money="money" @input="checkMinAmount" />
+                    <input :id="'price_' + idpro" :name="'price_' + idpro" type="text" v-model="donasi" placeholder="Nominal lain - minimal Rp 10.000" class="input-donasi-lain" @input="checkMinAmount" />
                     <div v-if="showNotification" style="color: red; font-size: .8rem">Transaksi minimal 10.000</div>
                 </div>
             </div>
