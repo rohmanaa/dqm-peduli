@@ -20,10 +20,11 @@
                         <hr />
 
                         <div class="col-md-12">
-                            <span>Jumlah yang saya harus </span>
-                            <input type="text" disabled v-model="totalfidyah" v-money="money" />
-                        </div>
+                            <span>Jumlah yang saya harus bayar</span>
 
+                            <input type="text" :value="formatNumber(totalfidyah)" disabled v-money="money" />
+                       
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -32,6 +33,26 @@
                             </button>
                         </div>
                     </div>
+                     <div class="service-download-widget mt-3 bg-white" v-if="totalfidyah != 0">
+                            <div class="donasi-form pt-3 pb-3">
+                                <h5>Profil Donatur</h5>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" />
+                                        <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" />
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-dqm w-100 text-white fw-6">
+                                            <span v-if="!isSubmitting">BAYAR ZAKAT</span>
+                                            <span v-else>
+                                                <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                 </div>
             </div>
 
@@ -68,29 +89,7 @@
                                 Saya berniat mengeluarkan zakat harta milikku karena Allah
                                 Ta’ala</span>
                         </div>
-                        <div class="service-download-widget"><a href="#"><i class="fal fa-download"></i><span>Total Zakat Perlu Dibayar/bulan</span></a></div>
-                        <div class="service-download-widget"><input type="text" :value="formatNumber(totalfidyah)" class="zakat" disabled v-money="money" /></div>
-                        <div class="service-download-widget mt-3 bg-white" v-if="totalfidyah != 0">
-                            <div class="donasi-form pt-3 ps-3 pe-3 pb-3">
-                                <h5>Profil Donatur</h5>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" />
-                                        <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" />
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="button" class="btn btn-dqm w-100 text-white fw-6">
-                                            <span v-if="!isSubmitting">BAYAR ZAKAT</span>
-                                            <span v-else>
-                                                <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
