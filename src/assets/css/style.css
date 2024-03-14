@@ -8363,7 +8363,7 @@ blockquote cite {
 
 .shop-buttons .product-quantity {
   border: 2px solid #e7eaef;
-  display: inline-block;
+  /* display: inline-block; */
   border-radius: 6px;
 }
 .shop-buttons .product-quantity button {
