@@ -10,7 +10,8 @@ import DetailCampaign from '../views/Campaign/DetailCampaign.vue'
 import ZakatMaal from '../views/Zakat/Maal/Maal.vue'
 import ZakatPenghasilan from '../views/Zakat/Penghasilan/Penghasilan.vue'
 import ZakatFidyah from '../views/Zakat/Fidyah/Fidyah.vue'
-import ZakatEmas from '../views/ComingSoon.vue'
+import ZakatPerak from '../views/Zakat/Perak/Perak.vue'
+import ZakatEmas from '../views/Zakat/Emas/Emas.vue'
 import Sedekah from '../views/Sedekah/Sedekah.vue'
 import Wakaf from '../views/ComingSoon.vue'
 import DetailWakaf from '../views/ComingSoon.vue'
@@ -19,8 +20,6 @@ import DetailQurban from '../views/ComingSoon.vue'
 import Berita from '../views/ComingSoon.vue'
 import DetailBerita from '../views/ComingSoon.vue'
 import Error from '../views/Error.vue'
-
-
 
 Vue.use(VueRouter)
 
@@ -85,6 +84,16 @@ const routes = [
       {
         header: AppHeader,
         default: ZakatFidyah,
+        footer: AppFooter
+      },
+  },
+     {
+    path: '/zakat-perak',
+    name: 'Zakat Perak',
+    components:
+      {
+        header: AppHeader,
+        default: ZakatPerak,
         footer: AppFooter
       },
     },

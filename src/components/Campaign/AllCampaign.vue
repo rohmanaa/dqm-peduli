@@ -80,8 +80,8 @@
                 <div class="col-lg-12">
                     <div class="bisylms-pagination">
                         <span class="current">01</span>
-                        <router-link to="#">02</router-link>
-                        <a class="next" href="#">next<i class="fal fa-arrow-right"></i></a>
+                        <!-- <router-link to="#">02</router-link>
+                        <a class="next" href="#">next<i class="fal fa-arrow-right"></i></a> -->
                     </div>
                 </div>
             </div>

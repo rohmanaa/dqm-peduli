@@ -36,6 +36,10 @@ export default {
                             path: '/zakat-fidyah'
                         },
                         {
+                            name: 'Perak',
+                            path: '/zakat-perak'
+                        },
+                        {
                             name: 'Emas',
                             path: '/zakat-emas'
                         },

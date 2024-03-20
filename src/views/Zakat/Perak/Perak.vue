@@ -1,15 +1,15 @@
 <template>
 <div>
-    <index-emas />
+    <index-perak />
 </div>
 </template>
 
 <script>
-import IndexEmas from '@/components/Zakat/Emas/IndexEmas.vue'
+import IndexPerak from '@/components/Zakat/Perak/IndexPerak.vue'
 
 export default {
     components: {
-        IndexEmas,
+        IndexPerak,
 
     },
     data() {

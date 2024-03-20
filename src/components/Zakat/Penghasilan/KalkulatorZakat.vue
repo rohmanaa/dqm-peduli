@@ -24,7 +24,7 @@
 
                         <div class="col-md-6">
                             <span>Masukkan harga emas saat ini (per gram)<span class="text-danger">*</span></span>
-                            <input type="text" v-model="goldPrice" @input="calculateZakat" />
+                            <input type="text" v-model="goldPrice" @input="calculateZakat" disabled v-money="money"/>
                         </div>
 
                         <hr />
@@ -77,18 +77,18 @@
                                 <h5>Profil Donatur</h5>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" />
-
-                                        <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" />
+                                        <input :id="'nama_' + productid" :name="'nama_' + productid" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" required />
+                                        <input :id="'nowa_' + productid" :name="'nowa_' + productid" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" required />
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn btn-dqm w-100 text-white fw-6" @click="payZakat">
+                                        <button type="button" class="btn btn-dqm w-100 text-white fw-6" @click="donate(productid)" :disabled="!namaDonatur || !nomorWhatsApp">
                                             <span v-if="!isSubmitting">BAYAR ZAKAT</span>
                                             <span v-else>
                                                 <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
                                             </span>
                                         </button>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,6 @@
 <script>
 import axios from "axios";
 import Swal from "sweetalert2";
-
 import {
     VMoney
 } from 'v-money'
@@ -112,16 +111,9 @@ export default {
     components: {
 
     },
-    props: {
-        idpro: {
-            type: String,
-        },
-        totalterkumpul: {
-            type: String,
-        },
-    },
     data() {
         return {
+            productid: 'd9d4f495e875a2e075a1a4a6e1b9770f',
             showQuestion: 1,
             switchPlan: true,
             selectedTab: 'hukum',
@@ -129,7 +121,6 @@ export default {
             nomorWhatsApp: '',
             showNotification: false,
             shopAPI: process.env.VUE_APP_SHOPURL,
-            donasi: '',
             selectedValue: '',
             money: {
                 decimal: "",
@@ -141,22 +132,13 @@ export default {
             salary: 0,
             otherIncome: 0,
             debt: 0,
-            goldPrice: 0,
+            goldPrice: 968385,
             totalIncome: 0,
             nisabAmount: 0,
             isZakatRequired: false,
             zakatAmount: 0,
             showAside: false,
         }
-    },
-    computed: {
-        jumlahDonasi: function () {
-            return this.donasi;
-        },
-        isB1uttonDisabled() {
-            return !this.donasi || this.donasi < 10000 || !this.namaDonatur || !this.nomorWhatsApp;
-        },
-
     },
     methods: {
         OpenQuestion(value) {
@@ -187,17 +169,17 @@ export default {
             return value.toFixed(0);
         },
         resetForm() {
-            this.salary = '';
-            this.otherIncome = '';
-            this.debt = '';
-            this.goldPrice = '';
-            this.totalIncome = '';
+            this.salary = 0;
+            this.otherIncome = 0;
+            this.debt = 0;
+            this.goldPrice = 968385;
+            this.totalIncome = 0;
             this.showAside = false;
-            this.totalterkumpul = '';
-            this.nisabAmount = '';
+            this.totalterkumpul = 0;
+            this.nisabAmount = 0;
         },
 
-        async donate(idpro) {
+        async donate(productid) {
             this.isSubmitting = true;
 
             // Simulasi proses submit (gantilah dengan logika sesuai kebutuhan)
@@ -206,10 +188,10 @@ export default {
             this.isSubmitting = false;
 
             const dataToSend = {
-                product_id: idpro,
+                product_id: productid,
                 nama: this.namaDonatur,
                 nohp: this.nomorWhatsApp,
-                price: this.donasi
+                price: this.zakatAmount
             };
 
             try {
@@ -245,31 +227,12 @@ export default {
                 this.loading = false;
             }, 2000);
         },
-        updateInputValue(event) {
-            this.donasi = event.target.value;
-        },
-        checkMinAmount() {
-            this.showNotification = this.donasi < 10000 && this.donasi !== null;
-        },
+
         directives: {
             money: VMoney
         },
-        payZakat() {
-            // Your payment logic goes here
-            // For example, you can make an API call to process the payment
-            // Display loading spinner during the payment process
-            this.isSubmitting = true;
-
-            // Simulating a payment process with a delay (you should replace this with your actual payment logic)
-            setTimeout(() => {
-                this.isSubmitting = false;
-                alert("Zakat payment successful!");
-                // Reset the form or redirect to a thank you page
-            }, 2000);
-        },
     },
     created() {
-        this.recalculateZakat();
         this.customerNama = this.$route.query["customer[nama]"] || "";
         this.customerNohp = this.$route.query["customer[nohp]"] || "";
     },
