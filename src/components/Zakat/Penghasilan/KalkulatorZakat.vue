@@ -10,6 +10,7 @@
                         <div class="col-md-6">
                             <span>Gaji saya per bulan<span class="text-danger">*</span></span>
                             <input type="text" v-model="salary" @input="calculateZakat" />
+
                         </div>
 
                         <div class="col-md-6">
@@ -24,7 +25,7 @@
 
                         <div class="col-md-6">
                             <span>Masukkan harga emas saat ini (per gram)<span class="text-danger">*</span></span>
-                            <input type="text" v-model="goldPrice" @input="calculateZakat" disabled v-money="money"/>
+                            <input type="text" v-model="goldPrice" @input="calculateZakat" disabled />
                         </div>
 
                         <hr />
@@ -48,9 +49,13 @@
                             <input type="text" :value="formatNumber(zakatAmount)" disabled v-money="money" />
                         </div>
 
-                        <div class="col-md-6 text-right">
-                            <button type="button" class="btn btn-dqm" @click="resetForm">
-                                <span class="text-white">Hitung Ulang</span>
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button type="button" class="btn btn-danger me-2" @click="resetForm">
+                                <span class="text-white">HAPUS</span>
+                            </button>
+
+                            <button type="button" class="btn btn-dqm" @click="Hitung">
+                                <span class="text-white">HITUNG</span>
                             </button>
                         </div>
                     </div>
@@ -129,15 +134,16 @@ export default {
                 precision: '',
                 masked: false,
             },
-            salary: 0,
-            otherIncome: 0,
-            debt: 0,
+            salary: null,
+            otherIncome: null,
+            debt: null,
             goldPrice: 968385,
             totalIncome: 0,
             nisabAmount: 0,
             isZakatRequired: false,
             zakatAmount: 0,
             showAside: false,
+            isSubmitting: false,
         }
     },
     methods: {
@@ -150,43 +156,31 @@ export default {
         selectFeature(name) {
             this.selectedTab = name
         },
-        calculateZakat() {
-            // Calculate Total Income
-            this.totalIncome =
-                parseFloat(this.salary) + parseFloat(this.otherIncome) - parseFloat(this.debt);
-
-            // Calculate Nisab Amount (Gold Price * 7.083333333333333)
+        Hitung() {
+            this.totalIncome = parseFloat(this.salary) + parseFloat(this.otherIncome) - parseFloat(this.debt);
             this.nisabAmount = parseFloat(this.goldPrice) * 7.083333333333333;
-
-            // Check if Zakat is required
             this.isZakatRequired = this.nisabAmount <= this.totalIncome;
-
-            // Calculate Zakat Amount (2.5% of Total Income)
             this.zakatAmount = this.isZakatRequired ? this.totalIncome * 0.025 : 0;
         },
-
-        formatNumber(value) {
-            return value.toFixed(0);
-        },
         resetForm() {
-            this.salary = 0;
-            this.otherIncome = 0;
-            this.debt = 0;
+            this.salary = null;
+            this.otherIncome = null;
+            this.debt = null;
             this.goldPrice = 968385;
             this.totalIncome = 0;
-            this.showAside = false;
-            this.totalterkumpul = 0;
             this.nisabAmount = 0;
+            this.isZakatRequired = false;
+            this.zakatAmount = 0;
+        },
+        formatNumber(value) {
+            return value.toFixed(0);
         },
 
         async donate(productid) {
             this.isSubmitting = true;
-
-            // Simulasi proses submit (gantilah dengan logika sesuai kebutuhan)
-            await new Promise(resolve => setTimeout(resolve, 2000));
-
-            this.isSubmitting = false;
-
+            setTimeout(() => {
+                this.isSubmitting = false;
+            }, 2000);
             const dataToSend = {
                 product_id: productid,
                 nama: this.namaDonatur,
