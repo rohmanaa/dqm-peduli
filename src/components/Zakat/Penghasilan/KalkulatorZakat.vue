@@ -7,6 +7,7 @@
                     <h4>Kalkulator Zakat</h4>
                     <p></p>
                     <div class="row">
+
                         <div class="col-md-6">
                             <span>Gaji saya per bulan<span class="text-danger">*</span></span>
                             <input type="text" v-model="salary" @input="calculateZakat" />
@@ -118,6 +119,7 @@ export default {
     },
     data() {
         return {
+
             productid: 'd9d4f495e875a2e075a1a4a6e1b9770f',
             showQuestion: 1,
             switchPlan: true,
@@ -131,12 +133,12 @@ export default {
                 decimal: "",
                 thousands: ".",
                 prefix: "Rp. ",
-                precision: '',
+                precision: 0,
                 masked: false,
             },
             salary: null,
             otherIncome: null,
-            debt: null,
+            debt: 0,
             goldPrice: 968385,
             totalIncome: 0,
             nisabAmount: 0,
@@ -185,7 +187,7 @@ export default {
                 product_id: productid,
                 nama: this.namaDonatur,
                 nohp: this.nomorWhatsApp,
-                price: this.zakatAmount
+                price: this.zakatAmount.toFixed(0)
             };
 
             try {
@@ -210,16 +212,6 @@ export default {
             } finally {
                 this.isLoading = false;
             }
-        },
-        closeMenu() {
-            const navbarCollapse = document.querySelector(".navbar-collapse");
-            navbarCollapse.classList.remove("show");
-        },
-        load() {
-            this.loading = true;
-            setTimeout(() => {
-                this.loading = false;
-            }, 2000);
         },
 
         directives: {
@@ -247,6 +239,20 @@ export default {
     letter-spacing: -.02em;
     line-height: 21px;
     padding: 11.5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+button:disabled{
+    background-color: #b12323;
+    border-radius: 8px;
+    color: #646464;
+    cursor: not-allowed;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 20px;
+    padding: 10.5px 0;
     text-align: center;
     width: 100%;
 }

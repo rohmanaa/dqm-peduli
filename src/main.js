@@ -16,7 +16,6 @@ import '../src/assets/css/default.css'
 import '../src/assets/css/style.css'
 import '../src/assets/css/main.css'
 
-
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueMoney);

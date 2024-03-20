@@ -23,7 +23,7 @@
                             <span>Jumlah yang saya harus bayar</span>
 
                             <input type="text" :value="formatNumber(totalfidyah)" disabled v-money="money" />
-                       
+
                         </div>
                     </div>
                     <div class="row">
@@ -33,26 +33,26 @@
                             </button>
                         </div>
                     </div>
-                     <div class="service-download-widget mt-3 bg-white" v-if="totalfidyah != 0">
-                            <div class="donasi-form pt-3 pb-3">
-                                <h5>Profil Donatur</h5>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" />
-                                        <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" />
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="button" class="btn btn-dqm w-100 text-white fw-6">
-                                            <span v-if="!isSubmitting">BAYAR ZAKAT</span>
-                                            <span v-else>
-                                                <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
-                                            </span>
-                                        </button>
-                                    </div>
+                    <div class="service-download-widget mt-3 bg-white" v-if="totalfidyah != 0">
+                        <div class="donasi-form pt-3 pb-3">
+                            <h5>Profil Donatur</h5>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input :id="'nama_' + productid" :name="'nama_' + productid" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" />
+                                    <input :id="'nowa_' + productid" :name="'nowa_' + productid" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" />
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-dqm w-100 text-white fw-6" @click="donate(productid)" :disabled="!namaDonatur || !nomorWhatsApp">
+                                        <span v-if="!isSubmitting">BAYAR ZAKAT</span>
+                                        <span v-else>
+                                            <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        
+                    </div>
+
                 </div>
             </div>
 
@@ -67,7 +67,6 @@
                             <p>
                                 <span class="mb-2 text-white text-end" style="font-size:1.2rem">نَوَيْتُ أَنْ أُخْرِجَ فِدْيَةَالْمُرْضِعِ فَرْضًاشَرْعًا
                                     لِلّٰهِ تَعَالٰى
-
                                 </span>
 
                             </p>
@@ -108,16 +107,11 @@ export default {
     components: {
 
     },
-    props: {
-        idpro: {
-            type: String,
-        },
-        totalterkumpul: {
-            type: String,
-        },
-    },
+
     data() {
         return {
+              isSubmitting: false,
+            productid: 'd82c8d1619ad8176d665453cfb2e55f0',
             showQuestion: 1,
             switchPlan: true,
             selectedTab: 'hukum',
@@ -135,13 +129,11 @@ export default {
             jumlahtidakpuasa: 0, // Nilai awal untuk jumlahtidakpuasa
             totalfidyah: 0,
             isZakatRequired: false,
-            zakatAmount: 0,
             showAside: false,
         }
     },
     watch: {
         jumlahtidakpuasa: function (newValue) {
-            // Menghitung totalfidyah
             this.totalfidyah = newValue * 40000;
         }
     },
@@ -164,19 +156,16 @@ export default {
             this.jumlahtidakpuasa = '';
         },
 
-        async donate(idpro) {
+        async donate(productid) {
             this.isSubmitting = true;
-
-            // Simulasi proses submit (gantilah dengan logika sesuai kebutuhan)
-            await new Promise(resolve => setTimeout(resolve, 2000));
-
-            this.isSubmitting = false;
-
+            setTimeout(() => {
+                this.isSubmitting = false;
+            }, 2000);
             const dataToSend = {
-                product_id: idpro,
+                product_id: productid,
                 nama: this.namaDonatur,
                 nohp: this.nomorWhatsApp,
-                price: this.donasi
+                price: this.totalfidyah.toFixed(0)
             };
 
             try {
@@ -202,41 +191,13 @@ export default {
                 this.isLoading = false;
             }
         },
-        closeMenu() {
-            const navbarCollapse = document.querySelector(".navbar-collapse");
-            navbarCollapse.classList.remove("show");
-        },
-        load() {
-            this.loading = true;
-            setTimeout(() => {
-                this.loading = false;
-            }, 2000);
-        },
-        updateInputValue(event) {
-            this.donasi = event.target.value;
-        },
-        checkMinAmount() {
-            this.showNotification = this.donasi < 10000 && this.donasi !== null;
-        },
+       
         directives: {
             money: VMoney
         },
-        payZakat() {
-            // Your payment logic goes here
-            // For example, you can make an API call to process the payment
-            // Display loading spinner during the payment process
-            this.isSubmitting = true;
-
-            // Simulating a payment process with a delay (you should replace this with your actual payment logic)
-            setTimeout(() => {
-                this.isSubmitting = false;
-                alert("Zakat payment successful!");
-                // Reset the form or redirect to a thank you page
-            }, 2000);
-        },
+        
     },
     created() {
-        this.recalculateZakat();
         this.customerNama = this.$route.query["customer[nama]"] || "";
         this.customerNohp = this.$route.query["customer[nohp]"] || "";
     },
@@ -245,19 +206,17 @@ export default {
 </script>
 
 <style scoped>
-.zakat {
-    background-color: #ddd;
+button:disabled{
+    background-color: #b12323;
     border-radius: 8px;
-    border: 1px solid #fff;
     color: #646464;
     cursor: not-allowed;
     font-size: 16px;
     font-style: normal;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    line-height: 21px;
-    padding: 11.5px 0;
+    line-height: 20px;
+    padding: 10.5px 0;
     text-align: center;
+    cursor: not-allowed;
     width: 100%;
 }
 </style>
