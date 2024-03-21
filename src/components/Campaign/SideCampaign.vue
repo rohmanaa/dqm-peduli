@@ -55,7 +55,7 @@
                 </div>
                 <h5 class="title_choose-donasi">Atau Masukkan Nominal</h5>
                 <div class="col-lg-12 mb-2">
-                    <input :id="'price_' + idpro" :name="'price_' + idpro" type="text" v-model="donasi" placeholder="Nominal lain - minimal Rp 10.000" class="input-donasi-lain" @input="checkMinAmount" />
+                    <input :id="'price_' + idpro" :name="'price_' + idpro" type="text" v-model="donasi" placeholder="Nominal lain - minimal Rp 10.000" class="input-donasi-lain" @input="checkMinAmount" v-money="money"/>
                     <div v-if="showNotification" style="color: red; font-size: .8rem">Transaksi minimal 10.000</div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
             <div class="total-donasi mt-3">
                 <div class="nominal-donasi">
                     <h5>Saya Mau Donasi</h5>
-                    <h4>Rp. {{ jumlahDonasi }}</h4>
+                    <h4>{{ jumlahDonasi }}</h4>
                 </div>
                 <button type="button" :class="{ 'submit-donasi': !isSubmitting, 'disabled-button': isButtonDisabled || isSubmitting }" :disabled="isButtonDisabled || isSubmitting" @click="donate(idpro)">
                     <span v-if="!isSubmitting">DONASI</span>
@@ -109,7 +109,7 @@ export default {
             money: {
                 decimal: ',',
                 thousands: '.',
-                prefix: '',
+                prefix: 'Rp. ',
                 suffix: '',
                 precision: 0,
                 masked: false

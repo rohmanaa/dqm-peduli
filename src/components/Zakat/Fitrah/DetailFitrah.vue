@@ -17,25 +17,23 @@
                         <div class="row align-items-start">
                             <div class="col-lg-9">
                                 <div class="appie-features-content wow animated fadeInRight" data-wow-duration="2000ms" data-wow-delay="600ms">
-                                    <span>Sedekah</span>
+                                    <span>Zakat Fitrah</span>
                                     <div class="text-justify content">
-                                    
-                                            <p>Sedekah merupakan amalan yang dicintai Allah SWT. Hal ini dibuktikan dengan banyaknya ayat Al-Qur’an yang menyebutkan tentang sedekah, salah satunya dalam surat Al-Baqarah ayat 271.</p>
-                                            <blockquote>“Jika kamu menampakkan sedekah (mu), maka itu adalah baik sekali. Dan jika kamu menyembunyikannya dan kamu berikan kepada orang-orang fakir, maka menyembunyikan itu lebih baik bagimu. Dan Allah akan menghapuskan dari kamu sebagian kesalahan-kesalahanmu, dan Allah mengetahui apa yang kamu kerjakan.”&nbsp; (QS. Al-Baqarah: 271)</blockquote>
-                                         <p><strong>Keutamaan Sedekah:</strong></p>
-                                            <p><strong>1. Menghapus Dosa</strong></p>
-                                            <p>Nabi Muhammad صلى الله عليه وسلم bersabda, “Sedekah itu dapat menghapus dosa sebagaimana air itu memadamkan api.“ (HR. Tirmidzi)</p>
-                                            <p><strong>&nbsp;2.</strong>&nbsp;<strong>Tidak Akan Mengurangi Harta</strong></p>
-                                            <p>“Harta tidak akan berkurang dengan sedekah. Dan seorang hamba yang pemaaf pasti akan Allah tambahkan kewibawaan baginya.” (HR. Muslim)</p>
-                                            <p>&nbsp;<strong>3. Melipatgandakan Pahala</strong></p>
-                                            <p>“Perumpamaan orang-orang yang mendermakan (shodaqoh) harta bendanya di jalan Allah, seperti sebutir biji yang menumbuhkan tujuh untai dan tiap-tiap untai terdapat seratus biji dan Allah melipat gandakan kepada orang yang dikehendaki, dan Allah Maha Luas (anugrah-Nya) lagi Maha Mengetahui.“ (QS. Al-Baqarah: 261)</p>
-                                            <p>&nbsp;<strong>4. Mencegah Maksiat dalam Jual-Beli (Perdagangan)</strong></p>
-                                            <p>“Wahai para pedagang, sesungguhnya setan dan dosa keduanya hadir dalam jual-beli. Maka hiasilah jual-beli kalian dengan sedekah.” (HR. Tirmidzi)</p>
-                                            <p><strong>&nbsp;5.</strong>&nbsp;<strong>Membebaskan dari Api Neraka</strong></p>
-                                            <p>“Jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma. Jika kamu tidak punya, maka bisa dengan kalimah thayyibah.” (HR. Bukhari)</p>
-                                            <p><strong>&nbsp;6. Mendapat Naungan di Hari Akhir</strong></p>
-                                            <p>“Naungan orang beriman di hari Kiamat adalah sedekahnya.” (HR Ahmad)</p>
-                                    
+                                       
+                                            <p><b>Zakat fitrah adalah zakat (sedekah) jiwa. Istilah tersebut diambil dari kata fitrah yang merupakan asal dari kejadian. Zakat fitrah adalah zakat yang wajib ditunaikan oleh seorang muslim, anak-anak maupun dewasa, orang merdeka maupun hamba sahaya, laki-laki dan perempuan sebesar 1 sha atau 2,176 kg beras atau dibulatkan menjadi 2,5 kg atau 3,5 liter beras, sebelum hari raya idul fitri.</b></p>
+                                            <p>Dari Ibnu Umar ra. Beliau berkata : </p>
+                                            <blockquote>”Rasulullah Saw. Telah memfardhukan zakat fitrah 1 sha’ dari kurma atau gandum atas budak,orang merdeka, laki-laki danperempuan, anak kecil dan orang tua dari seluruh kaum muslimin. Dan beliau perintahkan supaya dikeluarkan sebelum orang-orang keluar untuk shalat ‘Id.”<b> (HR. Bukhori)</b></blockquote>
+                                        
+                                            <p><b><span style="font-size: 18px;">Waktu Pembayaran</span></b></p>
+                                            <p><b>Waktu pembayaran zakat fitrah</b> terbagi kepada dua waktu, yaitu:</p>
+                                            <p><b>1. Waktu Sempit (al-mudhayiq) yaitu</b> waktu wajib membayar zakat fitrah. Ditandai dengan tenggelamnya matahari di akhir bulan Ramadhan sampai sebelum shalat ‘Id.</p>
+                                            <p><b>2. &nbsp;Waktu Luas (al-muwassi’) yaitu</b> boleh mendahulukan atau mempercepat pembayaran zakat fitrah dari waktu wajib tersebut, yaitu selama bulan Ramadhan.</p>
+                                            <p>Untuk kepentingan efektifitas pengelolaan dan efektifitas manfaat distribusi, dianjurkan untuk membayarnya pada waktu luas.</p>
+                                            <p><b><span style="font-size: 18px;">Waktu Distribusi</span></b></p>
+                                            <p>&nbsp; &nbsp; Adalah waktu yang mashlahat bagi penerima, amil berusaha semaksimal mungkin mendistribusikannya sebelum shalat ‘Id.<br><br>
+                                            <b><span style="font-size: 18px;">NOTE :</span><br>
+                                            <span style="font-size: 18px;">Transaksi Zakat Fitrah diluar dari waktu yang ditentukan akan dicatat sebagai Infaq</span></b></p>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +44,6 @@
                             <div class="col-lg-9">
                                 <div class="appie-features-content animated fadeInRight" data-wow-duration="2000ms" data-wow-delay="600ms">
 
-
                                 </div>
                             </div>
                         </div>
@@ -55,7 +52,6 @@
                         <div class="row align-items-center">
                             <div class="col-lg-9">
                                 <div class="appie-features-content animated fadeInRight" data-wow-duration="2000ms" data-wow-delay="600ms">
-                                   
 
                                 </div>
                             </div>

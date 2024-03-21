@@ -31,6 +31,10 @@ export default {
                             name: 'Penghasilan',
                             path: '/zakat-penghasilan'
                         },
+                           {
+                            name: 'Fitrah',
+                            path: '/zakat-fitrah'
+                        },
                         {
                             name: 'Fidyah',
                             path: '/zakat-fidyah'

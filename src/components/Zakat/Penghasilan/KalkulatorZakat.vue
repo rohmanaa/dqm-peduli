@@ -119,7 +119,6 @@ export default {
     },
     data() {
         return {
-
             productid: 'd9d4f495e875a2e075a1a4a6e1b9770f',
             showQuestion: 1,
             switchPlan: true,

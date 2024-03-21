@@ -7,23 +7,67 @@
                     <h4>Sedekah</h4>
 
                     <div class="row">
+                        <div id="chooseDonasi" class="choose-sedekah">
+                            <h5 class="title_choose-sedekah">Mau Sedekah Berapa ?</h5>
+                            <div class="overview-radio">
+                                <div class="row boxed-check-group boxed-check-success">
+                                    <div class="col-lg-6 ">
+                                        <label class="boxed-check">
+                                            <input class="boxed-check-input" type="radio" name="radio-overview" value="50000" @change="updateInputValue">
+                                            <div class="boxed-check-label text-center">50.000</div>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6 ">
+                                        <label class="boxed-check">
+                                            <input class="boxed-check-input" type="radio" name="radio-overview" value="100000" @change="updateInputValue">
+                                            <div class="boxed-check-label text-center">100.000</div>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6 ">
+                                        <label class="boxed-check">
+                                            <input class="boxed-check-input" type="radio" name="radio-overview" value="200000" @change="updateInputValue">
+                                            <div class="boxed-check-label text-center">200.000</div>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6 ">
+                                        <label class="boxed-check">
+                                            <input class="boxed-check-input" type="radio" name="radio-overview" value="500000" @change="updateInputValue">
+                                            <div class="boxed-check-label text-center">500.000</div>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-lg-6 ">
+                                        <label class="boxed-check">
+                                            <input class="boxed-check-input" type="radio" name="radio-overview" value="1000000" @change="updateInputValue">
+                                            <div class="boxed-check-label text-center">1000.000</div>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-lg-6 ">
+                                        <label class="boxed-check">
+                                            <input class="boxed-check-input" type="radio" name="radio-overview" value="2000000" @change="updateInputValue">
+                                            <div class="boxed-check-label text-center">2000.000</div>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <span>Masukan Nominal Sedekah<span class="text-danger">*</span></span>
-                            <input type="text" v-model="sedekah" />
-
+                            <input type="text" v-model="sedekah" v-money="money" />
                             <h5>Profil Donatur</h5>
-
                             <input :id="'nama_' + idpro" :name="'nama_' + idpro" placeholder="Masukan Nama Donatur" type="text" class="form-control" v-model="namaDonatur" />
-
                             <input :id="'nowa_' + idpro" :name="'nowa_' + idpro" placeholder="Masukan Nomor WhatsApp Aktif" type="text" class="form-control" v-model="nomorWhatsApp" />
-
                             <div class="text-center">
-                                <button type="button" class="btn btn-dqm w-100 text-white fw-6" @click="payZakat">
-                                    <span v-if="!isSubmitting">LANJUTKAN PEMBAYARAN</span>
-                                    <span v-else>
-                                        <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
-                                    </span>
-                                </button>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-dqm w-100 text-white fw-6" @click="donate(productid)" :disabled="!namaDonatur || !nomorWhatsApp">
+                                        <span v-if="!isSubmitting">LANJUTKAN PEMBAYARAN</span>
+                                        <span v-else>
+                                            <b-spinner small variant="white" label="Spinning"></b-spinner> Mohon Tunggu...
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -46,16 +90,9 @@ export default {
     components: {
 
     },
-    props: {
-        idpro: {
-            type: String,
-        },
-        totalterkumpul: {
-            type: String,
-        },
-    },
     data() {
         return {
+            productid: 'a684eceee76fc522773286a895bc8436',
             showQuestion: 1,
             switchPlan: true,
             selectedTab: 'hukum',
@@ -70,23 +107,17 @@ export default {
                 precision: '',
                 masked: false,
             },
-            salary: 0,
-            otherIncome: 0,
-            debt: 0,
-            goldPrice: 0,
-            totalIncome: 0,
-            nisabAmount: 0,
-            isZakatRequired: false,
-            zakatAmount: 0,
+            sedekah: '',
             showAside: false,
+            isSubmitting: false,
         }
     },
     computed: {
         jumlahDonasi: function () {
-            return this.donasi;
+            return this.sedekah;
         },
         isB1uttonDisabled() {
-            return !this.donasi || this.donasi < 10000 || !this.namaDonatur || !this.nomorWhatsApp;
+            return !this.sedekah || this.sedekah < 10000 || !this.namaDonatur || !this.nomorWhatsApp;
         },
 
     },
@@ -100,55 +131,24 @@ export default {
         selectFeature(name) {
             this.selectedTab = name
         },
-        calculateZakat() {
-            // Calculate Total Income
-            this.totalIncome =
-                parseFloat(this.salary) + parseFloat(this.otherIncome) - parseFloat(this.debt);
 
-            // Calculate Nisab Amount (Gold Price * 7.083333333333333)
-            this.nisabAmount = parseFloat(this.goldPrice) * 7.083333333333333;
-
-            // Check if Zakat is required
-            this.isZakatRequired = this.nisabAmount <= this.totalIncome;
-
-            // Calculate Zakat Amount (2.5% of Total Income)
-            this.zakatAmount = this.isZakatRequired ? this.totalIncome * 0.025 : 0;
-        },
-
-        formatNumber(value) {
-            return value.toFixed(0);
-        },
-        resetForm() {
-            this.salary = '';
-            this.otherIncome = '';
-            this.debt = '';
-            this.goldPrice = '';
-            this.totalIncome = '';
-            this.showAside = false;
-            this.totalterkumpul = '';
-            this.nisabAmount = '';
-        },
-
-        async donate(idpro) {
+        async donate(productid) {
             this.isSubmitting = true;
-
-            // Simulasi proses submit (gantilah dengan logika sesuai kebutuhan)
-            await new Promise(resolve => setTimeout(resolve, 2000));
-
-            this.isSubmitting = false;
-
+            setTimeout(() => {
+                this.isSubmitting = false;
+            }, 2000);
             const dataToSend = {
-                product_id: idpro,
+                product_id: productid,
                 nama: this.namaDonatur,
                 nohp: this.nomorWhatsApp,
-                price: this.donasi
+                price: this.sedekah,
             };
 
             try {
                 this.isLoading = true;
                 const response = await axios.post(process.env.VUE_APP_SHOPURL + "/api/transaction/request", dataToSend);
                 if (response.status === 200) {
-                    var win = window.open(response.data.data.paymenturl, 'PEMBAYARAN DQ PEDULI', 'width=350, height=700');
+                    var win = window.open(response.data.data.paymenturl, 'PEMBAYARAN DQM PEDULI', 'width=350, height=700');
                     var timer = setInterval(function () {
                         if (win.closed) {
                             clearInterval(timer);
@@ -167,41 +167,17 @@ export default {
                 this.isLoading = false;
             }
         },
-        closeMenu() {
-            const navbarCollapse = document.querySelector(".navbar-collapse");
-            navbarCollapse.classList.remove("show");
-        },
-        load() {
-            this.loading = true;
-            setTimeout(() => {
-                this.loading = false;
-            }, 2000);
-        },
+
         updateInputValue(event) {
-            this.donasi = event.target.value;
+            this.sedekah = event.target.value;
         },
-        checkMinAmount() {
-            this.showNotification = this.donasi < 10000 && this.donasi !== null;
-        },
+
         directives: {
             money: VMoney
         },
-        payZakat() {
-            // Your payment logic goes here
-            // For example, you can make an API call to process the payment
-            // Display loading spinner during the payment process
-            this.isSubmitting = true;
 
-            // Simulating a payment process with a delay (you should replace this with your actual payment logic)
-            setTimeout(() => {
-                this.isSubmitting = false;
-                alert("Zakat payment successful!");
-                // Reset the form or redirect to a thank you page
-            }, 2000);
-        },
     },
     created() {
-        this.recalculateZakat();
         this.customerNama = this.$route.query["customer[nama]"] || "";
         this.customerNohp = this.$route.query["customer[nohp]"] || "";
     },
@@ -210,18 +186,15 @@ export default {
 </script>
 
 <style scoped>
-.zakat {
-    background-color: #ddd;
+button:disabled {
+    background-color: #b12323;
     border-radius: 8px;
-    border: 1px solid #fff;
     color: #646464;
     cursor: not-allowed;
     font-size: 16px;
     font-style: normal;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    line-height: 21px;
-    padding: 11.5px 0;
+    line-height: 20px;
+    padding: 10.5px 0;
     text-align: center;
     width: 100%;
 }

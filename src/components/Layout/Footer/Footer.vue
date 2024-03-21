@@ -31,8 +31,14 @@
                         <li>
                             <router-link to="/zakat-penghasilan">Penghasilan</router-link>
                         </li>
+                                                <li>
+                            <router-link to="/zakat-fitrah">Fitrah</router-link>
+                        </li>
                         <li>
                             <router-link to="/zakat-Fidyah">Fidyah</router-link>
+                        </li>
+                                                <li>
+                            <router-link to="/zakat-perak">Perak</router-link>
                         </li>
                         <li>
                             <router-link to="/zakat-emas">Emas</router-link>

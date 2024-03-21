@@ -10,6 +10,7 @@ import DetailCampaign from '../views/Campaign/DetailCampaign.vue'
 import ZakatMaal from '../views/Zakat/Maal/Maal.vue'
 import ZakatPenghasilan from '../views/Zakat/Penghasilan/Penghasilan.vue'
 import ZakatFidyah from '../views/Zakat/Fidyah/Fidyah.vue'
+import ZakatFitrah from '../views/Zakat/Fitrah/Fitrah.vue'
 import ZakatPerak from '../views/Zakat/Perak/Perak.vue'
 import ZakatEmas from '../views/Zakat/Emas/Emas.vue'
 import Sedekah from '../views/Sedekah/Sedekah.vue'
@@ -84,6 +85,16 @@ const routes = [
       {
         header: AppHeader,
         default: ZakatFidyah,
+        footer: AppFooter
+      },
+  },
+  {
+    path: '/zakat-fitrah',
+    name: 'Zakat Fitrah',
+    components:
+      {
+        header: AppHeader,
+        default: ZakatFitrah,
         footer: AppFooter
       },
   },
